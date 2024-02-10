@@ -1,5 +1,6 @@
 {
   "name": "firmaszajowski.pl",
+  "author": "Kacper Walter",
   "version": "0.1.0",
   "private": true,
   "scripts": {
