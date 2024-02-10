@@ -1,0 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-text-fill-color: currentcolor;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  display: grid;
+  grid-template-columns: 1fr 80%;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+svg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+
+  &:link,
+  &:visited {
+    color: inherit;
+  }
+}

@@ -1,8 +1,10 @@
+import Homepage from "@/app/modules/Homepage/Homepage"
+
+import "@/app/common/styles/colors.scss"
+
 const Home = () => {
   return (
-    <main>
-      Hello firmaszajowski
-    </main>
+    <Homepage />
   )
 }
 
