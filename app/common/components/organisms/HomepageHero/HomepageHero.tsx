@@ -5,12 +5,13 @@ import Header from '@/app/common/components/molecules/Header/Header'
 const HomepageHero = ({ content }: HomepageHeroProps) => {
   return (
     <section className="homepage-hero">
-      <div className="homepage-hero__content">
+      <div className="homepage-hero__container">
         <Header
           heading={content.heading}
           headingType='h1'
           caption={content.caption}
         />
+        <div className="homepage-hero__background"></div>
       </div>
     </section>
   )
