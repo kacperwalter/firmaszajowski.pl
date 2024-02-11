@@ -1,4 +1,7 @@
 .navbar {
-  min-height: 7rem;
-  display: flex;
+  .wrapper {
+    display: flex;
+    align-items: center;
+    min-height: 7rem;
+  }
 }

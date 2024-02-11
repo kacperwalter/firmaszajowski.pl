@@ -38,6 +38,8 @@
   }
 
   &--wide {
+    --wrapper-max-width: 190rem;
+
     @media(max-width: 767px) {
       max-width: calc(var(--wrapper-max-width-wide) + 2 * var(--wrapper-padding));
     }
