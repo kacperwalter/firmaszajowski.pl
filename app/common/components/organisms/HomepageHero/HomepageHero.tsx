@@ -1,6 +1,7 @@
 import type { HomepageHeroProps } from './HomepageHero.types'
 import Header from '@/app/common/components/molecules/Header/Header'
 
+
 // TODO - you can pass content to organisms but not to atoms or molecules
 const HomepageHero = ({ content }: HomepageHeroProps) => {
   return (
