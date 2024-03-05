@@ -12,9 +12,22 @@
     align-items: center;
     gap: 10rem;
     text-transform: uppercase;
+    height: 100%;
   }
 
   &__link {
+    a {
+      transition: text-shadow .1s ease-in;
+      will-change: text-shadow;
+
+      &:hover {
+        text-shadow: 0.3px 0 currentColor, -0.3px 0 currentColor;
+      }
+    }
+  }
+
+  &__link,
+  &__contact a {
     position: relative;
 
     &:before {
@@ -27,15 +40,12 @@
       opacity: 0;
       transition: opacity .1s ease-in;
       will-change: opacity;
+      pointer-events: none;
     }
 
     &:hover {
       &:before {
         opacity: 1;
-      }
-      
-      a {
-        font-weight: bold;
       }
     }
 
