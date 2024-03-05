@@ -31,19 +31,23 @@ const Navbar = () => {
         </div>
 
         <div className="navbar__contact">
-          <Image
-            src={mailIcon}
-            alt="mail"
-            width={20}
-            height={20}
-          />
-          
-          <Image
-            src={phoneIcon}
-            alt="phone"
-            width={20}
-            height={20}
-          />
+          <a href="#">
+            <Image
+              src={mailIcon}
+              alt="mail"
+              width={20}
+              height={20}
+            />
+          </a>
+
+          <a href="#">
+            <Image
+              src={phoneIcon}
+              alt="phone"
+              width={20}
+              height={20}
+            />
+          </a>
         </div>
       </Wrapper>
     </nav>
