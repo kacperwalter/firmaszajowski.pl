@@ -10,7 +10,7 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    gap: 2rem;
+    gap: 10rem;
     text-transform: uppercase;
   }
 
@@ -25,6 +25,18 @@
       bottom: -1rem;
       background-color: var(--color-neo);
       opacity: 0;
+      transition: opacity .1s ease-in;
+      will-change: opacity;
+    }
+
+    &:hover {
+      &:before {
+        opacity: 1;
+      }
+      
+      a {
+        font-weight: bold;
+      }
     }
 
     a {
@@ -35,7 +47,7 @@
 
   &__contact {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     flex-direction: row;
   }
 }
