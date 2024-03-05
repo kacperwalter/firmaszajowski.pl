@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from 'next/link'
+import Link from "next/link"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import mailIcon from "@/public/icons/mail.svg"
@@ -38,7 +38,7 @@ const Navbar = () => {
               O firmie
             </Link>
           </li>
-          
+
           <li className="navbar__link">
             <Link href="/kontakt">
               Kontakt
