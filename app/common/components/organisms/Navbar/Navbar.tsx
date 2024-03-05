@@ -21,11 +21,8 @@ const Navbar = () => {
         </Link>
 
         <ul className="navbar__navigation">
-          <li>
-            <Link
-              href="/inwestycje"
-              className="navbar__link"
-            >
+          <li className="navbar__link">
+            <Link href="/inwestycje">
               Inwestycje
               <Image
                 src={arrowDown}
@@ -35,19 +32,15 @@ const Navbar = () => {
               />
             </Link>
           </li>
-          <li>
-            <Link
-              href="/o-firmie"
-              className="navbar__link"
-            >
+
+          <li className="navbar__link">
+            <Link href="/o-firmie">
               O firmie
             </Link>
           </li>
-          <li>
-            <Link
-               href="/kontakt"
-                className="navbar__link"
-            >
+          
+          <li className="navbar__link">
+            <Link href="/kontakt">
               Kontakt
             </Link>
           </li>
