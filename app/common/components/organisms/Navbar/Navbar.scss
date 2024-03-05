@@ -2,6 +2,14 @@
   .wrapper {
     display: flex;
     align-items: center;
-    min-height: 7rem;
+    justify-content: space-between;
+    height: 7rem;
+  }
+
+  &__navigation {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2rem;
+    text-transform: uppercase;
   }
 }

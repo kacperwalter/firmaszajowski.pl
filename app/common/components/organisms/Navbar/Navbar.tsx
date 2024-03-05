@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from 'next/link'
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import mailIcon from "@/public/icons/mail.svg"
@@ -7,28 +8,28 @@ import "./Navbar.scss"
 
 const Navbar = () => {
   return (
-    <nav className="navbar">
+    <nav className="navbar"> 
       <Wrapper isWide>
-        <Image
-          src={szajowskiLogo}
-          alt="logo"
-          width={100}
-          height={100}
-        />
+        <Link href="/">
+          <Image
+            src={szajowskiLogo}
+            alt="logo"
+            width={100}
+            height={100}
+          />
+        </Link>
 
-        <div className="navbar__navigation">
-          <ul>
-            <li>
-              <a href="#about">Inwestycje</a>
-            </li>
-            <li>
-              <a href="#offer">O firmie</a>
-            </li>
-            <li>
-              <a href="#contact">Kontakt</a>
-            </li>
-          </ul>
-        </div>
+        <ul className="navbar__navigation">
+          <li>
+            <a href="#about">Inwestycje</a>
+          </li>
+          <li>
+            <a href="#offer">O firmie</a>
+          </li>
+          <li>
+            <a href="#contact">Kontakt</a>
+          </li>
+        </ul>
 
         <div className="navbar__contact">
           <a href="#">
