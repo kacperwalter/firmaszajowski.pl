@@ -12,4 +12,10 @@
     gap: 2rem;
     text-transform: uppercase;
   }
+
+  &__contact {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+  }
 }
