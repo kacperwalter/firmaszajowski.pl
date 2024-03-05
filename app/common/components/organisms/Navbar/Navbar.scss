@@ -9,6 +9,7 @@
   &__navigation {
     display: flex;
     flex-flow: row nowrap;
+    align-items: center;
     gap: 2rem;
     text-transform: uppercase;
   }
@@ -21,5 +22,6 @@
 
   &__link {
     text-decoration: none;
+    display: flex;
   }
 }

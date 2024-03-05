@@ -4,6 +4,7 @@ import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import mailIcon from "@/public/icons/mail.svg"
 import phoneIcon from "@/public/icons/phone.svg"
+import arrowDown from "@/public/icons/arrow-down.svg"
 import "./Navbar.scss"
 
 const Navbar = () => {
@@ -26,6 +27,12 @@ const Navbar = () => {
               className="navbar__link"
             >
               Inwestycje
+              <Image
+                src={arrowDown}
+                alt="arrow-down"
+                width={20}
+                height={20}
+              />
             </Link>
           </li>
           <li>
