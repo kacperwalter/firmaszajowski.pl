@@ -21,13 +21,28 @@ const Navbar = () => {
 
         <ul className="navbar__navigation">
           <li>
-            <Link href="/inwestycje">Inwestycje</Link>
+            <Link
+              href="/inwestycje"
+              className="navbar__link"
+            >
+              Inwestycje
+            </Link>
           </li>
           <li>
-            <Link href="/o-firmie">O firmie</Link>
+            <Link
+              href="/o-firmie"
+              className="navbar__link"
+            >
+              O firmie
+            </Link>
           </li>
           <li>
-            <Link href="/kontakt">Kontakt</Link>
+            <Link
+               href="/kontakt"
+                className="navbar__link"
+            >
+              Kontakt
+            </Link>
           </li>
         </ul>
 

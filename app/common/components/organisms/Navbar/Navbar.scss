@@ -18,4 +18,8 @@
     gap: 1rem;
     flex-direction: row;
   }
+
+  &__link {
+    text-decoration: none;
+  }
 }
