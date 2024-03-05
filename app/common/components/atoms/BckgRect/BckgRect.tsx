@@ -5,7 +5,7 @@ type BckgRectProps = {
 }
 
 const BckgRect = ({ direction = "left" }: BckgRectProps) => {
-  // TODO start from here
+  // TODO start from here 
   return <div className={`bckg-rect`}></div>
 }
 
