@@ -1,12 +1,18 @@
+import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
+import About from "@/app/modules/About/About"
+
 export const metadata = {
     title: "Szajowski - O firmie",
     description: "",
   }
   
-  const AboutCompany = () => {
+  const AboutPage = () => {
     return (
-      <div>O firmie</div>
+      <>
+        <Navbar />
+        <About />
+      </>
     )
   }
   
-  export default AboutCompany
+  export default AboutPage

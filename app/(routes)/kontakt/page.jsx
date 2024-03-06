@@ -1,12 +1,18 @@
+import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
+import Contact from "@/app/modules/Contact/Contact"
+
 export const metadata = {
     title: "Szajowski - Kontakt",
     description: "",
   }
   
-  const Contact = () => {
+  const ContactPage = () => {
     return (
-      <div>Kontakt</div>
+      <>
+        <Navbar />
+        <Contact />
+      </>
     )
   }
   
-  export default Contact
+  export default ContactPage
