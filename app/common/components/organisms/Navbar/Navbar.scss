@@ -16,7 +16,8 @@
   }
 
   &__link {
-    a {
+    a,
+    p {
       transition: text-shadow .1s ease-in;
       will-change: text-shadow;
 
@@ -49,7 +50,12 @@
       }
     }
 
-    a {
+    p {
+      cursor: pointer;
+    }
+
+    a, 
+    p {
       text-decoration: none;
       display: flex;
     }
