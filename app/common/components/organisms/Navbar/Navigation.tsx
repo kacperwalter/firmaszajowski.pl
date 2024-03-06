@@ -1,13 +1,23 @@
 'use client'
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import arrowDown from "@/public/icons/arrow-down.svg"
 
 const Navigation = () => {
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false)
+
+  const setIsDropdownVisibleHandler = () => {
+    setIsDropdownVisible(!isDropdownVisible)
+  }
+
   return (
     <ul className="navbar__navigation">
-      <li className="navbar__link">
+      <li
+        className="navbar__link"
+        onClick={setIsDropdownVisibleHandler}
+      >
         <p>
           Inwestycje
           
