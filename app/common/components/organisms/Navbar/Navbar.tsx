@@ -1,8 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
+import BrandLogo from "@/app/common/components/atoms/BrandLogo/BrandLogo"
 import Navigation from "./Navigation"
-import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import mailIcon from "@/public/icons/mail.svg"
 import phoneIcon from "@/public/icons/phone.svg"
 import "./Navbar.scss"
@@ -12,12 +12,7 @@ const Navbar = () => {
     <nav className="navbar"> 
       <Wrapper isWide>
         <Link href="/">
-          <Image
-            src={szajowskiLogo}
-            alt="logo"
-            width={100}
-            height={100}
-          />
+          <BrandLogo />
         </Link>
 
         <Navigation />
