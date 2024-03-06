@@ -16,6 +16,8 @@
   }
 
   &__link {
+    position: relative;
+    
     a,
     p {
       transition: text-shadow .1s ease-in;
