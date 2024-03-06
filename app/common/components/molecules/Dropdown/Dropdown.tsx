@@ -1,36 +1,18 @@
 import Link from "next/link"
 import './Dropdown.scss'
+import { dropdownItems } from "@/app/data/dropdownItems"
 
 const Dropdown = () => {
   return (
     <ul className="dropdown">
-      <li>
-        <Link href="/osiedle-sadowa">
-          <h5>Osiedle Sadowa</h5>
-          <p>Nowoczesne domy dwulokalowe</p>
-        </Link>
-      </li>
-
-      <li>
-        <Link href="/osiedle-polana">
-          <h5>Leśna Polana</h5>
-          <p>Domy wolnostojące</p>
-        </Link>
-      </li>
-
-      <li>
-        <Link href="/osiedle-gajowa">
-          <h5>Osiedle Gajowa</h5>
-          <p>Nowoczesne domy dwulokalowe</p>
-        </Link>
-      </li>
-
-      <li>
-        <Link href="/osiedle-sadowa">
-          <h5>Osiedle Sadowa</h5>
-          <p>Nowoczesne domy dwulokalowe</p>
-        </Link>
-      </li>
+      {dropdownItems.map((item, index) => (
+        <li key={index} className="dropdown__item">
+          <Link href={item.path}>
+              <h4>{item.title}</h4>
+              <p>{item.description}</p>
+          </Link>
+        </li>
+      ))}
     </ul>
   )
 }
