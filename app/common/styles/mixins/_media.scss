@@ -1,0 +1,86 @@
+$breakpoints: (
+  mobile: 375,
+  tablet: 768,
+  tablet-h: 1024,
+  laptop: 1350,
+  hd: 1920,
+  qhd: 2560,
+);
+
+$media_features: (
+  hover:
+    "(hover: hover), not all and (-moz-touch-enabled), (-ms-high-contrast:none)",
+  touch: "(hover: none)",
+  motion: "(prefers-reduced-motion: no-preference)",
+  reduced-motion: "(prefers-reduced-motion: reduce)",
+  print: "print",
+  dark: "(prefers-color-scheme: dark)",
+  high-contrast: "(prefers-contrast: more) ",
+);
+
+@mixin media(
+  $first_arg: null,
+  // Allows quick access, i.e. media(tablet), media(hover). Works only with $max and $feature (so far).
+  $min: null,
+  // Lower boundary – can be breakpoint name or number (without unit).
+  $feature: null,
+  // Allows using other predefined queries from $media_features.
+  $also: null,
+  // Use if you need the same code for some other CSS blocks.
+  $only: null,
+  // Applies only for a particular breakpoint or width. Overwrites $min and $max values.
+  $max: null
+    // Upper boundary – can be breakpoint name or number (without unit).
+) {
+  // If first arg is a breakpoint's name, map it to $max
+  @if index(map-keys($breakpoints), $first_arg) or type-of($first_arg) == number
+  {
+    $max: $first_arg;
+  }
+
+  // If first arg is listed in media_features, map it to $feature
+  @if index(map-keys($media_features), $first_arg) {
+    $feature: $first_arg;
+  }
+
+  // Check if only for a specific breakpoint
+  @if $only {
+    $min: $only;
+    $max: $only;
+  }
+
+  // Check if boundaries are predefined breakpoints or sizes
+  $min: if(type-of($min) == string, map-get($breakpoints, $min), $min);
+  $max: if(
+    type-of($max) == string,
+    map-get(
+        $breakpoints,
+        nth(map-keys($breakpoints), index(map-keys($breakpoints), $max) + 1)
+      ) - 1,
+    $max
+  );
+
+  // Get feature query from $media_features
+  $feature: map-get($media_features, $feature);
+
+  // Building media query string
+  @media #{
+    if($min, '(min-width: ' + $min + 'px)', null)
+    if($max, if($min, 'and ', '') + '(max-width: ' + $max + 'px)', null)
+    if($feature, if($min or $max, 'and ', '') + $feature, null)
+  } {
+    @content;
+  }
+
+  @if $also {
+    @if index(map-keys($media_features), $also) {
+      @media #{ map-get($media_features, $also) } {
+        @content;
+      }
+    } @else {
+      @at-root #{ $also } {
+        @content;
+      }
+    }
+  }
+}

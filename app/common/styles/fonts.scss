@@ -1,7 +1,15 @@
+@import './mixins/media';
+
 :root {
-  --font-size-h1: 4.2rem;
-  --font-size-h2: 3.5rem;
-  --font-size-h3: 3rem;
+  --font-size-h1: 5.6rem;
+  --font-size-h2: 4.8rem;
+  --font-size-h3: 4rem;
+
+  @include media(tablet) {
+    --font-size-h1: 4rem;
+    --font-size-h2: 3.2rem;
+    --font-size-h3: 2.4rem;
+  }
 }
 
 html {
