@@ -18,8 +18,8 @@
   &__link {
     position: relative;
     
-    a,
-    p {
+    .navbar__link-navlink,
+    .navbar__link-title {
       transition: text-shadow .1s ease-in;
       will-change: text-shadow;
 
@@ -30,7 +30,7 @@
   }
 
   &__link,
-  &__contact a {
+  &__contact .navbar__link-navlink {
     position: relative;
 
     &:before {
@@ -52,12 +52,12 @@
       }
     }
 
-    p {
+    &-title {
       cursor: pointer;
     }
 
-    a, 
-    p {
+    .navbar__link-navlink, 
+    .navbar__link-title {
       text-decoration: none;
       display: flex;
     }

@@ -18,7 +18,10 @@ const Navbar = () => {
         <Navigation />
 
         <div className="navbar__contact">
-          <a href="#">
+          <a
+            href="#" 
+            className="navbar__link-navlink"
+          >
             <Image
               src={mailIcon}
               alt="mail"
@@ -27,7 +30,10 @@ const Navbar = () => {
             />
           </a>
 
-          <a href="#">
+          <a
+            href="#"
+            className="navbar__link-navlink"
+          >
             <Image
               src={phoneIcon}
               alt="phone"

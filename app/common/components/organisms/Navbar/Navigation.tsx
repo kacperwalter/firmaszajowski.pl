@@ -19,7 +19,9 @@ const Navigation = () => {
         className="navbar__link"
         onClick={setIsDropdownVisibleHandler}
       >
-        <p>
+        <p
+          className="navbar__link-title"
+        >
           Inwestycje
           
           <Image
@@ -34,13 +36,19 @@ const Navigation = () => {
       </li>
 
       <li className="navbar__link">
-        <Link href="/o-firmie">
+        <Link 
+          href="/o-firmie"
+          className="navbar__link-navlink"
+        >
           O firmie
         </Link>
       </li>
 
       <li className="navbar__link">
-        <Link href="/kontakt">
+        <Link
+          href="/kontakt"
+          className="navbar__link-navlink"
+        >
           Kontakt
         </Link>
       </li>
