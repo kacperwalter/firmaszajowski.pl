@@ -1,10 +1,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
+import Navigation from "./Navigation"
 import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import mailIcon from "@/public/icons/mail.svg"
 import phoneIcon from "@/public/icons/phone.svg"
-import arrowDown from "@/public/icons/arrow-down.svg"
 import "./Navbar.scss"
 
 const Navbar = () => {
@@ -20,31 +20,7 @@ const Navbar = () => {
           />
         </Link>
 
-        <ul className="navbar__navigation">
-          <li className="navbar__link">
-            <Link href="/inwestycje">
-              Inwestycje
-              <Image
-                src={arrowDown}
-                alt="arrow-down"
-                width={20}
-                height={20}
-              />
-            </Link>
-          </li>
-
-          <li className="navbar__link">
-            <Link href="/o-firmie">
-              O firmie
-            </Link>
-          </li>
-
-          <li className="navbar__link">
-            <Link href="/kontakt">
-              Kontakt
-            </Link>
-          </li>
-        </ul>
+        <Navigation />
 
         <div className="navbar__contact">
           <a href="#">
