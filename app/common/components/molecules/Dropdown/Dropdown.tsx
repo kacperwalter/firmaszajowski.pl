@@ -5,7 +5,7 @@ import type { DropdownProps } from "./Dropdown.types"
 
 const Dropdown = ({ isVisible }: DropdownProps) => {
   return (
-    <ul className={`dropdown ${!isVisible && "dropdown--is-hidden"}`}>
+    <ul className={`dropdown ${isVisible ? "" : "is-hidden"}`}>
       {dropdownItems.map((item, index) => (
         <li key={index} className="dropdown__item">
           <Link href={item.path}>
