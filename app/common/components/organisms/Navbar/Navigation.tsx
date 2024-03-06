@@ -7,7 +7,7 @@ import arrowDown from "@/public/icons/arrow-down.svg"
 import Dropdown from "@/app/common/components/molecules/Dropdown/Dropdown"
 
 const Navigation = () => {
-  const [isDropdownVisible, setIsDropdownVisible] = useState(true)
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false)
 
   const setIsDropdownVisibleHandler = () => {
     setIsDropdownVisible(!isDropdownVisible)
