@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import arrowDown from "@/public/icons/arrow-down.svg"
+import Dropdown from "@/app/common/components/molecules/Dropdown/Dropdown"
 
 const Navigation = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false)
@@ -22,10 +23,10 @@ const Navigation = () => {
           Inwestycje
           
           <Image
-          src={arrowDown}
-          alt="arrow-down"
-          width={20}
-          height={20}
+            src={arrowDown}
+            alt="arrow-down"
+            width={20}
+            height={20}
           />
         </p>
       </li>
