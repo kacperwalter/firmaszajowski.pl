@@ -16,7 +16,10 @@
   }
 
   &__link {
-    a {
+    position: relative;
+    
+    .navbar__link-navlink,
+    .navbar__link-title {
       transition: text-shadow .1s ease-in;
       will-change: text-shadow;
 
@@ -27,7 +30,7 @@
   }
 
   &__link,
-  &__contact a {
+  &__contact .navbar__link-navlink {
     position: relative;
 
     &:before {
@@ -49,7 +52,12 @@
       }
     }
 
-    a {
+    &-title {
+      cursor: pointer;
+    }
+
+    .navbar__link-navlink, 
+    .navbar__link-title {
       text-decoration: none;
       display: flex;
     }
