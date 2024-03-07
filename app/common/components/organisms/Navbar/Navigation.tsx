@@ -3,10 +3,13 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { usePathname } from 'next/navigation'
 import arrowDown from "@/public/icons/arrow-down.svg"
 import Dropdown from "@/app/common/components/molecules/Dropdown/Dropdown"
 
 const Navigation = () => {
+  const pathname = usePathname()
+  
   const [isDropdownVisible, setIsDropdownVisible] = useState(false)
 
   const setIsDropdownVisibleHandler = () => {
@@ -16,7 +19,7 @@ const Navigation = () => {
   return (
     <ul className="navbar__navigation">
       <li
-        className="navbar__link"
+        className={`navbar__link ${pathname === "/inwestycje" ? "navbar__link--active" : ""}`}
         onClick={setIsDropdownVisibleHandler}
       >
         <p
@@ -35,7 +38,9 @@ const Navigation = () => {
         <Dropdown isVisible={isDropdownVisible} />
       </li>
 
-      <li className="navbar__link">
+      <li
+        className={`navbar__link ${pathname === "/o-firmie" ? "navbar__link--active" : ""}`}
+      >
         <Link 
           href="/o-firmie"
           className="navbar__link-navlink"
@@ -44,7 +49,9 @@ const Navigation = () => {
         </Link>
       </li>
 
-      <li className="navbar__link">
+      <li 
+        className={`navbar__link ${pathname === "/kontakt" ? "navbar__link--active" : ""}`}
+      >
         <Link
           href="/kontakt"
           className="navbar__link-navlink"
