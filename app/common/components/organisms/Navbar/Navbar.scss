@@ -17,6 +17,16 @@
 
   &__link {
     position: relative;
+
+    &--active {
+      .navbar__link-navlink {
+        text-shadow: 0.3px 0 currentColor, -0.3px 0 currentColor;
+      }
+      
+      &:before {
+        opacity: 1 !important;
+      }
+    }
     
     .navbar__link-navlink,
     .navbar__link-title {
