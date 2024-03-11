@@ -11,12 +11,16 @@
     flex-flow: row nowrap;
     align-items: center;
     gap: 10rem;
-    text-transform: uppercase;
     height: 100%;
   }
 
   &__link {
     position: relative;
+
+    &-title,
+    &-navlink {
+      text-transform: uppercase;
+    }
 
     &--active {
       .navbar__link-navlink {
