@@ -8,7 +8,7 @@ const Dropdown = ({ isVisible }: DropdownProps) => {
     <ul className={`dropdown ${isVisible ? "" : "is-hidden"}`}>
       {dropdownItems.map((item, index) => (
         <li key={index} className="dropdown__item">
-          <Link href={item.path}>
+          <Link href={item.path} className="dropdown__link">
               <h4 className="dropdown__title">{item.title}</h4>
               <p className="dropdown__description">{item.description}</p>
           </Link>

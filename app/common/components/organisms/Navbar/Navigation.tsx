@@ -11,7 +11,7 @@ import { navigationItems } from "@/app/data/navigationItems"
 const Navigation = () => {
   const pathname = usePathname()
 
-  const [isDropdownVisible, setIsDropdownVisible] = useState(false)
+  const [isDropdownVisible, setIsDropdownVisible] = useState(true)
 
   const toggleDropdownVisibility = () => {
     setIsDropdownVisible(!isDropdownVisible)

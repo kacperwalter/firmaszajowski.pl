@@ -1,6 +1,10 @@
 .dropdown {
     position: absolute;
-    background-color: var(--color-white);
+    // background-color: var(--color-white);
+    background-color: lightblue;
+    top: 3rem;
+    left: -1rem;
+    min-width: 36rem;
 
     &__item {
         padding: 1rem 2rem;
