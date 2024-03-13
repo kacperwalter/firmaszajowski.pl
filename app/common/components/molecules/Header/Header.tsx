@@ -7,7 +7,7 @@ const Header = ({ heading, headingType, caption }: HeaderProps) => {
   return (
     <header>
       <Heading
-        headingType={headingType}
+        type={headingType}
         text={heading}
       />
       <RichText text={caption} />
