@@ -6,7 +6,6 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
   return (
     <section className="homepage-hero">
       <Wrapper>
-        {/* TODO do i need that div? */}
         <div className="homepage-hero__container">
           <Header
             heading={content.heading}

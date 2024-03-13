@@ -1,13 +1,9 @@
 import type { HeadingProps } from "./Heading.types"
 
-const Heading = ({ headingType = 'h2', text }: HeadingProps) => {
-  const Tag = headingType
+const Heading = ({ type = 'h2', text }: HeadingProps) => {
+  const Tag = type 
 
-  return (
-    <Tag>
-      {text}
-    </Tag>
-  )
+  return <Tag dangerouslySetInnerHTML={{ __html: text }} />
 }
 
 export default Heading
