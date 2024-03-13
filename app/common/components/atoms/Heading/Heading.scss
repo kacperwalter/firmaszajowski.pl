@@ -1,4 +1,23 @@
 .heading {
+  font-weight: bold;
+
+  strong {
+    position: relative;
+    font-weight: inherit;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 110%;
+      height: 1rem;
+      z-index: -1;
+      background-color: var(--color-neo);
+    }
+  }
+
   &--dark {
     color: var(--color-dark);
   }

@@ -1,4 +1,5 @@
 import type { HeadingProps } from "./Heading.types"
+import "./Heading.scss"
 
 const Heading = ({ type = 'h2', text, color = 'dark' }: HeadingProps) => {
   const Tag = type
