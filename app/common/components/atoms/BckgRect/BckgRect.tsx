@@ -1,12 +1,22 @@
 import "./BckgRect.scss"
+import { BckgRectProps } from "./BckgRect.types"
 
-type BckgRectProps = {
-    direction: "left" | "right"
-}
+const BckgRect = ({ placement = "left" }: BckgRectProps) => {
+  let className = "bckg-rect"
 
-const BckgRect = ({ direction = "left" }: BckgRectProps) => {
-  // TODO start from here 
-  return <div className={`bckg-rect`}></div>
+  switch (placement) {
+    case "left":
+      className += " bckg-rect--left"
+      break
+    case "right":
+      className += " bckg-rect--right"
+      break
+    case "center":
+      className += " bckg-rect--center"
+      break
+  }
+
+  return <div className={className}></div>
 }
 
 export default BckgRect

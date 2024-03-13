@@ -1,4 +1,4 @@
 export type RichTextProps = {
-  text?: string
+  text?: string | TrustedHTML
   children?: React.ReactNode
 }

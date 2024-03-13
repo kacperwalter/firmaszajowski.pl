@@ -1,11 +1,11 @@
 import { type RichTextProps } from "./RichText.types"
 
 const RichText = ({ text, children }: RichTextProps) => {
-  return (
-    <p className="rich-text">
-      {text || children}
-    </p>
-  )
+  const content = text || children
+  
+  if (!content) return null
+
+  return <p className="rich-text" dangerouslySetInnerHTML={{ __html: content }} />
 }
 
 export default RichText
