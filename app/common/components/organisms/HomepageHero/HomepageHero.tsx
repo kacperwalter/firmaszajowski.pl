@@ -12,7 +12,10 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
             headingType='h1'
             caption={content.caption}
           />
-          <div className="homepage-hero__background"></div>
+          <video className="homepage-hero__video" autoPlay muted loop> 
+            <source src={content.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </Wrapper>
     </section>
