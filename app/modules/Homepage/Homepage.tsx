@@ -4,7 +4,7 @@ import HomepageHero from "@/app/common/components/organisms/HomepageHero/Homepag
 const homepageHeroData = {
   heading: "Wzorzec <strong>jakości</strong>",
   caption: "Nowoczesne budownictwo dla Ciebie i Twojej rodziny",
-  backgroundVideo: "videos/hero-video.mp4",
+  video: "videos/hero-video.mp4",
 }
 
 const Home = () => {
