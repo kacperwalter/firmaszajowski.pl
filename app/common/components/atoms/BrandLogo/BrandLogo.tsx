@@ -7,7 +7,7 @@ const BrandLogo = () => {
     <Image
         src={szajowskiLogo}
         alt="logo"
-        width={100}
+        width={140}
         height={100}
     />
   )
