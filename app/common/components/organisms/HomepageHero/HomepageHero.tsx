@@ -1,6 +1,7 @@
 import type { HomepageHeroProps } from './HomepageHero.types'
 import Header from '@/app/common/components/molecules/Header/Header'
 import Wrapper from '@/app/common/components/atoms/Wrapper/Wrapper'
+import './HomepageHero.scss'
 
 const HomepageHero = ({ content }: HomepageHeroProps) => {
   return (
@@ -11,8 +12,12 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
             heading={content.heading}
             headingType='h1'
             caption={content.caption}
+            color='white'
           />
-          <div className="homepage-hero__background"></div>
+          <video className="homepage-hero__video-background" autoPlay muted loop> 
+            <source src={content.video} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </Wrapper>
     </section>
