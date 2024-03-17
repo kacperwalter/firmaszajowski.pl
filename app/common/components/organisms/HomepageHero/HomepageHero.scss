@@ -1,25 +1,29 @@
 .homepage-hero {
-  max-height: 75rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
   .wrapper {
-      min-height: 75vh;
       display: grid;
   }
 
   &__container {
       position: relative;
+      padding-top: 20rem;
+      padding-bottom: 20rem;
       height: 100%;
       display: grid;
       place-content: center;
       overflow: hidden;
       border-radius: var(--border-radius);
-      max-height: 80rem;
-
+      max-height: 75rem;
 
       .header {
         text-align: center;
+        padding: 5rem;
 
         .rich-text {
           font-size: var(--font-size-body-small);
