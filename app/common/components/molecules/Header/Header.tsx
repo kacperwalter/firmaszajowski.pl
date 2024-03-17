@@ -1,4 +1,5 @@
 import type { HeaderProps } from './Header.types'
+import './Header.scss'
 
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import RichText from '@/app/common/components/atoms/RichText/RichText'
