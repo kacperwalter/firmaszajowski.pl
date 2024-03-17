@@ -12,6 +12,7 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
             heading={content.heading}
             headingType='h1'
             caption={content.caption}
+            color='white'
           />
           <video className="homepage-hero__video-background" autoPlay muted loop> 
             <source src={content.video} type="video/mp4" />

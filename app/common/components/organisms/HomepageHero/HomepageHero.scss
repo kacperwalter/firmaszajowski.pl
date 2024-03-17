@@ -5,11 +5,18 @@
 
   .wrapper {
       min-height: 75vh;
+      display: grid;
   }
 
   &__container {
       position: relative;
       height: 100%;
+      display: grid;
+      place-content: center;
+
+      .header {
+        text-align: center;
+      }
   }
 
   &__video-background {
