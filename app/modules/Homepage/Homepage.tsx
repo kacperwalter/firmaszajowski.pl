@@ -9,7 +9,7 @@ const homepageHeroData = {
 }
 
 const blogFeedData = {
-  heading: "Nasze <strong>inwestycje mieszkaniowe</strong>",
+  heading: "Nasze <br><strong>inwestycje mieszkaniowe</strong>",
   caption: "Zajmujemy się budową oraz sprzedażą mieszkań  i nowoczesnych domów szeregowych w spokojnych, komfortowych lokalizacjach. Nasze inwestycje położone są w Chodzieży i jej okolicach – staramy się, aby nasze budynki wpisywały się w bieżący krajobraz, oferując klientom dostęp do zieleni, bez szkodliwej ingerencji w środowisko naturalne.",
   posts: [
     {

@@ -1,0 +1,11 @@
+.blog-feed {
+  .header {
+    gap: 2.5rem;
+    
+    .rich-text {
+      max-width: 59rem;
+      font-size: var( --font-size-body-regular);
+      color: var(--color-gray);
+    }
+  }
+}
