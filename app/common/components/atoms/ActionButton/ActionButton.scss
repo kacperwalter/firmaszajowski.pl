@@ -1,8 +1,18 @@
 .action-button {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid var(--color-neo);
-    cursor: pointer;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--color-neo);
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+
+  &__arrow {
+    height: 1.5rem;
+
+    path {
+      fill: var(--color-neo);
+    }
+  }
 }
