@@ -22,7 +22,7 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
         </div>
       </Wrapper>
       
-      <ActionButton />
+      <ActionButton as="link" href="#" />
     </section>
   )
 }
