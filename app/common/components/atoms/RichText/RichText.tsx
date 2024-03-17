@@ -1,4 +1,5 @@
 import { type RichTextProps } from "./RichText.types"
+import "./RichText.scss"
 
 const RichText = ({ text, children, color = 'dark' }: RichTextProps) => {
   const content = text || children

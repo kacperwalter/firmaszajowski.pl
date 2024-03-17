@@ -1,0 +1,9 @@
+.rich-text {
+  &--dark {
+    color: var(--color-dark);
+  }
+
+  &--white {
+    color: var(--color-white);
+  }
+}
