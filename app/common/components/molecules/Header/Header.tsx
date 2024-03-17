@@ -5,7 +5,7 @@ import RichText from '@/app/common/components/atoms/RichText/RichText'
 
 const Header = ({ heading, headingType, caption }: HeaderProps) => {
   return (
-    <header>
+    <header className="header">
       <Heading
         type={headingType}
         text={heading}

@@ -1,7 +1,6 @@
 import szajowskiLogo from "@/public/brand/szajowski-logo.svg"
 import Image from "next/image"
 
-// width and height via props? 
 const BrandLogo = () => {
   return (
     <Image

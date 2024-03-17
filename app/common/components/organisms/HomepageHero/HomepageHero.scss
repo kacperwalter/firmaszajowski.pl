@@ -3,8 +3,13 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
 
+  .wrapper {
+      min-height: 75vh;
+  }
+
   &__container {
       position: relative;
+      height: 100%;
   }
 
   &__video-background {
