@@ -29,12 +29,14 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
                   alt={post.heading} 
                 />
               </div>
-              <Header
-                heading={post.heading}
-                headingType='h3'
-                caption={post.caption}
-              />
-              <ActionButton />
+              <div className="blog-feed__content">
+                <Header
+                  heading={post.heading}
+                  headingType='h4'
+                  caption={post.caption}
+                />
+                <ActionButton />
+              </div>
             </Link>
           ))}
         </div>

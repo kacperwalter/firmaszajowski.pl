@@ -1,8 +1,11 @@
 .blog-feed {
-  .header {
-    gap: 2.5rem;
-    margin-bottom: 10rem;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+  }
 
+  .header {
     .rich-text {
       max-width: 59rem;
       font-size: var( --font-size-body-regular);
@@ -13,11 +16,24 @@
   &__posts {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    grid-row-gap: 15rem;
   }
 
   &__post {
     grid-column-end: span 8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &:nth-child(even) {
+      position: relative;
+      top: -20rem;
+      width: 44rem;
+
+      .blog-feed__image {
+        height: 60rem;
+      }
+    }
 
     &:nth-child(2) {
       grid-column-start: 12;
@@ -29,20 +45,31 @@
 
     &:nth-child(4) {
       grid-column-start: 14;
+      top: -10rem;
     }
 
-    &:nth-child(even) {
-      position: relative;
-      top: -20rem;
-
-      .blog-feed__image {
-
-      }
+    &:nth-child(odd) {
+      max-height: 50rem;
     }
   }
 
   &__image {
     border-radius: var(--border-radius);
     overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header {
+      gap: unset;
+    }
   }
 }
