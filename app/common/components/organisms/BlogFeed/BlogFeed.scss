@@ -1,6 +1,7 @@
 .blog-feed {
   .header {
     gap: 2.5rem;
+    margin-bottom: 10rem;
 
     .rich-text {
       max-width: 59rem;
@@ -11,7 +12,34 @@
 
   &__posts {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(20, 1fr);
+    grid-row-gap: 30rem;
+  }
+
+  &__post {
+    grid-column-end: span 8;
+
+    &:nth-child(2) {
+      grid-column-start: 10;
+    }
+
+    &:nth-child(3) {
+      grid-column-start: 4;
+    }
+
+    &:nth-child(4) {
+      grid-column-start: 14;
+    }
+
+    &:nth-child(even) {
+      .blog-feed__image {
+
+      }
+    }
+  }
+
+  &__image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
   }
 }

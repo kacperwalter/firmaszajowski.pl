@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import type { BlogFeedProps } from "./BlogFeed.types"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import Header from "@/app/common/components/molecules/Header/Header"
@@ -22,7 +23,12 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
               className="blog-feed__post"
               href='/'
             >
-              <img src={post.image} alt={post.heading} />
+              <div className="blog-feed__image" >
+                <img 
+                  src={post.image} 
+                  alt={post.heading} 
+                />
+              </div>
               <Header
                 heading={post.heading}
                 headingType='h3'
