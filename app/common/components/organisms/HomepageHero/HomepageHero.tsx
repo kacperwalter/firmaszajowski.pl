@@ -1,6 +1,7 @@
 import type { HomepageHeroProps } from './HomepageHero.types'
 import Header from '@/app/common/components/molecules/Header/Header'
 import Wrapper from '@/app/common/components/atoms/Wrapper/Wrapper'
+import ActionButton from '@/app/common/components/atoms/ActionButton/ActionButton'
 import './HomepageHero.scss'
 
 const HomepageHero = ({ content }: HomepageHeroProps) => {
@@ -20,6 +21,8 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
           </video>
         </div>
       </Wrapper>
+      
+      <ActionButton as="link" href="#" />
     </section>
   )
 }

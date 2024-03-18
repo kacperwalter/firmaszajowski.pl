@@ -1,0 +1,17 @@
+.blog-feed {
+  .header {
+    gap: 2.5rem;
+
+    .rich-text {
+      max-width: 59rem;
+      font-size: var( --font-size-body-regular);
+      color: var(--color-gray);
+    }
+  }
+
+  &__posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: 2.5rem;
+  }
+}
