@@ -1,5 +1,6 @@
 import HomepageHero from "@/app/common/components/organisms/HomepageHero/HomepageHero"
 import BlogFeed from "@/app/common/components/organisms/BlogFeed/BlogFeed"
+import CTA from "@/app/common/components/organisms/CTA/CTA"
 
 // TODO - all of the data fetching from Sanity is handled in this layer and passed down to the components
 const homepageHeroData = {
@@ -39,11 +40,20 @@ const blogFeedData = {
   ],
 }
 
+const CTAData = {
+  heading: "<srong>Sprzedań mieszkań i domów</strong>",
+  caption: "ul. Słoneczna 23K <br> 64-800 Chodzież",
+  contactInfo: true,
+  phone: "123 456 789",
+  email: "biuro@firmaszajowski.pl",
+}
+
 const Home = () => {
   return (
     <main>
       <HomepageHero content={homepageHeroData} />
       <BlogFeed content={blogFeedData} />
+      <CTA content={CTAData} />
     </main>
   )
 }
