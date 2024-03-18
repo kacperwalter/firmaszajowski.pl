@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .blog-feed {
   .wrapper {
     display: flex;
@@ -6,10 +8,17 @@
   }
 
   .header {
+    @include media(tablet) {
+      text-align: center;
+    }
+
     .rich-text {
-      max-width: 59rem;
       font-size: var( --font-size-body-regular);
       color: var(--color-gray);
+
+      @include media($min: tablet-h) {
+        max-width: 59rem;
+      }
     }
   }
 
@@ -36,8 +45,20 @@
       top: -20rem;
       grid-column-end: span 6;
 
+      @include media(tablet-h) {
+       top: -10rem;
+      }
+
+      @include media(tablet-h) {
+        grid-column-end: span 5;
+      }
+
       .blog-feed__image {
         height: 50rem;
+
+        @include media(tablet-h) {
+          height: 30rem;
+        }
       }
     }
 
@@ -45,8 +66,13 @@
       max-height: 50rem;
     }
 
+    &:nth-child(1) {
+      grid-column-start: 2; 
+    }
+
     &:nth-child(2) {
-      grid-column-start: 12;
+      grid-column-start: 13;
+
     }
 
     &:nth-child(3) {
@@ -56,6 +82,10 @@
     &:nth-child(4) {
       grid-column-start: 14;
       top: -10rem;
+
+      @include media(tablet-h) {
+        top: -2rem;
+      }
     }
   }
 
@@ -86,6 +116,7 @@
 
     .header {
       gap: unset;
+      text-align: left;
     }
   }
 }
