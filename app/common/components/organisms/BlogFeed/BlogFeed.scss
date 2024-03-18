@@ -25,6 +25,12 @@
     flex-direction: column;
     gap: 1.5rem;
 
+    &:hover {
+      .blog-feed__image img {
+        transform: scale(1.15);
+      }
+    }
+
     &:nth-child(even) {
       position: relative;
       top: -20rem;
@@ -60,6 +66,16 @@
     img {
       height: 100%;
       object-fit: cover;
+      transition: transform 0.2s ease-in-out;
+      will-change: transform;
+
+      &:nth-child(odd) {
+        transform-origin: left center;
+      }
+
+      &:nth-child(even) {
+        transform-origin: left center;
+      }
     }
   }
 

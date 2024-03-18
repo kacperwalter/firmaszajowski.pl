@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import type { BlogFeedProps } from "./BlogFeed.types"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import Header from "@/app/common/components/molecules/Header/Header"
