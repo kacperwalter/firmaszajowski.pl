@@ -34,11 +34,15 @@
     &:nth-child(even) {
       position: relative;
       top: -20rem;
-      width: 44rem;
+      grid-column-end: span 6;
 
       .blog-feed__image {
-        height: 60rem;
+        height: 50rem;
       }
+    }
+
+    &:nth-child(odd) {
+      max-height: 50rem;
     }
 
     &:nth-child(2) {
@@ -52,10 +56,6 @@
     &:nth-child(4) {
       grid-column-start: 14;
       top: -10rem;
-    }
-
-    &:nth-child(odd) {
-      max-height: 50rem;
     }
   }
 
