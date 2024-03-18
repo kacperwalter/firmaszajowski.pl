@@ -13,14 +13,14 @@
   &__posts {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
-    grid-row-gap: 30rem;
+    grid-row-gap: 15rem;
   }
 
   &__post {
     grid-column-end: span 8;
 
     &:nth-child(2) {
-      grid-column-start: 10;
+      grid-column-start: 12;
     }
 
     &:nth-child(3) {
@@ -32,6 +32,9 @@
     }
 
     &:nth-child(even) {
+      position: relative;
+      top: -20rem;
+
       .blog-feed__image {
 
       }
