@@ -1,6 +1,8 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .blog-feed {
+  position: relative;
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -129,5 +131,9 @@
       gap: unset;
       text-align: left;
     }
+  }
+
+  .bckg-rect {
+    top: 40%;
   }
 }

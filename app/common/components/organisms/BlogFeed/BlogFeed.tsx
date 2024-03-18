@@ -1,6 +1,7 @@
 import Link from "next/link"
 import type { BlogFeedProps } from "./BlogFeed.types"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
+import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 import Header from "@/app/common/components/molecules/Header/Header"
 import ActionButton from "@/app/common/components/atoms/ActionButton/ActionButton"
 import "./BlogFeed.scss"
@@ -40,6 +41,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
           ))}
         </div>
       </Wrapper>
+      <BckgRect placement="right" />
     </section>
   )
 }
