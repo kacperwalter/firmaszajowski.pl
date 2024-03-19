@@ -21,6 +21,30 @@
   &__navigation {
     display: flex;
     gap: 5rem;
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    &-heading {
+      text-transform: uppercase;
+    }
   }
 
   .contact-info {

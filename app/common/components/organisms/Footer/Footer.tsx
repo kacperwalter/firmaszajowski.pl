@@ -17,11 +17,11 @@ const Footer = () => {
 
         <ul className="footer__navigation">
           {navigationItems.map((item, index) => (
-            <li key={index}>
+            <li className="footer__navigation-column" key={index}>
               {item.isDropdown ? (
                 <>
-                  <a href={item.path}>{item.label}</a>
-                  <ul>
+                  <a className="footer__navigation-heading" href={item.path}>{item.label}</a>
+                  <ul className="footer__navigation-list">
                     {dropdownItems.map((dropdownItem, dropdownIndex) => (
                       <li key={dropdownIndex}>
                         <a href={dropdownItem.path}>{dropdownItem.description}</a>
@@ -30,7 +30,7 @@ const Footer = () => {
                   </ul>
                 </>
               ) : (
-                <a href={item.path}>{item.label}</a>
+                <a className="footer__navigation-heading" href={item.path}>{item.label}</a>
               )}
             </li>
           ))}
