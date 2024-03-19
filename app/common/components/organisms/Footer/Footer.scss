@@ -10,10 +10,25 @@
     justify-content: space-between;
 
     @include media(tablet-h) {
-      // flex-direction: column;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
+    }
+
+    @include media(mobile) {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+      align-items: center;
+    }
+  }
+
+  &__contact,
+  &__navigation {
+    @include media(mobile){
+      width: 100%;
+      text-align: center;
+      align-items: center;
     }
   }
 
@@ -64,6 +79,13 @@
   }
 
   .contact-info {
-    align-self: baseline;
+    @include media(mobile) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    @include media($min: tablet) {
+      align-self: baseline;
+    }    
   }
 }
