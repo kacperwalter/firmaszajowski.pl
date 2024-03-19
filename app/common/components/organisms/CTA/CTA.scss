@@ -8,5 +8,23 @@
     display: grid;
     place-content: center;
     border-radius: var(--border-radius);
+
+    &,
+    .header {
+      gap: 3rem;
+    }
+  }
+
+  &__contact-info {
+    display: flex;
+    margin: 0 auto;
+    gap: 4rem;
+
+    &-text {
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
   }
 }

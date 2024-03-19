@@ -2,6 +2,11 @@
 
 .blog-feed {
   position: relative;
+  margin-bottom: 5rem;
+
+  @include media(tablet) {
+    margin-bottom: 10rem;
+  }
 
   .wrapper {
     display: flex;
