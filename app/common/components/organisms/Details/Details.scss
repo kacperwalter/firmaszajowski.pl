@@ -7,7 +7,8 @@
   .wrapper {
     display: flex;
     align-items: center;
-    gap: 10rem;
+    gap: 25rem;
+    justify-content: left;
 
     @include media(tablet-h) {
       gap: 6rem;
@@ -24,10 +25,11 @@
     }
 
     & > .details__image {
-      min-width: 50%;
+      // min-width: 50%;
+      width: 60rem;
 
       @include media(tablet) {
-        max-width: 100%;
+        // max-width: 100%;
       }
 
       @include media(tablet) {
@@ -36,7 +38,7 @@
       }
 
       @include media($min: laptop) {
-        min-width: 60rem;
+        // min-width: 60rem;
       }
     }
   }
@@ -45,16 +47,28 @@
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    max-width: 44rem;
 
     .heading {
-      font-size: var(--font-size-h3)
+      font-size: var(--font-size-h4);
+    }
+
+    .rich-text {
+      color: var(--color-gray);
     }
   }
 
   &--reverse {
     .wrapper {
+      gap: 10rem;
+      justify-content: unset;
+
       @include media($min: tablet-h) {
         flex-direction: row;
+      }
+
+      .details__content {
+        margin-left: 10rem;
       }
     }
   }

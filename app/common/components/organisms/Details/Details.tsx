@@ -5,7 +5,7 @@ import "./Details.scss"
 
 const Details = ({ content, isReversed = false }: DetailsProps) => {
   return (
-    <section className={`details ${isReversed && "details--reverse"}`}>
+    <section className={`details ${isReversed ? "details--reverse" : ""}`}>
       <Wrapper>
         <div className="details__content">
           <Header
