@@ -1,6 +1,7 @@
 import HomepageHero from "@/app/common/components/organisms/HomepageHero/HomepageHero"
 import BlogFeed from "@/app/common/components/organisms/BlogFeed/BlogFeed"
 import CTA from "@/app/common/components/organisms/CTA/CTA"
+import Footer from "@/app/common/components/organisms/Footer/Footer"
 
 // TODO - all of the data fetching from Sanity is handled in this layer and passed down to the components
 const homepageHeroData = {
@@ -54,6 +55,7 @@ const Home = () => {
       <HomepageHero content={homepageHeroData} />
       <BlogFeed content={blogFeedData} />
       <CTA content={CTAData} />
+      <Footer />
     </main>
   )
 }
