@@ -29,6 +29,7 @@
   strong {
     position: relative;
     font-weight: inherit;
+    display: inline-block;
 
     &::after {
       content: '';
