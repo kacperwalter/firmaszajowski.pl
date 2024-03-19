@@ -37,9 +37,8 @@ svg {
 }
 
 a {
-
-  // &:link,
-  // &:visited {
-  //   color: inherit;
-  // }
+  &:link,
+  &:visited {
+    color: inherit;
+  }
 }
