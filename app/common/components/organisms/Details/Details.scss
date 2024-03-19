@@ -25,7 +25,10 @@
     }
 
     & > .details__image {
-      // min-width: 50%;
+      @include media(tablet) {
+        width: 100%;
+      }
+      
       width: 60rem;
 
       @include media(tablet) {
@@ -46,8 +49,15 @@
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 5rem;
-    max-width: 44rem;
+    gap: 3rem;
+
+    @include media($min: tablet-h) {
+      max-width: 44rem;
+    }
+
+    .brand-logo {
+      width: 20rem;
+    }
 
     .heading {
       font-size: var(--font-size-h4);
@@ -60,15 +70,17 @@
 
   &--reverse {
     .wrapper {
-      gap: 10rem;
       justify-content: unset;
 
       @include media($min: tablet-h) {
         flex-direction: row;
+        gap: 10rem;
       }
 
       .details__content {
-        margin-left: 10rem;
+        @include media($min: laptop ){
+          margin-left: 10rem;
+        }
       }
     }
   }

@@ -1,3 +1,4 @@
+import BrandLogo from "@/app/common/components/atoms/BrandLogo/BrandLogo"
 import Header from "@/app/common/components/molecules/Header/Header"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import type { DetailsProps } from "./Details.types"
@@ -8,6 +9,7 @@ const Details = ({ content, isReversed = false }: DetailsProps) => {
     <section className={`details ${isReversed ? "details--reverse" : ""}`}>
       <Wrapper>
         <div className="details__content">
+          <BrandLogo />
           <Header
             heading={content.heading}
             headingType='h2'
