@@ -1,11 +1,12 @@
 .CTA {
   text-align: center;
-  
+
   .wrapper {
     background-color: var(--color-beige);
     padding-top: 8rem;
     padding-bottom: 8rem;
     display: grid;
     place-content: center;
+    border-radius: var(--border-radius);
   }
 }
