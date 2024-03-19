@@ -1,3 +1,29 @@
 .footer {
   background-color: var(--color-beige);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    p:last-child {
+      margin-top: 2rem;
+    }
+  }
+  
+  &__navigation {
+    display: flex;
+    gap: 5rem;
+  }
+
+  .contact-info {
+    align-self: baseline;
+  }
 }
