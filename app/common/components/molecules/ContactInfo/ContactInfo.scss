@@ -1,0 +1,11 @@
+.contact-info {
+  display: flex;
+  gap: 4rem;
+
+  &__text {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
