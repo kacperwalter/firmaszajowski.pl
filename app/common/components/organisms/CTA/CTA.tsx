@@ -12,6 +12,13 @@ const CTA = ({ content }: CTAProps) => {
           headingType='h2'
           caption={content.caption}
         />
+
+        {content.contactInfo && (
+          <div className="CTA__contact-info">
+            <p>{content.phone}</p>
+            <p>{content.email}</p>
+          </div>
+        )}
       </Wrapper>
     </section>
   )
