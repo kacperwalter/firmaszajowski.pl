@@ -4,4 +4,5 @@ export type DetailsProps = {
     caption: string
     image: string
   }
+  isReversed?: boolean
 }

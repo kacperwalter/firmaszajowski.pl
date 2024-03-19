@@ -10,6 +10,7 @@ const About = () => {
   return (
     <main>
       <Details content={detailsData} />
+      <Details content={detailsData} isReversed />
     </main>
   )
 }

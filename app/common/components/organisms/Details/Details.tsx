@@ -3,9 +3,9 @@ import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import type { DetailsProps } from "./Details.types"
 import "./Details.scss"
 
-const Details = ({ content }: DetailsProps) => {
+const Details = ({ content, isReversed = false }: DetailsProps) => {
   return (
-    <section className="details">
+    <section className={`details ${isReversed && "details--reverse"}`}>
       <Wrapper>
         <div className="details__content">
           <Header
@@ -14,7 +14,11 @@ const Details = ({ content }: DetailsProps) => {
             caption={content.caption}
           />
         </div>
-        <img src={content.image} alt="Example image" />
+        <img
+          className="details__image"
+          src={content.image}
+          alt="Example image" 
+        />
       </Wrapper>
     </section>
   )
