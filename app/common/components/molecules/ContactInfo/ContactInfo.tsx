@@ -6,7 +6,7 @@ import "./ContactInfo.scss"
 
 const ContactInfo = ({ phone, email }: ContactInfoProps) => {
   return (
-    <div className="contact-info">
+    <article className="contact-info">
       {phone && (
         <p className="contact-info__text">
           <Image src={phoneIcon} alt="phone-icon" height={24} width={24} />
@@ -20,7 +20,7 @@ const ContactInfo = ({ phone, email }: ContactInfoProps) => {
           {email}
         </p>
       )}
-    </div>
+    </article>
   )
 }
 
