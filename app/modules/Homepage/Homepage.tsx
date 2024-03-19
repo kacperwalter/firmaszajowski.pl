@@ -52,7 +52,7 @@ const Home = () => {
   return (
     <main>
       <HomepageHero content={homepageHeroData} />
-      {/* <BlogFeed content={blogFeedData} /> */}
+      <BlogFeed content={blogFeedData} />
       <CTA content={CTAData} />
     </main>
   )

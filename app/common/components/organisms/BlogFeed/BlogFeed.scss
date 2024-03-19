@@ -140,5 +140,9 @@
 
   .bckg-rect {
     top: 40%;
+
+    @include media(tablet) {
+     top: 30%; 
+    }
   }
 }

@@ -10,18 +10,20 @@ const CTA = ({ content }: CTAProps) => {
   return (
     <section className="CTA">
       <Wrapper>
-        <Header
-          heading={content.heading}
-          headingType='h2'
-          caption={content.caption}
-        />
+        <div className="CTA__container">
+          <Header
+            heading={content.heading}
+            headingType='h2'
+            caption={content.caption}
+          />
 
-        {content.contactInfo && (
-          <div className="CTA__contact-info">
-            <p className="CTA__contact-info-text"><Image src={phoneIcon} alt="phone-icon" height={24} width={24} /> {content.phone}</p>
-            <p className="CTA__contact-info-text"><Image src={emailIcon} alt="email-icon" height={24} width={24} /> {content.email}</p>
-          </div>
-        )}
+          {content.contactInfo && (
+            <div className="CTA__contact-info">
+              <p className="CTA__contact-info-text"><Image src={phoneIcon} alt="phone-icon" height={24} width={24} /> {content.phone}</p>
+              <p className="CTA__contact-info-text"><Image src={emailIcon} alt="email-icon" height={24} width={24} /> {content.email}</p>
+            </div>
+          )}
+        </div>
       </Wrapper>
     </section>
   )
