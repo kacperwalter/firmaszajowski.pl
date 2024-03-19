@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <BckgRect placement="left" />
-      <Navbar />
+      {/* <Navbar /> */}
       <Homepage />
       <Footer />
     </>
