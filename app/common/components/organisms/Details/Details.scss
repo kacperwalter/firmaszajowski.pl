@@ -1,6 +1,8 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .details {
+  --font-size-h2: var(--font-size-h3);
+
   position: relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
@@ -65,12 +67,6 @@
       }
     }
 
-    .heading {
-      @include media($min: tablet-h) {
-        font-size: var(--font-size-h4);
-      }
-    }
-
     .rich-text {
       color: var(--color-gray);
     }
@@ -87,13 +83,31 @@
 
       @include media($min: tablet-h) {
         flex-direction: row;
-        gap: 10rem;
+        gap: 15rem;
+      }
+
+      @include media($min: tablet) {
+        // gap: 10rem;
       }
 
       .details__content {
-        @include media($min: laptop ){
+        @include media($min: laptop ) {
           margin-left: 10rem;
         }
+      }
+    }
+  }
+
+  &--hero {
+    .wrapper .details__image {
+      width: 80rem;
+
+      @include media(tablet-h) {
+        width: 60rem;
+      }
+
+      @include media(tablet) {
+        width: 100%;
       }
     }
   }

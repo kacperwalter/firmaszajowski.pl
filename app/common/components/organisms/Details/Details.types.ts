@@ -6,4 +6,5 @@ export type DetailsProps = {
     icons?: string[]
   }
   isReversed?: boolean
+  isHero?: boolean
 }
