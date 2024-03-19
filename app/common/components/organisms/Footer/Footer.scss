@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .footer {
   background-color: var(--color-beige);
   padding-top: 5rem;
@@ -6,6 +8,13 @@
   .wrapper {
     display: flex;
     justify-content: space-between;
+
+    @include media(tablet-h) {
+      // flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
   }
 
   &__contact {
@@ -21,6 +30,11 @@
   &__navigation {
     display: flex;
     gap: 5rem;
+
+    @include media(tablet-h) {
+      gap: 3rem;
+      flex-direction: column;
+    }
 
     a {
       text-decoration: none;
@@ -40,6 +54,8 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
 
     &-heading {
