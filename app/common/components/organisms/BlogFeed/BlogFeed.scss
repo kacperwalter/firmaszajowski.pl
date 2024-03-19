@@ -1,17 +1,139 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .blog-feed {
+  position: relative;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+  }
+
   .header {
-    gap: 2.5rem;
+    @include media(tablet) {
+      text-align: center;
+    }
 
     .rich-text {
-      max-width: 59rem;
       font-size: var( --font-size-body-regular);
       color: var(--color-gray);
+
+      @include media($min: tablet-h) {
+        max-width: 59rem;
+      }
     }
   }
 
   &__posts {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(20, 1fr);
+  }
+
+  &__post {
+    grid-column-end: span 8;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &:hover {
+      .blog-feed__image img {
+        transform: scale(1.15);
+      }
+    }
+
+    &:nth-child(even) {
+      position: relative;
+      top: -20rem;
+      grid-column-end: span 6;
+
+      @include media(tablet-h) {
+       top: -10rem;
+      }
+
+      @include media(mobile) {
+        grid-column-end: span 8;
+      }
+
+      .blog-feed__image {
+        height: 50rem;
+
+        @include media(tablet-h) {
+          height: 30rem;
+        }
+      }
+    }
+
+    &:nth-child(odd) {
+      max-height: 50rem;
+
+      @include media(tablet) {
+        grid-column-end: span 10;
+      }
+    }
+
+    &:nth-child(1) {
+      grid-column-start: 2;
+
+      @include media(tablet) {
+        grid-column-start: 1;
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column-start: 13;
+    }
+
+    &:nth-child(3) {
+      grid-column-start: 4;
+
+      @include media(tablet) {
+        grid-column-start: 2;
+      }
+    }
+
+    &:nth-child(4) {
+      grid-column-start: 14;
+      top: -10rem;
+
+      @include media(tablet-h) {
+        top: -2rem;
+      }
+    }
+  }
+
+  &__image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease-in-out;
+      will-change: transform;
+
+      &:nth-child(odd) {
+        transform-origin: left center;
+      }
+
+      &:nth-child(even) {
+        transform-origin: left center;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header {
+      gap: unset;
+      text-align: left;
+    }
+  }
+
+  .bckg-rect {
+    top: 40%;
   }
 }
