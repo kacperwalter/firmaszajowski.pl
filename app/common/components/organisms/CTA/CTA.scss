@@ -31,6 +31,8 @@
     }
 
     &__text {
+      font-weight: bold;
+      
       @include media(mobile) {
         flex-direction: column;
         align-items: center;
