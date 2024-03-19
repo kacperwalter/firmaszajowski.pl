@@ -25,23 +25,15 @@
     }
 
     & > .details__image {
+      width: 60rem;
+
       @include media(tablet) {
         width: 100%;
       }
       
-      width: 60rem;
-
-      @include media(tablet) {
-        // max-width: 100%;
-      }
-
       @include media(tablet) {
         aspect-ratio: 2 / 1;
         overflow: hidden;
-      }
-
-      @include media($min: laptop) {
-        // min-width: 60rem;
       }
     }
   }
