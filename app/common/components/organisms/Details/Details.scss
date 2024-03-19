@@ -1,6 +1,7 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .details {
+  position: relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
 
@@ -27,12 +28,17 @@
     & > .details__image {
       width: 60rem;
 
+      @include media(tablet-h) {
+        width: 50rem;
+      }
+
       @include media(tablet) {
         width: 100%;
       }
       
       @include media(tablet) {
         aspect-ratio: 2 / 1;
+        object-fit: cover;
         overflow: hidden;
       }
     }
@@ -43,21 +49,36 @@
     flex-direction: column;
     gap: 3rem;
 
+    @include media(tablet) {
+      text-align: center;
+    }
+
     @include media($min: tablet-h) {
       max-width: 44rem;
     }
 
     .brand-logo {
       width: 20rem;
+
+      @include media(tablet) {
+        margin: 0 auto;
+      }
     }
 
     .heading {
-      font-size: var(--font-size-h4);
+      @include media($min: tablet-h) {
+        font-size: var(--font-size-h4);
+      }
     }
 
     .rich-text {
       color: var(--color-gray);
     }
+  }
+
+  .bckg-rect {
+    width: 40%;
+    height: 70%;
   }
 
   &--reverse {
