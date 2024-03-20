@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
@@ -12,6 +13,9 @@ import close from "@/public/icons/close.svg"
 import "./Navbar.scss"
 
 const Navbar = () => {
+  const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const toggleMenu = () => setIsMenuVisible(!isMenuVisible)
+
   return (
     <nav className="navbar"> 
       <Wrapper isWide>
@@ -19,7 +23,7 @@ const Navbar = () => {
           <BrandLogo />
         </Link>
 
-        <div className="navbar__menu">
+        <div className={`navbar__menu ${isMenuVisible ? "navbar__menu--visible" : ""}`}>
           <Navigation />
 
           <div className="navbar__contact">
@@ -46,25 +50,25 @@ const Navbar = () => {
                 height={20}
               />
             </a>
+
+            <Image
+              src={close}
+              alt="close"
+              width={20}
+              height={20}
+              className="navbar__close"
+              onClick={toggleMenu}
+            />
           </div>
         </div>
-      
-        <Image
-          src={close}
-          alt="close"
-          width={30}
-          height={30}
-          className="navbar__close"
-          onClick={() => console.log("Close clicked")}
-        />
 
         <Image
           src={hamburger}
           alt="hamburger"
-          width={30}
-          height={30}
+          width={20}
+          height={20}
           className="navbar__hamburger"
-          onClick={() => console.log("Hamburger clicked")}
+          onClick={toggleMenu}
         />
       </Wrapper>
     </nav>

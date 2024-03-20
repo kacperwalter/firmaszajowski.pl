@@ -1,6 +1,8 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .navbar {
+  position: relative;
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -9,6 +11,11 @@
   }
 
   &__menu {
+    @include media(tablet) {
+      position: absolute;
+      top: -100%;
+    }
+
     display: flex;
   }
 
@@ -90,10 +97,10 @@
   }
 
   &__close {
-    display: none;
+    // display: none;
   }
 
   &__hamburger {
-    display: none;
+    // display: none;
   }
 }
