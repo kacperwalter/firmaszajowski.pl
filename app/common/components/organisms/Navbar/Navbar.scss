@@ -3,6 +3,10 @@
 .navbar {
   position: relative;
 
+  @include media(tablet) {
+    background-color: var(--color-white);
+  }
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -12,19 +16,34 @@
 
   &__menu {
     @include media(tablet) {
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--color-white);
+      z-index: 102;
       position: absolute;
-      top: -100%;
+      top: -100vh;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: top .3s ease-in-out;
     }
 
-    display: flex;
+    &--visible {
+      @include media(tablet) {
+        top: 7rem;
+      }
+    }
+
+    // display: flex;
   }
 
   &__navigation {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 10rem;
-    height: 100%;
+    // display: flex;
+    // flex-flow: row nowrap;
+    // align-items: center;
+    // gap: 10rem;
+    // height: 100%;
   }
 
   &__link {
@@ -97,7 +116,7 @@
   }
 
   &__close {
-    // display: none;
+    display: none;
   }
 
   &__hamburger {

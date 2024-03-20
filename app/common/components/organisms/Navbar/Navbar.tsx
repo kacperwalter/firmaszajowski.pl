@@ -50,25 +50,28 @@ const Navbar = () => {
                 height={20}
               />
             </a>
-
-            <Image
-              src={close}
-              alt="close"
-              width={20}
-              height={20}
-              className="navbar__close"
-              onClick={toggleMenu}
-            />
           </div>
         </div>
 
         <Image
+          src={close}
+          alt="close"
+          width={20}
+          height={20}
+          className="navbar__close"
+          onClick={toggleMenu}
+          onKeyDown={(event) => event.key === "Enter" && toggleMenu()}
+        />
+
+        <Image
           src={hamburger}
+          tabIndex={2}
           alt="hamburger"
           width={20}
           height={20}
           className="navbar__hamburger"
           onClick={toggleMenu}
+          onKeyDown={(event) => event.key === "Enter" && toggleMenu()}
         />
       </Wrapper>
     </nav>
