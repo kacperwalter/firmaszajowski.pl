@@ -6,7 +6,11 @@ import Button from "@/app/common/components/atoms/Button/Button"
 import type { DetailsProps } from "./Details.types"
 import "./Details.scss"
 
-const Details = ({ content, isReversed = false, isHero = false }: DetailsProps) => {
+const Details = ({
+  content,
+  isReversed = false,
+  isHero = false
+}: DetailsProps) => {
   isReversed = isHero ? true : isReversed
 
   return (
