@@ -41,7 +41,7 @@ const blogFeedData = {
 }
 
 const CTAData = {
-  heading: "<srong>Sprzedań mieszkań i domów</strong>",
+  heading: "Sprzedaż <strong>mieszkań i domów</strong>",
   caption: "ul. Słoneczna 23K <br> 64-800 Chodzież",
   contactInfo: true,
   phone: "123 456 789",

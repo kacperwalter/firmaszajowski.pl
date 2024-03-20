@@ -1,0 +1,114 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.details {
+  --font-size-h2: var(--font-size-h3);
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin-bottom: 5rem;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 25rem;
+    justify-content: left;
+
+    @include media(tablet-h) {
+      gap: 6rem;
+    }
+
+    @include media(tablet) {
+      flex-direction: column-reverse;
+      gap: 5rem;
+      align-items: flex-start;
+    }
+
+    @include media($min: tablet-h) {
+      flex-direction: row-reverse;
+    }
+
+    & > .details__image {
+      width: 60rem;
+
+      @include media(tablet-h) {
+        width: 50rem;
+      }
+
+      @include media(tablet) {
+        width: 100%;
+      }
+      
+      @include media(tablet) {
+        aspect-ratio: 2 / 1;
+        object-fit: cover;
+        overflow: hidden;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include media(tablet) {
+      text-align: center;
+    }
+
+    @include media($min: tablet-h) {
+      max-width: 44rem;
+    }
+
+    .brand-logo {
+      width: 20rem;
+
+      @include media(tablet) {
+        margin: 0 auto;
+      }
+    }
+
+    .rich-text {
+      color: var(--color-gray);
+    }
+  }
+
+  .bckg-rect {
+    width: 40%;
+    height: 70%;
+  }
+
+  &--reverse {
+    .wrapper {
+      justify-content: unset;
+
+      @include media($min: tablet-h) {
+        flex-direction: row;
+        gap: 15rem;
+      }
+
+      @include media($min: tablet) {
+        // gap: 10rem;
+      }
+
+      .details__content {
+        @include media($min: laptop ) {
+          margin-left: 10rem;
+        }
+      }
+    }
+  }
+
+  &--hero {
+    .wrapper .details__image {
+      width: 80rem;
+
+      @include media(tablet-h) {
+        width: 60rem;
+      }
+
+      @include media(tablet) {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
+import Footer from "@/app/common/components/organisms/Footer/Footer"
 import Contact from "@/app/modules/Contact/Contact"
 
 export const metadata = {
@@ -11,6 +12,7 @@ export const metadata = {
       <>
         <Navbar />
         <Contact />
+        <Footer />
       </>
     )
   }

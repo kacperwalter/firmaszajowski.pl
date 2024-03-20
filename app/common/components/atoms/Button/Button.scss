@@ -1,0 +1,70 @@
+.button {
+  width: fit-content;
+  padding: 1.5rem 2.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3.2rem;
+  display: flex;
+  gap: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  will-change: background-color, color, border-color;
+
+  &--primary {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    border: 1px solid transparent;
+
+    &:visited {
+      color: var(--color-white);
+    }
+
+    .button__arrow {
+      path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+    border: 1px solid var(--color-dark);
+
+    &:visited {
+      color: var(--color-dark);
+    }
+
+    .button__arrow {
+      path {
+        fill: var(--color-dark);
+      }
+    }
+  }
+
+  &:hover {
+    &.button--primary {
+      background-color: var(--color-white);
+      color: var(--color-dark);
+      border: 1px solid var(--color-dark);
+
+      .button__arrow path {
+        fill: var(--color-dark);
+      }
+    }
+
+    &--secondary {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+
+      .button__arrow path {
+        fill: var(--color-white);
+      }
+    }
+  }
+
+  &--arrow-down {
+    .button__arrow {
+      transform: rotate(90deg);
+    }
+  }
+}

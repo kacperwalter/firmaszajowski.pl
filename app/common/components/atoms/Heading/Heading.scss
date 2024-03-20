@@ -1,5 +1,7 @@
 .heading {
   font-weight: bold;
+  z-index: 10;
+  text-decoration: none;
 
   &.h1 {
     font-size: var(--font-size-h1);
@@ -28,6 +30,7 @@
   strong {
     position: relative;
     font-weight: inherit;
+    display: inline-block;
 
     &::after {
       content: '';

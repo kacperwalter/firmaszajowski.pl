@@ -4,6 +4,7 @@ import Image from "next/image"
 const BrandLogo = () => {
   return (
     <Image
+        className="brand-logo"
         src={szajowskiLogo}
         alt="logo"
         width={140}

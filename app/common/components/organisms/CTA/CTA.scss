@@ -1,0 +1,42 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.CTA {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  &__container {
+    background-color: var(--color-beige);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    display: grid;
+    place-content: center;
+    border-radius: var(--border-radius);
+
+    .header {
+      padding: 1rem;
+    }
+
+    &,
+    .header {
+      gap: 3rem;
+    }
+  }
+
+  .contact-info {
+    margin: 0 auto;
+
+    @include media(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__text {
+      font-weight: bold;
+      
+      @include media(mobile) {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+}
