@@ -1,9 +1,15 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .navbar {
   .wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 7rem;
+  }
+
+  &__menu {
+    display: flex;
   }
 
   &__navigation {
@@ -81,5 +87,13 @@
     display: flex;
     gap: 2rem;
     flex-direction: row;
+  }
+
+  &__close {
+    display: none;
+  }
+
+  &__hamburger {
+    display: none;
   }
 }
