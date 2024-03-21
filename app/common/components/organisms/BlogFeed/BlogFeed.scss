@@ -2,7 +2,6 @@
 
 .blog-feed {
   position: relative;
-  margin-bottom: 5rem;
 
   @include media(tablet) {
     margin-bottom: 10rem;
@@ -86,6 +85,7 @@
   }
 
   &__post {
+    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 2rem;
