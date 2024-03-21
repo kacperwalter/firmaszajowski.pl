@@ -3,7 +3,7 @@
 .navbar {
   position: relative;
 
-  @include media(tablet) {
+  @include media(tablet-h) {
     background-color: var(--color-white);
   }
 
@@ -15,8 +15,8 @@
   }
 
   &__menu {
-    @include media(tablet) {
-      height: 100vh;
+    @include media(tablet-h) {
+      height: 90vh;
       width: 100vw;
       background-color: var(--color-white);
       z-index: 102;
@@ -26,32 +26,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       transition: top .3s ease-in-out;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .navbar__navigation {
+      @include media(tablet-h) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5rem;
+      }
     }
 
     &--visible {
-      @include media(tablet) {
+      @include media(tablet-h) {
         top: 7rem;
       }
-
-      // .navbar__close {
-      //   display: block;
-      // }
-
-      // .navbar__hamburger {
-      //   display: none;
-      // }
     }
-
-    // display: flex;
-  }
-
-  &__navigation {
-    // display: flex;
-    // flex-flow: row nowrap;
-    // align-items: center;
-    // gap: 10rem;
-    // height: 100%;
   }
 
   &__link {
