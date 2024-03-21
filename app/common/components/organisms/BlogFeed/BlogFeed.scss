@@ -19,8 +19,36 @@
   }
 
   .header {
+    @include media($min: tablet) {
+      gap: 2rem;
+    }
+
+    @include media(tablet) {
+      gap: 4rem; 
+    }
+
+    @include media(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     @include media(tablet) {
       text-align: center;
+    }
+
+    .heading {
+      @include media(mobile) {
+        max-width: 40rem;
+      }
+
+      strong {
+        &::after {
+          @include media(mobile) {
+            width: 65%;
+          }
+        }
+      }
     }
 
     .rich-text {
@@ -30,6 +58,15 @@
       @include media($min: tablet-h) {
         max-width: 59rem;
       }
+    }
+  }
+
+  .action-button {
+    height: 5rem;
+    width: 5rem;
+
+    &__arrow {
+      height: 1.5rem;
     }
   }
 
