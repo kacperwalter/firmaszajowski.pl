@@ -35,11 +35,17 @@
 
       @include media(mobile) {
         border-radius: 0%;
+        padding-top: 25rem;
+        padding-bottom: 25rem;
       }
 
       .header {
         text-align: center;
         padding: 5rem;
+
+        @include media(tablet) {
+          padding: 3rem;
+        }
 
         .rich-text {
           font-size: var(--font-size-body-small);
