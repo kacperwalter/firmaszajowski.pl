@@ -33,6 +33,14 @@
       @include media(tablet) {
         top: 7rem;
       }
+
+      // .navbar__close {
+      //   display: block;
+      // }
+
+      // .navbar__hamburger {
+      //   display: none;
+      // }
     }
 
     // display: flex;
@@ -115,11 +123,9 @@
     flex-direction: row;
   }
 
-  &__close {
-    display: none;
-  }
-
+  &__close,
   &__hamburger {
-    // display: none;
+    background-color: transparent;
+    border: none;
   }
 }

@@ -53,26 +53,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        <Image
-          src={close}
-          alt="close"
-          width={20}
-          height={20}
-          className="navbar__close"
-          onClick={toggleMenu}
-          onKeyDown={(event) => event.key === "Enter" && toggleMenu()}
-        />
+        <button className={`navbar__close ${isMenuVisible ? "" : "is-hidden" }`} onClick={toggleMenu}>
+          <Image src={close} alt="close" width={18} height={18} />
+        </button>
 
-        <Image
-          src={hamburger}
-          tabIndex={2}
-          alt="hamburger"
-          width={20}
-          height={20}
-          className="navbar__hamburger"
-          onClick={toggleMenu}
-          onKeyDown={(event) => event.key === "Enter" && toggleMenu()}
-        />
+        <button className={`navbar__hamburger ${isMenuVisible ? "is-hidden" : ""}`} onClick={toggleMenu}>
+          <Image src={hamburger} alt="hamburger" width={20} height={20} />
+        </button>
       </Wrapper>
     </nav>
   )
