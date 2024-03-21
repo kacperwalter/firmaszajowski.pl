@@ -10,8 +10,16 @@
   .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 7rem;
+    position: relative;
+
+    @include media(tablet-h) {
+      justify-content: space-between;
+    }
+
+    @include media($min: laptop) {
+      justify-content: space-between;
+    }
   }
 
   &__menu {
@@ -32,6 +40,10 @@
       padding-bottom: 5rem;
     }
 
+    @include media($min: laptop) {
+      display: flex;
+    }
+
     .navbar__navigation {
       @include media(tablet-h) {
         display: flex;
@@ -39,6 +51,14 @@
         align-items: center;
         text-align: center;
         gap: 3rem;
+      }
+
+      @include media($min: laptop) {
+        display: flex;
+        gap: 7rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       }
 
       .navbar__link {
@@ -140,5 +160,9 @@
   &__hamburger {
     background-color: transparent;
     border: none;
+
+    @include media($min: laptop) {
+      display: none;
+    }
   }
 }
