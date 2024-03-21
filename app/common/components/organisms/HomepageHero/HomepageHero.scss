@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .homepage-hero {
   margin-top: 3rem;
   margin-bottom: 5rem;
@@ -6,8 +8,18 @@
   align-items: center;
   gap: 3rem;
 
+  @include media(tablet-h) {
+    margin-top: 0;
+  }
+
   .wrapper {
       display: grid;
+
+      @include media(tablet) {
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+      }
   }
 
   &__container {
@@ -20,6 +32,10 @@
       overflow: hidden;
       border-radius: var(--border-radius);
       max-height: 75rem;
+
+      @include media(mobile) {
+        border-radius: 0%;
+      }
 
       .header {
         text-align: center;
