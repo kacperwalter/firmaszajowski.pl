@@ -1,8 +1,8 @@
 import "./ActionButton.scss"
 import type { ActionButtonProps } from "./ActionButton.types"
 
-const ActionButton = ({ as = "button", href = "#", onClick }: ActionButtonProps) => {
-  const className = "action-button"
+const ActionButton = ({ variant = "primary",  as = "button", href = "#", onClick }: ActionButtonProps) => {
+  const className = `action-button action-button--${variant}`
 
   const arrowSvg = (
     <svg className="action-button__arrow" viewBox="0 0 14 20" xmlns="http://www.w3.org/2000/svg">

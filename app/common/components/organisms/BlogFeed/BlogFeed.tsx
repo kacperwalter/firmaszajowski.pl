@@ -37,7 +37,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
                   caption={post.caption}
                 />
 
-                <ActionButton />
+                <ActionButton variant="secondary" />
               </div>
             </Link>
           ))}
