@@ -10,7 +10,7 @@
   .wrapper {
     display: flex;
     align-items: center;
-    height: 7rem;
+    height: 8rem;
     position: relative;
 
     @include media(tablet-h) {
@@ -30,6 +30,7 @@
       z-index: 102;
       position: absolute;
       top: -100vh;
+      // left: calc(0rem - var(--wrapper-padding));
       left: 0;
       display: flex;
       flex-direction: column;
