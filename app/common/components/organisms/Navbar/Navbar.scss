@@ -1,4 +1,12 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .navbar {
+  position: relative;
+
+  @include media(tablet) {
+    background-color: var(--color-white);
+  }
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -6,12 +14,44 @@
     height: 7rem;
   }
 
+  &__menu {
+    @include media(tablet) {
+      height: 100vh;
+      width: 100vw;
+      background-color: var(--color-white);
+      z-index: 102;
+      position: absolute;
+      top: -100vh;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: top .3s ease-in-out;
+    }
+
+    &--visible {
+      @include media(tablet) {
+        top: 7rem;
+      }
+
+      // .navbar__close {
+      //   display: block;
+      // }
+
+      // .navbar__hamburger {
+      //   display: none;
+      // }
+    }
+
+    // display: flex;
+  }
+
   &__navigation {
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 10rem;
-    height: 100%;
+    // display: flex;
+    // flex-flow: row nowrap;
+    // align-items: center;
+    // gap: 10rem;
+    // height: 100%;
   }
 
   &__link {
@@ -81,5 +121,11 @@
     display: flex;
     gap: 2rem;
     flex-direction: row;
+  }
+
+  &__close,
+  &__hamburger {
+    background-color: transparent;
+    border: none;
   }
 }
