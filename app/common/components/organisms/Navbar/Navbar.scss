@@ -93,6 +93,10 @@
       transition: opacity .1s ease-in;
       will-change: opacity;
       pointer-events: none;
+
+      @include media(tablet-h) {
+        left: 0;
+      }
     }
 
     &:hover {
