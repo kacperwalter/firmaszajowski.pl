@@ -8,7 +8,7 @@ const ErrorPage = ({ type }: ErrorPageProps) => {
     <section className={`error-page ${type === "404" ? "error-page--404" : "error-page--500" }`}>
       <Wrapper>
         <Header
-          heading={type === "404" ? "Strona <strong>nie została znaleziona</strong>" : "Coś poszło nie tak"}
+          heading={type === "404" ? "Strona <strong>nie została znaleziona</strong>" : "Coś poszło nie tak - error 500"}
           caption="Zapraszamy za to na pozostałe podstrony :)"
           headingType="h1"
         />
