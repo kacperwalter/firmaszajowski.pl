@@ -36,7 +36,7 @@ const Navbar = () => {
 
           <div className="navbar__contact">
             <a
-              href="#" 
+              href="mailto:biuro@firmaszajowski.pl" 
               className="navbar__link-navlink"
             >
               <Image
@@ -48,7 +48,7 @@ const Navbar = () => {
             </a>
 
             <a
-              href="#"
+              href="tel:+48601566829"
               className="navbar__link-navlink"
             >
               <Image
