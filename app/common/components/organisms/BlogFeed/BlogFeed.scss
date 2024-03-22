@@ -78,6 +78,15 @@
       grid-template-columns: 60% 1fr;
     }
 
+    @include media(tablet-h) {
+      grid-template-columns: 50% 1fr;
+      margin-bottom: 5rem;
+    }
+
+    @include media(tablet) {
+      margin-bottom: 0;
+    }
+
     @include media($min: laptop) {
       gap: unset;
     }
