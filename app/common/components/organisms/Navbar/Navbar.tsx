@@ -23,6 +23,14 @@ const Navbar = () => {
           <BrandLogo />
         </Link>
 
+        <button className={`navbar__close ${isMenuVisible ? "" : "is-hidden" }`} onClick={toggleMenu}>
+          <Image src={close} alt="close" width={18} height={18} />
+        </button>
+
+        <button className={`navbar__hamburger ${isMenuVisible ? "is-hidden" : ""}`} onClick={toggleMenu}>
+          <Image src={hamburger} alt="hamburger" width={20} height={20} />
+        </button>
+
         <div className={`navbar__menu ${isMenuVisible ? "navbar__menu--visible" : ""}`}>
           <Navigation />
 
@@ -52,14 +60,6 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-
-        <button className={`navbar__close ${isMenuVisible ? "" : "is-hidden" }`} onClick={toggleMenu}>
-          <Image src={close} alt="close" width={18} height={18} />
-        </button>
-
-        <button className={`navbar__hamburger ${isMenuVisible ? "is-hidden" : ""}`} onClick={toggleMenu}>
-          <Image src={hamburger} alt="hamburger" width={20} height={20} />
-        </button>
       </Wrapper>
     </nav>
   )

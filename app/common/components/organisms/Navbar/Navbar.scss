@@ -3,21 +3,31 @@
 .navbar {
   position: relative;
 
-  @include media(tablet) {
+  @include media(tablet-h) {
     background-color: var(--color-white);
   }
 
   .wrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 7rem;
+    height: 8rem;
+    position: relative;
+
+    @include media(tablet-h) {
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 100vw;
+    }
+
+    @include media($min: laptop) {
+      justify-content: space-between;
+    }
   }
 
   &__menu {
-    @include media(tablet) {
-      height: 100vh;
-      width: 100vw;
+    @include media(tablet-h) {
+      height: 95vh;
+      width: 100%;
       background-color: var(--color-white);
       z-index: 102;
       position: absolute;
@@ -26,32 +36,53 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-between;
       transition: top .3s ease-in-out;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    @include media($min: laptop) {
+      display: flex;
+    }
+
+    .navbar__navigation {
+      @include media(tablet-h) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 3rem;
+      }
+
+      @include media($min: laptop) {
+        display: flex;
+        gap: 7rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .navbar__link {
+        @include media(tablet-h) {
+          &-title {
+            display: flex;
+            justify-content: center;
+          }
+
+          .dropdown {
+            position: initial;
+            padding: 0;
+          }
+        }
+      }
     }
 
     &--visible {
-      @include media(tablet) {
+      @include media(tablet-h) {
         top: 7rem;
       }
-
-      // .navbar__close {
-      //   display: block;
-      // }
-
-      // .navbar__hamburger {
-      //   display: none;
-      // }
     }
-
-    // display: flex;
-  }
-
-  &__navigation {
-    // display: flex;
-    // flex-flow: row nowrap;
-    // align-items: center;
-    // gap: 10rem;
-    // height: 100%;
   }
 
   &__link {
@@ -98,6 +129,10 @@
       transition: opacity .1s ease-in;
       will-change: opacity;
       pointer-events: none;
+
+      @include media(tablet-h) {
+        left: 0;
+      }
     }
 
     &:hover {
@@ -127,5 +162,9 @@
   &__hamburger {
     background-color: transparent;
     border: none;
+
+    @include media($min: laptop) {
+      display: none;
+    }
   }
 }

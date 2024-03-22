@@ -2,7 +2,6 @@
 
 .blog-feed {
   position: relative;
-  margin-bottom: 5rem;
 
   @include media(tablet) {
     margin-bottom: 10rem;
@@ -19,8 +18,36 @@
   }
 
   .header {
+    @include media($min: tablet) {
+      gap: 2rem;
+    }
+
+    @include media(tablet) {
+      gap: 4rem; 
+    }
+
+    @include media(tablet) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
     @include media(tablet) {
       text-align: center;
+    }
+
+    .heading {
+      @include media(mobile) {
+        max-width: 40rem;
+      }
+
+      strong {
+        &::after {
+          @include media(mobile) {
+            width: 65%;
+          }
+        }
+      }
     }
 
     .rich-text {
@@ -30,6 +57,15 @@
       @include media($min: tablet-h) {
         max-width: 59rem;
       }
+    }
+  }
+
+  .action-button {
+    height: 5rem;
+    width: 5rem;
+
+    &__arrow {
+      height: 1.5rem;
     }
   }
 
@@ -49,6 +85,7 @@
   }
 
   &__post {
+    align-self: start;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -61,6 +98,18 @@
     &:hover {
       .blog-feed__image img {
         transform: scale(1.15);
+      }
+
+      .action-button--secondary {
+        border: 1px solid var(--color-dark);
+
+        .action-button__arrow {
+          transform: rotate(-90deg);
+
+          path {
+            fill: var(--color-dark);
+          }
+        }
       }
     }
 

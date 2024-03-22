@@ -1,16 +1,29 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .homepage-hero {
-  margin-top: 5rem;
+  margin-top: 3rem;
   margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
 
+  @include media(tablet-h) {
+    margin-top: 0;
+  }
+
   .wrapper {
       display: grid;
+
+      @include media(tablet) {
+        width: 100vw;
+        padding-left: 0;
+        padding-right: 0;
+      }
   }
 
   &__container {
+      pointer-events: none;
       position: relative;
       padding-top: 20rem;
       padding-bottom: 20rem;
@@ -21,9 +34,19 @@
       border-radius: var(--border-radius);
       max-height: 75rem;
 
+      @include media(mobile) {
+        border-radius: 0%;
+        padding-top: 25rem;
+        padding-bottom: 25rem;
+      }
+
       .header {
         text-align: center;
         padding: 5rem;
+
+        @include media(tablet) {
+          padding: 3rem;
+        }
 
         .rich-text {
           font-size: var(--font-size-body-small);

@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .heading {
   font-weight: bold;
   z-index: 10;
@@ -35,13 +37,17 @@
     &::after {
       content: '';
       position: absolute;
-      bottom: 0;
+      bottom: 1rem;
       left: 50%;
       transform: translateX(-50%);
       width: 103%;
       height: 2.2rem;
       z-index: -1;
       background-color: var(--color-neo);
+
+      @include media(mobile) {
+        bottom: 0.3rem;
+      }
     }
   }
 
