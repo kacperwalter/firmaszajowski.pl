@@ -10,14 +10,14 @@ const ContactInfo = ({ phone, email }: ContactInfoProps) => {
       {phone && (
         <p className="contact-info__text">
           <Image src={phoneIcon} alt="phone-icon" height={24} width={24} />
-          {phone}
+          <a href={`tel:${phone}`}>{phone}</a>
         </p>
       )}
 
       {email && (
         <p className="contact-info__text">
           <Image src={emailIcon} alt="email-icon" height={24} width={24} />
-          {email}
+          <a href={`mailto:${email}`}>{email}</a>
         </p>
       )}
     </article>

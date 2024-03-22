@@ -9,12 +9,13 @@ import "./Details.scss"
 const Details = ({
   content,
   isReversed = false,
-  isHero = false
+  isHero = false,
+  id
 }: DetailsProps) => {
   isReversed = isHero ? true : isReversed
 
   return (
-    <section className={`details ${isHero ? "details--hero" : ""} ${isReversed ? "details--reverse" : ""}`}>
+    <section id={id} className={`details ${isHero ? "details--hero" : ""} ${isReversed ? "details--reverse" : ""}`}>
       <Wrapper>
         <div className="details__content">
           {!isHero && <BrandLogo />}
@@ -42,7 +43,7 @@ const Details = ({
             <Button
               as="link"
               text="Poznaj nas"
-              href="/"
+              href="#scroll-to-view"
               arrow
               arrowDirection="down"
             />

@@ -1,6 +1,8 @@
+import ErrorPage from "@/app/common/components/molecules/ErrorPage/ErrorPage"
+
 const Contact = () => {
   return (
-    <div>Kontakt</div>
+    <ErrorPage type="500" />
   )
 }
 

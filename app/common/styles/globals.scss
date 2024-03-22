@@ -5,6 +5,10 @@
   -webkit-text-fill-color: currentcolor;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-poppins);
   font-size: 1.6rem;

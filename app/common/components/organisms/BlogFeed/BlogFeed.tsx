@@ -14,6 +14,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
           heading={content.heading}
           headingType='h2'
           caption={content.caption}
+          id={"blog-feed-header"}
         />
 
         <div className="blog-feed__posts">
@@ -21,7 +22,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
             <Link 
               key={index} 
               className="blog-feed__post"
-              href='/'
+              href={post.slug}
             >
               <div className="blog-feed__image" >
                 <img 

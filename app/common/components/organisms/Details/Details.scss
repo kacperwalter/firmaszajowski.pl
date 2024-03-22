@@ -5,7 +5,7 @@
   position: relative;
   padding-top: 5rem;
   padding-bottom: 5rem;
-  margin-bottom: 5rem;
+  // margin-bottom: 5rem;
 
   .wrapper {
     display: flex;
@@ -32,6 +32,7 @@
 
       @include media(tablet-h) {
         width: 50rem;
+        align-self: baseline;
       }
 
       @include media(tablet) {
@@ -39,7 +40,7 @@
       }
       
       @include media(tablet) {
-        aspect-ratio: 2 / 1;
+        // aspect-ratio: 2 / 1;
         object-fit: cover;
         overflow: hidden;
       }
@@ -89,7 +90,7 @@
 
       @include media($min: tablet-h) {
         flex-direction: row;
-        gap: 15rem;
+        gap: 10rem;
       }
 
       .details__content {
@@ -101,6 +102,20 @@
   }
 
   &--hero {
+    padding-top: 0;
+
+    .wrapper {
+      @include media(tablet) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .details__content {
+        padding-left: var(--wrapper-padding);
+        padding-right: var(--wrapper-padding);
+      }
+    }
+
     .wrapper .details__image {
       width: 80rem;
 

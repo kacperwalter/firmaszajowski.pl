@@ -4,9 +4,9 @@ import './Header.scss'
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import RichText from '@/app/common/components/atoms/RichText/RichText'
 
-const Header = ({ heading, headingType, caption, color = 'dark' }: HeaderProps) => {
+const Header = ({ heading, headingType, caption, color = 'dark', id }: HeaderProps) => {
   return (
-    <header className="header">
+    <header id={id} className="header">
       <Heading
         type={headingType}
         text={heading}

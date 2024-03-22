@@ -5,4 +5,5 @@ export type HeaderProps = {
   headingType?: HeadingType
   caption: string
   color?: Color
+  id?: string
 }

@@ -37,8 +37,8 @@ const Footer = () => {
         </ul>
 
         <ContactInfo
-          phone="123 456 789"
-          email="test@test.pl"
+          phone="+48 601 566 829"
+          email="biuro@firmaszajowski.pl"
         />
       </Wrapper>
     </section>
