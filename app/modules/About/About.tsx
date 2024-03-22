@@ -26,7 +26,7 @@ const About = () => {
   return (
     <main>
       <Details content={heroData} isHero />
-      <Details content={detailsData1} />
+      <Details id="scroll-to-view" content={detailsData1} />
       <Details content={detailsData2} isReversed />
     </main>
   )

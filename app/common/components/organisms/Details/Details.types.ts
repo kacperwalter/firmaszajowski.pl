@@ -7,4 +7,5 @@ export type DetailsProps = {
   }
   isReversed?: boolean
   isHero?: boolean
+  id?: string
 }
