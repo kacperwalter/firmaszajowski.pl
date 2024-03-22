@@ -22,7 +22,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
             <Link 
               key={index} 
               className="blog-feed__post"
-              href='/'
+              href={post.slug}
             >
               <div className="blog-feed__image" >
                 <img 

@@ -44,7 +44,7 @@ const CTAData = {
   heading: "Sprzedaż <strong>mieszkań i domów</strong>",
   caption: "ul. Słoneczna 23K <br> 64-800 Chodzież",
   contactInfo: true,
-  phone: "123 456 789",
+  phone: "+48 601 566 829",
   email: "biuro@firmaszajowski.pl",
 }
 
