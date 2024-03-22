@@ -14,6 +14,7 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
           heading={content.heading}
           headingType='h2'
           caption={content.caption}
+          id={"blog-feed-header"}
         />
 
         <div className="blog-feed__posts">

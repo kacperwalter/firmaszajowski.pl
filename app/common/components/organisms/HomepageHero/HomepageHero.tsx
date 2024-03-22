@@ -22,7 +22,7 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
         </div>
       </Wrapper>
       
-      <ActionButton as="link" href="#" />
+      <ActionButton as="link" href="#blog-feed-header" />
     </section>
   )
 }
