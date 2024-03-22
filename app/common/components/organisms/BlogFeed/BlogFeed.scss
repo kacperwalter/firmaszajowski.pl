@@ -26,10 +26,9 @@
       gap: 4rem; 
     }
 
-    @include media(tablet) {
+    @include media(mobile) {
       display: flex;
       flex-direction: column;
-      align-items: center;
     }
 
     @include media(tablet) {
@@ -90,6 +89,10 @@
     flex-direction: column;
     gap: 2rem;
     text-decoration: none;
+
+    @include media(tablet-h) {
+      width: 100%;
+    }
 
     @include media($min: laptop) {
       max-width: 50rem;
@@ -167,6 +170,7 @@
   &__image {
     border-radius: var(--border-radius);
     overflow: hidden;
+    height: 30rem;
     
     @include media(mobile) {
       height: 32rem;
