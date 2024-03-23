@@ -14,7 +14,7 @@ const blogFeedData = {
   caption: "Zajmujemy się budową oraz sprzedażą mieszkań  i nowoczesnych domów szeregowych w spokojnych, komfortowych lokalizacjach. Nasze inwestycje położone są w Chodzieży i jej okolicach – staramy się, aby nasze budynki wpisywały się w bieżący krajobraz, oferując klientom dostęp do zieleni, bez szkodliwej ingerencji w środowisko naturalne.",
   posts: [
     {
-      image: "images/lesna-polana.png",
+      image: "images/lesna-polana.jpg",
       heading: "Leśna Polana",
       caption: "Domy wolnostojące",
       slug: "inwestycje/lesna-polana-1",
