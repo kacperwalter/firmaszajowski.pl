@@ -1,6 +1,7 @@
 import "./SwitchableMenu.scss"
+import type { SwitchableMenuProps } from "./SwitchableMenu.types"
 
-const SwitchableMenu = () => {
+const SwitchableMenu = ({ content }: SwitchableMenuProps) => {
   return (
     <div>SwitchableMenu</div>
   )

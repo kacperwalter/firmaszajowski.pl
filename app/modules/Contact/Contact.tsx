@@ -27,11 +27,10 @@ const switchableMenuData = {
   ]
 }
 
-
 const Contact = () => {
   return (
     <main>
-      <SwitchableMenu />
+      <SwitchableMenu content={switchableMenuData}/>
     </main>
   )
 }
