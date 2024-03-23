@@ -36,8 +36,29 @@
 
       .switchable-menu__select {
         border-bottom: 1px solid transparent;
-        border-left: 7px solid var(--color-neo);
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--color-ultragray);
+        position: relative; 
         padding-left: 2.4rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%; 
+          transform: translateY(-50%); 
+          height: 60%; 
+          width: 4px; 
+          background-color: var(--color-neo);
+
+          @include media($min: laptop) {
+            height: 65%;
+            width: 5.5px;
+          }
+        }
 
         @include media($min: laptop) {
           border-bottom: 1px solid var(--color-dark);
