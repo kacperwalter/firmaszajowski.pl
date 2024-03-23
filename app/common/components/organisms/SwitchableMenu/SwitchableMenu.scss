@@ -6,7 +6,7 @@
 
   @include media($min: laptop) {
     padding-top: 10rem;
-    padding-bottom: 15rem;
+    padding-bottom: 20rem;
   }
 
   .wrapper {
@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
+    position: relative;
   }
 
   &__item {
@@ -26,7 +27,6 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2.4rem;
-      position: relative;
     }
 
     &--active {
@@ -118,13 +118,23 @@
 
     @include media($min: laptop) {
       position: absolute;
-      left: 70%;
+      left: 55%;
+      top: 0;
+      width: 70rem;
+    }
+
+    @include media($min: hd) {
+      left: 60%;
     }
 
     &:not(.is-hidden) {
       display: flex;
       flex-direction: column;
       gap: 2.4rem;
+    }
+
+    .heading {
+      font-size: var(--font-size-h4);
     }
 
     .rich-text {
