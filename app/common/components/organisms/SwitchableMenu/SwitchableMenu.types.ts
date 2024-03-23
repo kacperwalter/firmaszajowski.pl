@@ -1,4 +1,5 @@
 type SwitchableMenuItem = {
+  id: number
   name: string
   heading: string
   caption: string
