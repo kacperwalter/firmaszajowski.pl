@@ -16,8 +16,12 @@
 
   &__item {
     &--active {
+      border-bottom: 1px solid var(--color-dark);
+      
       .switchable-menu__select {
-        border-bottom: 1px solid var(--color-dark);
+        border-bottom: 1px solid transparent;
+        border-left: 5px solid var(--color-neo);
+        padding-left: 2.4rem;
 
         .heading {
           color: var(--color-dark);
@@ -41,7 +45,8 @@
   &__select {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-ultragray);
     
     .heading {
