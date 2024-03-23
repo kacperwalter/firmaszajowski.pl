@@ -22,7 +22,10 @@ const SwitchableMenu = ({ content }: SwitchableMenuProps) => {
         <Heading type="h1" text={content.heading}/>
         <div className="switchable-menu__items">
           {content.items.map(item => (
-            <div key={item.id} className="switchable-menu__item">
+            <div
+              key={item.id}
+              className={`switchable-menu__item ${activeItemId === item.id ? "switchable-menu__item--active" : ""}`}
+            >
               <div 
                 className="switchable-menu__select"
                 onClick={() => handleItemClick(item.id)}

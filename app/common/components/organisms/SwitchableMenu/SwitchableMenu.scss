@@ -1,0 +1,46 @@
+.switchable-menu {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+
+  &__item {
+    &--active {
+      .switchable-menu__select {
+
+      }
+    }
+  }
+
+  &__select {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-ultragray);
+    
+    .heading {
+      color: var(--color-ultragray);
+      font-weight: 600;
+    }
+
+    .action-button {
+      height: 4.5rem;
+      width: 4.5rem;
+  
+      &__arrow {
+        height: 1.5rem;
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
