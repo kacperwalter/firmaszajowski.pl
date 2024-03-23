@@ -1,6 +1,13 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .switchable-menu {
   padding-top: 2rem;
   padding-bottom: 2rem;
+
+  @include media($min: laptop) {
+    padding-top: 10rem;
+    padding-bottom: 15rem;
+  }
 
   .wrapper {
     display: flex;
@@ -15,13 +22,26 @@
   }
 
   &__item {
+    @include media($min: laptop) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.4rem;
+      position: relative;
+    }
+
     &--active {
-      border-bottom: 1px solid var(--color-dark);
+      @include media(tablet-h) {
+        border-bottom: 1px solid var(--color-dark);
+      }
 
       .switchable-menu__select {
         border-bottom: 1px solid transparent;
-        border-left: 5px solid var(--color-neo);
+        border-left: 7px solid var(--color-neo);
         padding-left: 2.4rem;
+
+        @include media($min: laptop) {
+          border-bottom: 1px solid var(--color-dark);
+        }
 
         .heading {
           color: var(--color-dark);
@@ -32,6 +52,10 @@
 
           &__arrow {
             transform: rotate(180deg);
+
+            @include media($min: laptop) {
+              transform: rotate(-90deg);
+            }
           
             path {
               fill: var(--color-dark);
@@ -48,6 +72,25 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-ultragray);
+
+    &:hover {
+      .action-button {
+        border: 1px solid var(--color-dark);
+
+        &__arrow {
+          transform: rotate(-90deg);
+
+          path {
+            fill: var(--color-dark);
+          }
+        }
+      }
+    }
+
+    @include media($min: laptop) {
+      max-width: 75rem;
+      cursor: pointer;
+    }
     
     .heading {
       color: var(--color-ultragray);
@@ -62,12 +105,21 @@
       &__arrow {
         height: 1.5rem;
         transform: rotate(0deg);
+
+        @include media($min: laptop) {
+          transform: rotate(-45deg);
+        }
       }
     }
   }
 
   &__item-content {
     padding: 2.4rem;
+
+    @include media($min: laptop) {
+      position: absolute;
+      left: 70%;
+    }
 
     &:not(.is-hidden) {
       display: flex;
