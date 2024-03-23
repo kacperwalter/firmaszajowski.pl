@@ -20,7 +20,7 @@ const blogFeedData = {
       slug: "inwestycje/lesna-polana-1",
     },
     {
-      image: "images/osiedle-sadowa.png",
+      image: "images/osiedle-sadowa.jpg",
       heading: "Osiedle Sadowa",
       caption: "Nowoczesne domy dwulokalowe",
       slug: "inwestycje/osiedle-sadowa",
