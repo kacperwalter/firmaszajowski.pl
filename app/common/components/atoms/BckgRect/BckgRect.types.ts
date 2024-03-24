@@ -1,3 +1,3 @@
 export type BckgRectProps = {
-    placement: "left" | "right" | "center"
+    placement: "left" | "right" | "center" | "left-down"
   }
