@@ -2,7 +2,6 @@ import HomepageHero from "@/app/common/components/organisms/HomepageHero/Homepag
 import BlogFeed from "@/app/common/components/organisms/BlogFeed/BlogFeed"
 import CTA from "@/app/common/components/organisms/CTA/CTA"
 
-// TODO - all of the data fetching from Sanity is handled in this layer and passed down to the components
 const homepageHeroData = {
   heading: "Wzorzec <strong>jakości</strong>",
   caption: "Nowoczesne budownictwo dla Ciebie i Twojej rodziny",
