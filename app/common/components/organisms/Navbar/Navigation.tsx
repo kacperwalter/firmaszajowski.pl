@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
@@ -17,6 +17,22 @@ const Navigation = () => {
     setIsDropdownVisible(!isDropdownVisible)
   }
 
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+
+      if (!target.closest(".navbar__link")) {
+        setIsDropdownVisible(false)
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick)
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick)
+    }
+  }, [])
+
   return (
     <ul className="navbar__navigation">
       {navigationItems.map(({ path, label, isDropdown }) => (
@@ -26,10 +42,10 @@ const Navigation = () => {
             className={`navbar__link ${pathname === path ? "navbar__link--active" : ""}`}
             onClick={toggleDropdownVisibility}
           >
-            <p className="navbar__link-title">
+            <button className="navbar__link-title">
               {label}
               <Image src={arrowDown} alt="arrow-down" width={20} height={20} />
-            </p>
+            </button>
             <Dropdown isVisible={isDropdownVisible} />
           </li>
         ) : (
