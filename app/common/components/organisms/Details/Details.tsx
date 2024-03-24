@@ -55,9 +55,9 @@ const Details = ({
           src={content.image}
           alt="Example image" 
         />
+        
+        {(!isReversed && !isHero) && <BckgRect placement="left-down" />}
       </Wrapper>
-
-      {(!isReversed && !isHero) && <BckgRect placement="left" />}
     </section>
   )
 }

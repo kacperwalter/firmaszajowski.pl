@@ -5,6 +5,9 @@ const BckgRect = ({ placement = "left" }: BckgRectProps) => {
   let className = "bckg-rect"
 
   switch (placement) {
+    case "left-down":
+      className += " bckg-rect--left-down"
+      break
     case "left":
       className += " bckg-rect--left"
       break
