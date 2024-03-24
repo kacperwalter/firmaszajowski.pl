@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
@@ -16,6 +16,22 @@ const Navigation = () => {
   const toggleDropdownVisibility = () => {
     setIsDropdownVisible(!isDropdownVisible)
   }
+
+  useEffect(() => {
+    const handleOutsideClick = (event: MouseEvent) => {
+      const target = event.target as HTMLElement
+
+      if (!target.closest(".navbar__link")) {
+        setIsDropdownVisible(false)
+      }
+    }
+
+    document.addEventListener("click", handleOutsideClick)
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick)
+    }
+  }, [])
 
   return (
     <ul className="navbar__navigation">
