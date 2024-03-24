@@ -26,10 +26,10 @@ const Navigation = () => {
             className={`navbar__link ${pathname === path ? "navbar__link--active" : ""}`}
             onClick={toggleDropdownVisibility}
           >
-            <p className="navbar__link-title">
+            <button className="navbar__link-title">
               {label}
               <Image src={arrowDown} alt="arrow-down" width={20} height={20} />
-            </p>
+            </button>
             <Dropdown isVisible={isDropdownVisible} />
           </li>
         ) : (
