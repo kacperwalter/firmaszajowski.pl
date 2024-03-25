@@ -1,11 +1,11 @@
 import type { Metadata } from "next"
 import { Poppins } from 'next/font/google'
 
-import "@/app/common/styles/colors.scss"
-import "@/app/common/styles/fonts.scss"
-import "@/app/common/styles/globals.scss"
-import "@/app/common/styles/spacings.scss"
-import "@/app/common/styles/utils/is-hidden.scss"
+// import "@/app/common/styles/colors.scss"
+// import "@/app/common/styles/fonts.scss"
+// import "@/app/common/styles/globals.scss"
+// import "@/app/common/styles/spacings.scss"
+// import "@/app/common/styles/utils/is-hidden.scss"
 
 const poppins = Poppins({
   subsets: ['latin'],
