@@ -136,13 +136,17 @@
   }
 
   &__item-content {
-    padding: 2.4rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
 
     @include media($min: laptop) {
       position: absolute;
       left: 55%;
       top: 0;
       width: 70rem;
+      padding-top: 0;
     }
 
     @include media($min: hd) {
