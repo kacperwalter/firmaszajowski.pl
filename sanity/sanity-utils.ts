@@ -1,4 +1,4 @@
-import { createClient } from "next-sanity"
+import { createClient, groq } from "next-sanity"
 
 export async function getInvestments() {
   const client = createClient({
@@ -6,4 +6,16 @@ export async function getInvestments() {
     dataset: "production",
     apiVersion: "2024-03-24",
   })
+
+  return client.fetch(
+    groq`*[type == "investment"]{
+      _id,
+      _createdAt,
+      heading,
+      "slug": slug.current,
+      "image": image.asset->url,
+      url,
+      caption
+    }`
+  )
 }

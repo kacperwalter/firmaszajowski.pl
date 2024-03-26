@@ -1,5 +1,5 @@
 const investment = {
-  name: "Investment",
+  name: "investment",
   title: "Inwestycje",
   type: "document",
   fields: [
