@@ -1,5 +1,5 @@
-const inwestycja = {
-  name: "inwestycja",
+const investment = {
+  name: "Investment",
   title: "Inwestycje",
   type: "document",
   fields: [
@@ -41,4 +41,4 @@ const inwestycja = {
   ]
 }
 
-export default inwestycja
+export default investment

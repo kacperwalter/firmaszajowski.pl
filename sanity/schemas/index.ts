@@ -1,7 +1,7 @@
-import inwestycja from "./inwestycja-schema"
+import investment from "./investment-schema"
 
 const schemas = [
-  inwestycja,
+  investment,
 ]
 
 export default schemas
