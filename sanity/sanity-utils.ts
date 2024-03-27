@@ -9,6 +9,12 @@ const client = createClient({
 
 export async function getInvestments() {
   return client.fetch(
-    groq`*[_type == "investment"]`
+    groq`*[_type == "investment"]{
+      _id,
+      _createdAt,
+      heading,
+      "slug": slug.current,
+      "image": image.asset->url,
+    }`
   )
 }
