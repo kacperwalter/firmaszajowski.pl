@@ -9,8 +9,8 @@ const Dropdown = ({ isVisible }: DropdownProps) => {
       {dropdownItems.map((item, index) => (
         <li key={index} className="dropdown__item">
           <Link href={item.path} className="dropdown__link">
-              <h4 className="dropdown__title">{item.title}</h4>
-              <p className="dropdown__description">{item.description}</p>
+              <h4 className="dropdown__title">{item.name}</h4>
+              <p className="dropdown__description">{item.category}</p>
           </Link>
         </li>
       ))}
