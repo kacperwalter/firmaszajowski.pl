@@ -1,4 +1,5 @@
 import { createClient, groq } from "next-sanity"
+import type { Investment } from "@/app/types/Investment"
 
 const client = createClient({
   projectId: "q9ew4tw5",
@@ -7,14 +8,21 @@ const client = createClient({
 })
 
 
-export async function getInvestments() {
+export async function getInvestments(): Promise<Investment[]> {
   return client.fetch(
     groq`*[_type == "investment"]{
       _id,
       _createdAt,
-      heading,
-      "slug": slug.current,
-      "image": image.asset->url,
+      name,
+      category,
+      "path": path.current,
+      "image": {
+        "url": image.asset->url,
+        "alt": image.alt
+      },
+      caption,
+      title,
+      description
     }`
   )
 }
