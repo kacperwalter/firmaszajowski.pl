@@ -1,6 +1,7 @@
 import HomepageHero from "@/app/common/components/organisms/HomepageHero/HomepageHero"
 import BlogFeed from "@/app/common/components/organisms/BlogFeed/BlogFeed"
 import CTA from "@/app/common/components/organisms/CTA/CTA"
+import { getInvestments } from "@/sanity/sanity-utils"
 
 const homepageHeroData = {
   heading: "Wzorzec <strong>jakości</strong>",
@@ -47,7 +48,10 @@ const CTAData = {
   email: "biuro@firmaszajowski.pl",
 }
 
-const Home = () => {
+const Home = async () => {
+  const investments = await getInvestments()
+  console.log(investments)
+  
   return (
     <main>
       <HomepageHero content={homepageHeroData} />
