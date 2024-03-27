@@ -11,7 +11,7 @@ export const metadata = {
     return (
       <>
         <Navbar />
-          <ErrorPage type="404" />
+        <ErrorPage type="404" />
         <Footer />
       </>
     )
