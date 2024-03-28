@@ -1,9 +1,18 @@
 import Link from "next/link"
 import './Dropdown.scss'
-import { dropdownItems } from "@/app/data/dropdownItems"
+import type { DropdownItem } from "@/app/types/types"
+import { getInvestments } from "@/sanity/sanity-utils"
 import type { DropdownProps } from "./Dropdown.types"
 
-const Dropdown = ({ isVisible }: DropdownProps) => {
+const Dropdown = async ({ isVisible }: DropdownProps) => {
+  const investments = await getInvestments()
+
+  const dropdownItems = investments.map((investment) => ({
+    name: investment.name,
+    category: investment.category,
+    path: investment.path
+  }))
+
   return (
     <ul className={`dropdown ${isVisible ? "" : "is-hidden"}`}>
       {dropdownItems.map((item, index) => (

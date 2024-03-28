@@ -11,7 +11,6 @@ const investment = {
       name: "name",
       title: "Name",
       type: "string",
-      fieldset: "Content",
     },
     {
       name: "category",
