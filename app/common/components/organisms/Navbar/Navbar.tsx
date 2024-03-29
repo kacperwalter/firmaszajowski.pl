@@ -32,7 +32,7 @@ const Navbar = () => {
         </button>
 
         <div className={`navbar__menu ${isMenuVisible ? "navbar__menu--visible" : ""}`}>
-          <Navigation />
+          <Navigation /> 
 
           <div className="navbar__contact">
             <a

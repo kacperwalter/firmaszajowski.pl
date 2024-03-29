@@ -1,21 +1,27 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from "next/link"
 import './Dropdown.scss'
-import type { DropdownItem } from "@/app/types/types"
 import { getInvestments } from "@/sanity/sanity-utils"
 import type { DropdownProps } from "./Dropdown.types"
+import { Investment } from '@/app/types/Investment'
 
-const Dropdown = async ({ isVisible }: DropdownProps) => {
-  const investments = await getInvestments()
+const Dropdown = ({ isVisible }: DropdownProps) => {
+  const [investments, setInvestments] = useState<Investment[]>([])
 
-  const dropdownItems = investments.map((investment) => ({
-    name: investment.name,
-    category: investment.category,
-    path: investment.path
-  }))
+  useEffect(() => {
+    const fetchInvestments = async () => {
+      const investments = await getInvestments()
+      setInvestments(investments)
+    }
+
+    fetchInvestments()
+  }, [])
 
   return (
     <ul className={`dropdown ${isVisible ? "" : "is-hidden"}`}>
-      {dropdownItems.map((item, index) => (
+      {investments.map((item, index) => (
         <li key={index} className="dropdown__item">
           <Link href={item.path} className="dropdown__link">
               <h4 className="dropdown__title">{item.name}</h4>

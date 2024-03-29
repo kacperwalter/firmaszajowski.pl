@@ -10,7 +10,6 @@ export async function getDropdownItems(): Promise<DropdownItem[]> {
     path: investment.path.current
   }))
 }
-// export const dropdownItems: Promise<DropdownItem[]> = getDropdownItems()
 
 export const dropdownItems: DropdownItem[] = [
     {

@@ -3,10 +3,7 @@ export type Investment = {
     _createdAt: string
     name: string
     category: string
-    path: {
-        _type: string
-        current: string
-    }
+    path: string
     image: {
         _type: string
         asset: {
