@@ -4,6 +4,8 @@ import RichText from '@/app/common/components/atoms/RichText/RichText'
 import Image from "next/image"
 import ActionButton from '@/app/common/components/atoms/ActionButton/ActionButton'
 
+import "./BlogpostHero.scss"
+
 const header = {
   heading: "<strong>Nowe oblicze domu</strong>",
   subheading: "Leśna polana",
