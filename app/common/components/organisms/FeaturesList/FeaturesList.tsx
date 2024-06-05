@@ -19,6 +19,39 @@ const images = [
   }
 ]
 
+const listElements = [
+  {
+    id: 1,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+  {
+    id: 2,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+  {
+    id: 3,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+  {
+    id: 4,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+  {
+    id: 5,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+  {
+    id: 6,
+    caption: "Jedno piętro mieszkalne",
+    icon: "/images/features-list/first-floor.svg",
+  },
+]
+
 const FeaturesList = () => {
   return (
     <section className="features-list">
@@ -52,6 +85,24 @@ const FeaturesList = () => {
           />
         </div>
       </div>
+
+      <ul className="features-list__list">
+        {listElements.map((item, index) => (
+            <li key={index} className="features-list__item">
+              <span>{index}</span>
+
+              <span className="features-list__item-caption">{item.caption}</span>
+
+              <Image
+                src={item.icon}
+                alt={item.caption}
+                width={50}
+                height={50}
+                className="features-list__item-icon"
+              />
+            </li>
+          ))}
+      </ul>
     </section>
   )
 }
