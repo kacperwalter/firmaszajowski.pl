@@ -91,9 +91,12 @@ const FeaturesList = () => {
         <ul className="features-list__list">
           {listElements.map((item, index) => (
             <li key={index} className="features-list__item">
-              <span className="features-list__item--index">{index}</span>
+              <span className="features-list__item-caption">
+                <span className="features-list__item--index">{index}</span>
 
-              <p className="features-list__item-caption">{item.caption}</p>
+                <p className="features-list__item-caption">{item.caption}</p>
+              </span>
+
 
               <Image
                 src={item.icon}

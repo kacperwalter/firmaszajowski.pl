@@ -64,16 +64,14 @@
     }
 
     &-caption {
-      font-size: var(--font-size-h3);
-      font-weight: 600;
-
-      @include media($min: tablet) {
-        font-size: var(--font-size-h4);
+      p {
+        font-size: var(--font-size-h3);
+        font-weight: 600;
+  
+        @include media($min: tablet) {
+          font-size: var(--font-size-h4);
+        }
       }
-    }
-
-    &-icon {
-      align-self: flex-end;
     }
 
     &--index {
