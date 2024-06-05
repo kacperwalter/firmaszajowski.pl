@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .features-list {
   margin-top: 3rem;
   margin-bottom: 5rem;
@@ -29,6 +31,14 @@
       border: var(--border-radius);
       aspect-ratio: 1 / 1;
       object-fit: cover;
+    }
+  }
+
+  &__item {
+    &--index {
+      @include media(tablet) {
+        display: none;
+      }
     }
   }
 }
