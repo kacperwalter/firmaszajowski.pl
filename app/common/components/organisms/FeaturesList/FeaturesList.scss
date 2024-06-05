@@ -58,9 +58,22 @@
     padding-bottom: 2.5rem;
     border-bottom: 1px solid var(--color-ultragray);
 
+    @include media($min: tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     &-caption {
       font-size: var(--font-size-h3);
       font-weight: 600;
+
+      @include media($min: tablet) {
+        font-size: var(--font-size-h4);
+      }
+    }
+
+    &-icon {
+      align-self: flex-end;
     }
 
     &--index {
