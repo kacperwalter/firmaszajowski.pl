@@ -1,0 +1,26 @@
+.features-list {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  .rich-text {
+    text-align: center;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    .heading {
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+}

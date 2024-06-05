@@ -1,6 +1,7 @@
 import RichText from '@/app/common/components/atoms/RichText/RichText'
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import Image from "next/image"
+import Wrapper from '@/app/common/components/atoms/Wrapper/Wrapper'
 import "./FeaturesList.scss"
 
 const header = {
@@ -55,39 +56,40 @@ const listElements = [
 const FeaturesList = () => {
   return (
     <section className="features-list">
-      <RichText
-        color={"dark"}
-        text={header.caption}
-      />
-
-      <div className="features-list__info">
-        <Heading
-          type='h1'
-          text={header.heading}
-          color="dark"
+      <Wrapper>
+        <RichText
+          color={"dark"}
+          text={header.caption}
         />
 
-        <div className="features-list__images">
-          <Image
-            src={images[0].src}
-            alt={images[0].alt}
-            width={1000}
-            height={1000}
-            className="features-list__images--primary"
+        <div className="features-list__info">
+          <Heading
+            type='h1'
+            text={header.heading}
+            color="dark"
           />
 
-          <Image
-            src={images[1].src}
-            alt={images[1].alt}
-            width={1000}
-            height={1000}
-            className="features-list__images--secondary"
-          />
+          <div className="features-list__images">
+            <Image
+              src={images[0].src}
+              alt={images[0].alt}
+              width={1000}
+              height={1000}
+              className="features-list__images--primary"
+            />
+
+            <Image
+              src={images[1].src}
+              alt={images[1].alt}
+              width={1000}
+              height={1000}
+              className="features-list__images--secondary"
+            />
+          </div>
         </div>
-      </div>
 
-      <ul className="features-list__list">
-        {listElements.map((item, index) => (
+        <ul className="features-list__list">
+          {listElements.map((item, index) => (
             <li key={index} className="features-list__item">
               <span>{index}</span>
 
@@ -102,7 +104,8 @@ const FeaturesList = () => {
               />
             </li>
           ))}
-      </ul>
+        </ul>
+      </Wrapper>
     </section>
   )
 }
