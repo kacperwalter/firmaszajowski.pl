@@ -23,4 +23,12 @@
       font-weight: 600;
     }
   }
+  
+  &__images {
+    img {
+      border: var(--border-radius);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
 }
