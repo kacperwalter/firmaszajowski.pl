@@ -54,6 +54,10 @@ const listElements = [
 ]
 
 const FeaturesList = () => {
+  const formatNumber = (number: number) => { // TODO move it to some helpers catalog
+    return number < 10 ? `0${number}` : number
+  }
+
   return (
     <section className="features-list">
       <Wrapper>
@@ -92,7 +96,7 @@ const FeaturesList = () => {
           {listElements.map((item, index) => (
             <li key={index} className="features-list__item">
               <span className="features-list__item-caption">
-                <span className="features-list__item--index">{index + 1}</span>
+                <span className="features-list__item--index">{formatNumber(index + 1)}</span>
 
                 <p>{item.caption}</p>
               </span>
