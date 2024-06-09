@@ -4,6 +4,10 @@
   margin-top: 3rem;
   margin-bottom: 5rem;
 
+  @include media($min: tablet-h) {
+    margin-bottom: 10rem;
+  }
+
   .wrapper {
     display: flex;
     justify-content: center;
@@ -49,6 +53,28 @@
   }
   
   &__images {
+    position: relative;
+
+    &--primary {
+      @include media($min: tablet-h) {
+        max-height: 47rem;
+      }
+    }
+
+    &--secondary {
+      @include media($min: tablet-h) {
+        position: absolute;
+        right: -5rem;
+        top: 60%;
+        max-width: 20rem;
+      }
+
+      @include media($min: hd) {
+        left: -10rem;
+        top: 70%;
+      }
+    }
+
     img {
       border-radius: var(--border-radius);
       aspect-ratio: 1 / 1;
