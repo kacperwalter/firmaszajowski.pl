@@ -13,6 +13,11 @@
     @include media($min: tablet-h) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      column-gap: 8rem;
+    }
+
+    @include media($min: laptop) {
+      column-gap: 16rem;
     }
   }
 
@@ -36,7 +41,9 @@
       font-weight: 600;
 
       @include media($min: tablet-h) {
+        font-size: var(--font-size-h2);
         text-align: left;
+        max-width: 50rem;
       }
     }
   }
@@ -75,8 +82,24 @@
         font-weight: 600;
   
         @include media($min: tablet-h) {
+          font-size: var(--font-size-h5);
+        }
+
+        @include media($min: laptop) {
           font-size: var(--font-size-h4);
         }
+      }
+    }
+
+    &-icon {
+      @include media($min: tablet-h) {
+        height: 4rem;
+        width: 4rem;
+      }
+
+      @include media($min: laptop) {
+        height: 6rem;
+        width: 6rem;
       }
     }
 
