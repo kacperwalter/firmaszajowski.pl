@@ -4,6 +4,7 @@ import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
+import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 
 const InwestycjePage = () => {
   return (
@@ -14,6 +15,7 @@ const InwestycjePage = () => {
       <main>
         <BlogpostHero />
         <FeaturesList />
+        <BuildingPlan />
       </main>
       <Footer />
     </>
