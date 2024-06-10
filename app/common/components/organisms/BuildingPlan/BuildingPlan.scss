@@ -1,6 +1,18 @@
 @import 'app/common/styles/mixins/media.scss';
 
-.building-plan {
+.building-plan { 
+  margin-bottom: 5rem;
+
+  @include media($min: tablet-h) {
+    margin-bottom: 10rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+  }
+
   &__header {
     text-align: center;
 
@@ -12,11 +24,16 @@
 
 // TODO ofc move it to another component
 .tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; 
+
   &__menu {
     display: flex;
     justify-content: space-around;
 
     &-item {
+      // TODO unify it with styles from 
       position: relative;
       text-transform: uppercase;
       background-color: transparent;
