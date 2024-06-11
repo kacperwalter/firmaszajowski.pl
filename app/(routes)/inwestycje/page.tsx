@@ -6,6 +6,7 @@ import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/Blogpos
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
+import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
 
 const InwestycjePage = () => {
   return (
@@ -18,6 +19,7 @@ const InwestycjePage = () => {
         <FeaturesList />
         <BuildingPlan />
         <ImageAndContent />
+        <BlogCTA />
       </main>
       <Footer />
     </>

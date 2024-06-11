@@ -1,0 +1,20 @@
+.blogCTA {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  &__container {
+    background-color: var(--color-beige);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    display: grid;
+    place-content: center;
+    border-radius: var(--border-radius);
+    row-gap: 2rem;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1.6rem;
+    place-self: center;
+  }
+}
