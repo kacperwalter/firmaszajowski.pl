@@ -10,7 +10,11 @@
   .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 2.5rem; 
+    gap: 4rem;
+
+    @include media($min: tablet-h) {
+      gap: 8rem;
+    }
   }
 
   &__header {
@@ -28,9 +32,23 @@
   flex-direction: column;
   gap: 2.5rem; 
 
+  @include media($min: tablet-h) {
+    display: grid;
+  }
+
+  @include media($min: laptop) {
+    // column-gap: 20rem;
+  }
+
+
   &__menu {
     display: flex;
     justify-content: space-around;
+
+    @include media($min: tablet-h) {
+      justify-content: unset;
+      gap: 2rem;
+    }
 
     &-item {
       // TODO unify it with styles from 
@@ -77,6 +95,10 @@
         @include media(tablet-h) {
           left: 0;
         }
+
+        @include media($min: laptop) {
+          bottom: 1rem;
+        }
       }
 
       &:hover,
@@ -86,6 +108,21 @@
           opacity: 1;
         }
       }
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    @include media($min: tablet-h) {
+      grid-column-start: 2;
+      grid-row: span 2;
+    }
+  }
+
+  &__caption {
+    @include media($min: tablet-h) {
+      max-width: 55rem;
     }
   }
 }

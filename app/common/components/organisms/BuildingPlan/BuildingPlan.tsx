@@ -42,7 +42,7 @@ const BuildingPlan = () => {
     <section className="building-plan">
       <Wrapper>
         <div className="building-plan__header">
-        <Heading
+          <Heading
             type="h2"
             text={header.heading}
             color={"dark"}
@@ -58,8 +58,8 @@ const BuildingPlan = () => {
           <ul className="tabs__menu">
             {tabs.map((tab, index) => (
               <li 
-                key={index}
                 className={`tabs__menu-item ${activeTab.name === tab.name ? "tabs__menu-item--active" : ""}`}
+                key={index}
                 onClick={() => handleClick(index)}
               >
                 {tab.name}
@@ -68,14 +68,17 @@ const BuildingPlan = () => {
           </ul>
 
             <Image
+              className="tabs__image"
               src={activeTab.img.src}
               alt={activeTab.img.alt}
               height={1000}
               width={1000}
-              className="tabs__image"
             />
 
-            <div dangerouslySetInnerHTML={{ __html: activeTab.caption }} />
+            <div
+             className="tabs__caption"
+             dangerouslySetInnerHTML={{ __html: activeTab.caption }}
+             />
         </article>
       </Wrapper>
     </section>
