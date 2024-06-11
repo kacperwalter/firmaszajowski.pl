@@ -31,7 +31,7 @@
     }
 
     @include media($min: tablet-h) {
-      font-size: var(--font-size-h3);
+      font-size: var(--font-size-h4);
       grid-column-start: 2;
       grid-row-start: 2;
       max-width: var(--content-max-width);
