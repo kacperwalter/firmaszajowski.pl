@@ -12,6 +12,12 @@
     row-gap: 2rem;
   }
 
+  &__caption {
+    li {
+      list-style-type: disc;
+    }
+  }
+
   &__buttons {
     display: flex;
     gap: 1.6rem;

@@ -6,7 +6,7 @@ import "./blogCTA.scss"
 
 const content = {
   heading: "Jeśli interesuję Cię ta nieruchomość <strong>prosimy o kontakt</strong>",
-  caption: "<strongOferta:</strong><ul><li>dom o łącznej powierzchni</li><li>dom o łącznej powierzchni</li></ul>",
+  caption: "<strong>Oferta:</strong><br>- dom o łącznej powierzchni użytkowej 113,8 m2<br>- dom o łącznej powierzchni użytkowej 113,8 m2",
   buttons: [
     {
       text: "Sprawdź standard wykończenia",
@@ -29,7 +29,7 @@ const BlogCTA = () => {
             type="h2"
           />
 
-          <p
+          <div
             className="blogCTA__caption"
             dangerouslySetInnerHTML={{ __html: content.caption }}
           />
