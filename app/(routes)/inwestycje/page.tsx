@@ -5,6 +5,7 @@ import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
+import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 
 const InwestycjePage = () => {
   return (
@@ -16,6 +17,7 @@ const InwestycjePage = () => {
         <BlogpostHero />
         <FeaturesList />
         <BuildingPlan />
+        <ImageAndContent />
       </main>
       <Footer />
     </>
