@@ -14,8 +14,9 @@
     color: var(--color-white);
     border: 1px solid transparent;
 
-    &:visited {
-      color: var(--color-white);
+    &:visited,
+    &:link {
+      color: var(--color-white) !important;
     }
 
     .button__arrow {
