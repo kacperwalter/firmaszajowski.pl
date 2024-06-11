@@ -23,6 +23,7 @@ const ImageAndContent = () => {
       />
 
       <Image
+        className="image-and-content__image"
         src={content.image.src}
         alt={content.image.alt}
         width={1000}

@@ -1,6 +1,7 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .image-and-content {
+  --content-max-width: 55rem; 
   margin-bottom: 5rem;
 
   @include media(tablet) {
@@ -18,21 +19,56 @@
     grid-template-rows: repeat(6, 1fr);
   }
 
+  @include media($min: laptop) {
+    column-gap: 16rem;
+  }
+
   .heading {
     font-weight: 500;
-    font-size: var(--font-size-h3);
     
     @include media(tablet) {
       text-align: center;
     }
 
+    @include media($min: tablet-h) {
+      font-size: var(--font-size-h3);
+      grid-column-start: 2;
+      grid-row-start: 2;
+      max-width: var(--content-max-width);
+    }
+
+    @include media($min: hd) {
+      grid-row-start: 3;
+  }
+
     strong {
       font-weight: 600;
       font-size: var(--font-size-h2);
+
+      @include media(tablet) {
+        font-size: var(--font-size-h1);      
+      }
+    }
+  }
+
+  &__image {
+    @include media($min: tablet-h) {
+      grid-column-start: 1;
+      grid-row: span 6;
     }
   }
 
   .rich-text {
     font-size: var(--font-size-body-regular);
+
+    @include media($min: tablet-h) {
+      max-width: var(--content-max-width);
+      grid-column-start: 2;
+      grid-row-start: 3;
+    }
+
+    @include media($min: hd) {
+        grid-row-start: 4;
+    }
   }
 }
