@@ -1,0 +1,38 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.image-and-content {
+  margin-bottom: 5rem;
+
+  @include media(tablet) {
+    max-width: calc(var(--wrapper-max-width) + 2 * var(--wrapper-padding));
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--wrapper-padding);
+    padding-right: var(--wrapper-padding);
+  }
+
+  @include media($min: tablet-h) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .heading {
+    font-weight: 500;
+    font-size: var(--font-size-h3);
+    
+    @include media(tablet) {
+      text-align: center;
+    }
+
+    strong {
+      font-weight: 600;
+      font-size: var(--font-size-h2);
+    }
+  }
+
+  .rich-text {
+    font-size: var(--font-size-body-regular);
+  }
+}
