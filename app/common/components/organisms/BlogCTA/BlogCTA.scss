@@ -1,3 +1,5 @@
+@import 'app/common/styles/mixins/media.scss';
+
 .blogCTA {
   text-align: center;
   margin-bottom: 5rem;
@@ -20,7 +22,16 @@
 
   &__buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 1.6rem;
     place-self: center;
+
+    @include media(mobile) {
+      justify-content: center;
+    }
+
+    .button {
+      font-size: var(--font-size-h5);
+    }
   }
 }
