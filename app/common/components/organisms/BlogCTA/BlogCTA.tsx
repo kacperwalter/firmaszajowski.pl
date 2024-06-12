@@ -1,12 +1,19 @@
 // @ts-nocheck
+"use client"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import Button from "@/app/common/components/atoms/Button/Button"
 import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
+import { useState } from "react"
 
 import "./blogCTA.scss"
 
 const BlogCTA = ({ content }) => {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
+  const openGallery = () => setIsGalleryOpen(true);
+  const closeGallery = () => setIsGalleryOpen(false);
+
   return (
     <>
       <section className="blogCTA">
@@ -33,9 +40,9 @@ const BlogCTA = ({ content }) => {
 
               {content.buttons[1].text && (
                 <Button
-                  as="link"
+                  as="button"
                   text={content.buttons[1].text}
-                  href={content.buttons[1].href}
+                  onClick={openGallery}
                   arrow
                   arrowDirection="right"
                   variant="secondary"
@@ -46,7 +53,9 @@ const BlogCTA = ({ content }) => {
         </Wrapper>
       </section>
 
-      <ImageGallery content={content.imageGalleryContent} />
+      {isGalleryOpen && (
+        <ImageGallery content={content.imageGalleryContent} closeGallery={closeGallery} />
+      )}
     </>
   )
 }

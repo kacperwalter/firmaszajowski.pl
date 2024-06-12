@@ -6,9 +6,9 @@ import Heading from '@/app/common/components/atoms/Heading/Heading'
 import Image from "next/image"
 import close from "@/public/icons/close.svg"
 import arrowDown from "@/public/icons/arrow-down.svg"
-import useImageGallery from './useImageGallery'
+import useImageGallery from './useImageGallery'  // Import the hook
 
-const ImageGallery = ({ isOpen = "false", content }) => {
+const ImageGallery = ({ content, closeGallery }) => {
   const {
     currentImageIndex,
     currentImage,
@@ -20,7 +20,7 @@ const ImageGallery = ({ isOpen = "false", content }) => {
 
   return (
     <section className="image-gallery">
-      <button>
+      <button className="image-gallery__button-close" onClick={closeGallery}>
         <Image src={close} alt="close" width={20} height={20} />
       </button>
 
