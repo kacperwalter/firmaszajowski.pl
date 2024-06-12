@@ -1,0 +1,37 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.blogCTA {
+  text-align: center;
+  margin-bottom: 5rem;
+
+  &__container {
+    background-color: var(--color-beige);
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    display: grid;
+    place-content: center;
+    border-radius: var(--border-radius);
+    row-gap: 2rem;
+  }
+
+  &__caption {
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    place-self: center;
+
+    @include media(mobile) {
+      justify-content: center;
+    }
+
+    .button {
+      font-size: var(--font-size-h5);
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.features-list {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+
+  @include media($min: tablet-h) {
+    margin-bottom: 10rem;
+  }
+
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include media($min: tablet-h) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 8rem;
+    }
+
+    @include media($min: laptop) {
+      column-gap: 16rem;
+    }
+  }
+
+  .rich-text {
+    text-align: center;
+    max-width: 90rem;
+
+    @include media($min: tablet-h) {
+      grid-column: span 2;
+      place-self: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+    .heading {
+      text-align: center;
+      font-weight: 600;
+
+      @include media($min: tablet-h) {
+        font-size: var(--font-size-h2);
+        text-align: left;
+        max-width: 50rem;
+      }
+    }
+  }
+  
+  &__images {
+    position: relative;
+
+    &--primary {
+      @include media($min: tablet-h) {
+        max-height: 47rem;
+      }
+    }
+
+    &--secondary {
+      @include media($min: tablet-h) {
+        position: absolute;
+        right: -5rem;
+        top: 60%;
+        max-width: 20rem;
+      }
+
+      @include media($min: hd) {
+        left: -10rem;
+        top: 70%;
+      }
+    }
+
+    img {
+      border-radius: var(--border-radius);
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 2.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--color-ultragray);
+
+    @include media($min: tablet-h) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-caption {
+      @include media($min: tablet-h) {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+      }
+
+      p {
+        font-size: var(--font-size-h3);
+        font-weight: 600;
+  
+        @include media($min: tablet-h) {
+          font-size: var(--font-size-h5);
+        }
+
+        @include media($min: laptop) {
+          font-size: var(--font-size-h4);
+        }
+      }
+    }
+
+    &-icon {
+      @include media($min: tablet-h) {
+        height: 4rem;
+        width: 4rem;
+      }
+
+      @include media($min: laptop) {
+        height: 6rem;
+        width: 6rem;
+      }
+    }
+
+    &--index {
+      font-size: var(--font-size-h4);
+      color: var(--color-ultragray);
+
+      @include media(tablet) {
+        display: none;
+      }
+    }
+  }
+}
