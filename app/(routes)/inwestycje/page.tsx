@@ -9,6 +9,38 @@ import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/I
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
 import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
 
+const CTAcontent = {
+  heading: "Jeśli interesuję Cię ta nieruchomość <strong>prosimy o kontakt</strong>",
+  caption: "<strong>Oferta:</strong><br>- dom o łącznej powierzchni użytkowej 113,8 m2<br>- dom o łącznej powierzchni użytkowej 113,8 m2",
+  buttons: [
+    {
+      text: "Sprawdź standard wykończenia",
+      href: "#"
+    },
+    {
+      text: "Zobacz galerię zdjęć",
+      href: "#"
+    },
+  ],
+  imageGalleryContent: {
+    heading: "Galeria zdjęć inwestycji",
+    images: [
+      {
+        src: "/images/sample-gallery/1.jpeg",
+        alt: "alt",
+      },
+      {
+        src: "/images/sample-gallery/2.jpeg",
+        alt: "alt",
+      },
+      {
+        src: "/images/sample-gallery/3.jpeg",
+        alt: "alt",
+      },
+    ]
+  }
+}
+
 const InwestycjePage = () => {
   return (
     <>
@@ -20,8 +52,7 @@ const InwestycjePage = () => {
         <FeaturesList />
         <BuildingPlan />
         <ImageAndContent />
-        <BlogCTA />
-        <ImageGallery />
+        <BlogCTA content={CTAcontent}/>
       </main>
       <Footer />
     </>

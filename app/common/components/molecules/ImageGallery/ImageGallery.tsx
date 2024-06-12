@@ -8,25 +8,7 @@ import close from "@/public/icons/close.svg"
 import arrowDown from "@/public/icons/arrow-down.svg"
 import useImageGallery from './useImageGallery'
 
-const content = {
-  heading: "Galeria zdjęć inwestycji",
-  images: [
-    {
-      src: "/images/sample-gallery/1.jpeg",
-      alt: "alt",
-    },
-    {
-      src: "/images/sample-gallery/2.jpeg",
-      alt: "alt",
-    },
-    {
-      src: "/images/sample-gallery/3.jpeg",
-      alt: "alt",
-    },
-  ]
-}
-
-const ImageGallery = ({ isOpen = "false" }) => {
+const ImageGallery = ({ isOpen = "false", content }) => {
   const {
     currentImageIndex,
     currentImage,
@@ -34,7 +16,7 @@ const ImageGallery = ({ isOpen = "false" }) => {
     handleNext,
     setCurrentImage,
     totalImages,
-  } = useImageGallery(content.images);
+  } = useImageGallery(content.images)
 
   return (
     <section className="image-gallery">
