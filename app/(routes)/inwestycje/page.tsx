@@ -7,6 +7,7 @@ import FeaturesList from "@/app/common/components/organisms/FeaturesList/Feature
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
+import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
 
 const InwestycjePage = () => {
   return (
@@ -20,6 +21,7 @@ const InwestycjePage = () => {
         <BuildingPlan />
         <ImageAndContent />
         <BlogCTA />
+        <ImageGallery />
       </main>
       <Footer />
     </>
