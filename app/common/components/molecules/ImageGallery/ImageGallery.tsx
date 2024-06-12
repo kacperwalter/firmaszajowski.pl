@@ -69,6 +69,7 @@ const ImageGallery = ({ content, closeGallery }) => {
               alt="arrow"
               width={20}
               height={20}
+              color="white"
             />
           </button>
         </nav>
