@@ -6,7 +6,7 @@ import Heading from '@/app/common/components/atoms/Heading/Heading'
 import Image from "next/image"
 import close from "@/public/icons/close.svg"
 import arrowDown from "@/public/icons/arrow-down.svg"
-import { useState } from "react"
+import useImageGallery from './useImageGallery'
 
 const content = {
   heading: "Galeria zdjęć inwestycji",
@@ -27,7 +27,14 @@ const content = {
 }
 
 const ImageGallery = ({ isOpen = "false" }) => {
-  const [currentImage, setCurrentImage] = useState(content.images[0])
+  const {
+    currentImageIndex,
+    currentImage,
+    handlePrevious,
+    handleNext,
+    setCurrentImage,
+    totalImages,
+  } = useImageGallery(content.images);
 
   return (
     <section className="image-gallery">
@@ -49,19 +56,21 @@ const ImageGallery = ({ isOpen = "false" }) => {
         />
 
         <div className="image-gallery__listing">
-          {content.images.map(image => (
+          {content.images.map((image, index) => (
             <Image
-             className="image-gallery__listing-image"
+             key={index}
+             className={`image-gallery__listing-image ${index === currentImageIndex ? 'active' : ''}`}
              src={image.src}
              alt={image.alt}
              width={500}
              height={500}
+             onClick={() => setCurrentImage(index)}
             />
           ))}
         </div>
 
         <nav className="image-gallery__selector">
-          <button className="arrow-previous">
+          <button className="arrow-previous" onClick={handlePrevious}>
             <Image
               src={arrowDown}
               alt="arrow"
@@ -70,9 +79,9 @@ const ImageGallery = ({ isOpen = "false" }) => {
             />
           </button>
 
-          <p className="image-gallery__navigation"><span className="image-gallery__selector-current">1</span> / 6</p>
+          <p className="image-gallery__navigation"><span className="image-gallery__selector-current">{currentImageIndex + 1}</span> / {totalImages}</p>
 
-          <button className="arrow-next">
+          <button className="arrow-next" onClick={handleNext}>
             <Image
               src={arrowDown}
               alt="arrow"
