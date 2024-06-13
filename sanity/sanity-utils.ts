@@ -7,22 +7,19 @@ const client = createClient({
   apiVersion: "2024-03-24",
 })
 
-
 export async function getInvestments(): Promise<Investment[]> {
   return client.fetch(
     groq`*[_type == "investment"]{
       _id,
       _createdAt,
       name,
-      category,
-      "path": path.current,
+      "slug": slug.current,
       "image": {
         "url": image.asset->url,
         "alt": image.alt
       },
-      caption,
-      title,
-      description
+      url,
+      content
     }`
   )
 }

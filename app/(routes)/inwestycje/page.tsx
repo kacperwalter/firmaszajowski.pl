@@ -7,7 +7,14 @@ import FeaturesList from "@/app/common/components/organisms/FeaturesList/Feature
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
-import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
+
+// TODO temporarly they have to be imported there, before single inwestycja is a module
+import "@/app/common/styles/colors.scss"
+import "@/app/common/styles/fonts.scss"
+import "@/app/common/styles/globals.scss"
+import "@/app/common/styles/spacings.scss"
+import "@/app/common/styles/utils/is-hidden.scss"
+// TODO remove these imports then
 
 const CTAcontent = {
   heading: "Jeśli interesuję Cię ta nieruchomość <strong>prosimy o kontakt</strong>",

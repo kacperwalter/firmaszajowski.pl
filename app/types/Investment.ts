@@ -1,33 +1,12 @@
-export type Investment = {
-    _id: string
-    _createdAt: string
-    name: string
-    category: string
-    path: string
+export interface Investment {
+    _id: string;
+    _createdAt: string;
+    name: string;
+    slug: string;
     image: {
-        _type: string
-        asset: {
-            _ref: string
-            _type: string
-        }
-        alt?: string
-    }
-    caption: Array<{
-        _key: string
-        _type: string
-        children: Array<{
-            _key: string
-            _type: string
-            marks: Array<string>
-            text: string
-        }>
-        markDefs: Array<{
-            _key: string
-            _type: string
-            href: string
-        }>
-        style: string
-    }>
-    title: string
-    description: string
-}
+      url: string;
+      alt: string;
+    };
+    url: string;
+    content: any[]; // Adjust this type according to the structure of your content
+  }
