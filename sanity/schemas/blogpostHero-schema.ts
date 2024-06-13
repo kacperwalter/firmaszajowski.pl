@@ -4,13 +4,13 @@ const blogpostHero = {
   type: 'object',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
+      name: 'heading',
+      title: 'Heading',
       type: 'string',
     },
     {
-      name: 'subtitle',
-      title: 'Subtitle',
+      name: 'headingAnchor',
+      title: "Heading Anchor",
       type: 'string',
     },
   ],

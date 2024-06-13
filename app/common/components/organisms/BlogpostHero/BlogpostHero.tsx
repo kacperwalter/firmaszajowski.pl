@@ -33,7 +33,7 @@ const BlogpostHero = ({ content }) => {
           />
         </Wrapper>
 
-        <ActionButton as='link' href="#" />
+        <ActionButton as='link' href={content.headingAnchor} />
     </section>
   )
 }

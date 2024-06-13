@@ -21,18 +21,18 @@ type Props = {
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  console.log(investment.heroSection)
+  // console.log(investment.heroSection)
 
   const blogpostHeroContent = {
-    heading: "<strong>Nowe oblicze domu</strong>",
+    heading: investment.heroSection.heading.toString(),
     subheading: investment.name,
     image: {
-      src: "/images/lesna-polana.jpg",
-      alt: 'alt',
+      src: investment.image.src,
+      alt: investment.image.alt,
     },
+    headingAnchor: investment.heroSection.headingAnchor,
   }
   
-
   return (
     <>
       <BckgRect placement="center" />
