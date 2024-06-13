@@ -20,5 +20,7 @@
 
   img {
     border-radius: var(--border-radius);
+    max-height: 60rem;
+    object-fit: cover;
   }
 }
