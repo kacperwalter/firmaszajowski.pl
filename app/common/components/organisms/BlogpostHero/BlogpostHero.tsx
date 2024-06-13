@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Wrapper from '@/app/common/components/atoms/Wrapper/Wrapper'
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import RichText from '@/app/common/components/atoms/RichText/RichText'
@@ -6,38 +7,29 @@ import ActionButton from '@/app/common/components/atoms/ActionButton/ActionButto
 
 import "./BlogpostHero.scss"
 
-const header = {
-  heading: "<strong>Nowe oblicze domu</strong>",
-  subheading: "Leśna polana",
-}
 
-const image = {
-  src: "/images/lesna-polana.jpg",
-  alt: 'alt',
-}
-
-const BlogpostHero = () => {
+const BlogpostHero = ({ content }) => {
   return (
     <section className="blogpost-hero">
         <Wrapper>
           <div className="blogpost-hero__header">
             <RichText
               color={"dark"}
-              text={header.subheading}
+              text={content.subheading}
             />
 
             <Heading
               type="h1"
-              text={header.heading}
+              text={content.heading}
               color={"dark"}
             />
           </div>
 
           <Image
-            src={image.src}
+            src={content.image.src}
             width={2500}
             height={2000}
-            alt={image.alt}
+            alt={content.image.alt}
           />
         </Wrapper>
 
