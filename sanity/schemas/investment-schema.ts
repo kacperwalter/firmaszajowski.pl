@@ -110,6 +110,11 @@ const investment = {
         },
       ],
     },
+    {
+      name: 'heroSection',
+      title: 'Hero Section',
+      type: 'blogpostHero',
+    },
   ]
 }
 

@@ -39,7 +39,8 @@ export async function getInvestment(slug) {
         "alt": image.alt
       },
       url,
-      content
+      content,
+      heroSection
     }`,
     { slug },
   )
