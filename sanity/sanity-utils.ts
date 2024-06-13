@@ -68,6 +68,15 @@ export async function getInvestment(slug) {
           caption
         }
       },
+      imageAndContent {
+        display,
+        heading,
+        caption,
+        image {
+          "url": asset->url,
+          alt
+        }
+      },
     }`,
     { slug },
   )

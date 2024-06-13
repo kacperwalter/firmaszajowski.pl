@@ -124,7 +124,12 @@ const investment = {
       name: 'buildingPlan',
       title: 'Building Plan',
       type: 'buildingPlan',
-    }
+    },
+    {
+      name: 'imageAndContent',
+      title: 'Image and content',
+      type: 'imageAndContent',
+    },
   ]
 }
 

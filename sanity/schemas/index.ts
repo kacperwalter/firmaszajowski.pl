@@ -4,6 +4,7 @@ import feature from "./feature-schema"
 import featuresList from "./featuresList-schema"
 import buildingPlanTab from "./buildingPlanTab-schema"
 import buildingPlan from "./buildingPlan.schema"
+import imageAndContent from "./imageAndContent-schema"
 
 const schemas = [
   investment,
@@ -12,6 +13,7 @@ const schemas = [
   featuresList,
   buildingPlanTab,
   buildingPlan,
+  imageAndContent,
 ]
 
 export default schemas
