@@ -26,6 +26,7 @@ const CTAData = {
 
 const Home = async () => {
   const investments = await getInvestments()
+  console.log(investments)
 
   const blogFeedListing = investments.map(investment => ({
     image: {

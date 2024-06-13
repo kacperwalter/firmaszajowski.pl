@@ -22,7 +22,7 @@ type Props = {
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  // console.log(investment.heroSection)
+  console.log(investment)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),

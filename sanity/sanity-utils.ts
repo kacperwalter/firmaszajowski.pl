@@ -40,7 +40,8 @@ export async function getInvestment(slug) {
       },
       url,
       content,
-      heroSection
+      heroSection,
+      featuresList,
     }`,
     { slug },
   )
