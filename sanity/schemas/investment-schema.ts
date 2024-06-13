@@ -115,6 +115,11 @@ const investment = {
       title: 'Hero Section',
       type: 'blogpostHero',
     },
+    {
+      name: 'featuresList',
+      title: 'Features List',
+      type: 'featuresList',
+    }
   ]
 }
 

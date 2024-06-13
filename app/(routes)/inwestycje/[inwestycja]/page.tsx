@@ -5,6 +5,7 @@ import Footer from "@/app/common/components/organisms/Footer/Footer"
 import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
+import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
 
 // TODO temporarly they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
@@ -41,6 +42,7 @@ const Inwestycja = async ({ params }: Props) => {
 
       <main>
         <BlogpostHero content={blogpostHeroContent} />
+        {/* <FeaturesList /> */}
         <div>{investment.name}</div>
 
       </main>
