@@ -6,6 +6,7 @@ import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
+import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 
 // TODO temporarly they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
@@ -19,10 +20,11 @@ type Props = {
   params: { inwestycja: string }
 }
 
+// TODO refactor of fetching data into app
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  console.log(investment)
+  // console.log(investment)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),
@@ -41,7 +43,11 @@ const Inwestycja = async ({ params }: Props) => {
     features: investment.featuresList.features,
   }
 
-  // console.log("featuresListContent kurwo", featuresListContent)
+  const buildingPlanContent = {
+    heading: investment.buildingPlan.heading,
+    subheading: investment.buildingPlan.subheading,
+    tabs: investment.buildingPlan.tabs,
+  }
   
   return (
     <>
@@ -52,7 +58,7 @@ const Inwestycja = async ({ params }: Props) => {
       <main>
         <BlogpostHero content={blogpostHeroContent} />
         <FeaturesList content={featuresListContent} />
-
+        <BuildingPlan content={buildingPlanContent} />
       </main>
 
       <Footer />
