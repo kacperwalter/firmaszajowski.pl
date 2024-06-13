@@ -56,6 +56,18 @@ export async function getInvestment(slug) {
           }
         }
       },
+      buildingPlan {
+        heading,
+        subheading,
+        tabs[]{
+          name,
+          img {
+            "url": asset->url,
+            alt
+          },
+          caption
+        }
+      },
     }`,
     { slug },
   )

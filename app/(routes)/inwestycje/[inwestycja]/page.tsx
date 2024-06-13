@@ -22,7 +22,7 @@ type Props = {
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  console.log(investment.featuresList)
+  console.log(investment)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),
@@ -52,7 +52,6 @@ const Inwestycja = async ({ params }: Props) => {
       <main>
         <BlogpostHero content={blogpostHeroContent} />
         <FeaturesList content={featuresListContent} />
-        {/* <div>{investment.name}</div> */}
 
       </main>
 

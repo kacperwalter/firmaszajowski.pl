@@ -119,6 +119,11 @@ const investment = {
       name: 'featuresList',
       title: 'Features List',
       type: 'featuresList',
+    },
+    {
+      name: 'buildingPlan',
+      title: 'Building Plan',
+      type: 'buildingPlan',
     }
   ]
 }
