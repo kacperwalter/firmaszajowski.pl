@@ -16,7 +16,7 @@ export async function getInvestments(): Promise<Investment[]> {
       category,
       "slug": slug.current,
       "image": {
-        "url": image.asset->url,
+        "src": image.asset->url,
         "alt": image.alt
       },
       url,
