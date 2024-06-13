@@ -17,25 +17,25 @@ const blogFeedData = {
       image: "images/lesna-polana.jpg",
       heading: "Leśna Polana",
       caption: "Domy wolnostojące",
-      slug: "inwestycje/lesna-polana-1",
+      slug: "lesna-polana-1",
     },
     {
       image: "images/osiedle-sadowa.jpg",
       heading: "Osiedle Sadowa",
       caption: "Nowoczesne domy dwulokalowe",
-      slug: "inwestycje/osiedle-sadowa",
+      slug: "osiedle-sadowa",
     },
     {
       image: "images/osiedle-gajowa.jpeg",
       heading: "Osiedle Gajowa",
       caption: "Mieszkania",
-      slug: "inwestycje/osiedle-gajowa",
+      slug: "osiedle-gajowa",
     },
     {
       image: "images/lesna-polana-2.jpeg",
       heading: "Leśna Polana",
       caption: "Domy bliźniacze",
-      slug: "inwestycje/lesna-polana-2",
+      slug: "lesna-polana-2",
     },
   ],
 }
@@ -50,7 +50,7 @@ const CTAData = {
 
 const Home = async () => {
   const investments = await getInvestments()
-  // console.log(investments)
+  console.log(investments)
   
   return (
     <main>
