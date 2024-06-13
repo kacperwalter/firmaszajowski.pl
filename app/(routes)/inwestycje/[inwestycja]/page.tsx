@@ -22,7 +22,7 @@ type Props = {
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  console.log(investment)
+  console.log(investment.featuresList)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),
@@ -33,6 +33,15 @@ const Inwestycja = async ({ params }: Props) => {
     },
     headingAnchor: investment.heroSection.headingAnchor,
   }
+
+  const featuresListContent = {
+    heading: investment.featuresList.heading,
+    caption: investment.featuresList.caption,
+    images: investment.featuresList.images,
+    features: investment.featuresList.features,
+  }
+
+  // console.log("featuresListContent kurwo", featuresListContent)
   
   return (
     <>
@@ -42,8 +51,8 @@ const Inwestycja = async ({ params }: Props) => {
 
       <main>
         <BlogpostHero content={blogpostHeroContent} />
-        {/* <FeaturesList /> */}
-        <div>{investment.name}</div>
+        <FeaturesList content={featuresListContent} />
+        {/* <div>{investment.name}</div> */}
 
       </main>
 

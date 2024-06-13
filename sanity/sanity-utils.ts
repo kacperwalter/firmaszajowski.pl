@@ -41,7 +41,21 @@ export async function getInvestment(slug) {
       url,
       content,
       heroSection,
-      featuresList,
+      featuresList {
+        heading,
+        caption,
+        images[]{
+          "url": asset->url,
+          alt
+        },
+        features[]{
+          caption,
+          icon {
+            "url": asset->url,
+            alt
+          }
+        }
+      },
     }`,
     { slug },
   )
