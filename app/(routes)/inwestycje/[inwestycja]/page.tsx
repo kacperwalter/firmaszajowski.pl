@@ -7,6 +7,7 @@ import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
+import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 
 // TODO temporarly they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
@@ -48,6 +49,13 @@ const Inwestycja = async ({ params }: Props) => {
     subheading: investment.buildingPlan.subheading,
     tabs: investment.buildingPlan.tabs,
   }
+
+  const imageAndContentContent = {
+    display: investment.imageAndContent.display,
+    heading: investment.imageAndContent.heading,
+    caption: investment.imageAndContent.caption,
+    image: investment.imageAndContent.image,
+  }
   
   return (
     <>
@@ -59,6 +67,7 @@ const Inwestycja = async ({ params }: Props) => {
         <BlogpostHero content={blogpostHeroContent} />
         <FeaturesList content={featuresListContent} />
         <BuildingPlan content={buildingPlanContent} />
+        <ImageAndContent content={imageAndContentContent} />
       </main>
 
       <Footer />
