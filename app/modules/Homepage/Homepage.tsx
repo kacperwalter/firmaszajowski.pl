@@ -27,7 +27,7 @@ const CTAData = {
 const Home = async () => {
   const investments = await getInvestments()
 
-  const transformedInvestments = investments.map(investment => ({
+  const blogFeedListing = investments.map(investment => ({
     image: {
       src: investment.image.src,
       alt: investment.image.alt,
@@ -37,7 +37,7 @@ const Home = async () => {
     slug: investment.slug,
   }))
 
-  blogFeedData.posts = transformedInvestments
+  blogFeedData.posts = blogFeedListing
   
   return (
     <main>
