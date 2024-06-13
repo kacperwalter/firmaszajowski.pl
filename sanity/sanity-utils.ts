@@ -2,9 +2,9 @@ import { createClient, groq } from "next-sanity"
 import type { Investment } from "@/app/types/Investment"
 
 const client = createClient({
-  projectId: "q9ew4tw5",
+  projectId: "jhpk521q",
   dataset: "production",
-  apiVersion: "2024-03-24",
+  apiVersion: "2024-06-12",
 })
 
 export async function getInvestments(): Promise<Investment[]> {
@@ -13,6 +13,7 @@ export async function getInvestments(): Promise<Investment[]> {
       _id,
       _createdAt,
       name,
+      category,
       "slug": slug.current,
       "image": {
         "url": image.asset->url,

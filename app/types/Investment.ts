@@ -2,6 +2,7 @@ export interface Investment {
     _id: string;
     _createdAt: string;
     name: string;
+    category: string;
     slug: string;
     image: {
       url: string;
