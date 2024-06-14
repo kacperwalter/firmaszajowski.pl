@@ -1,25 +1,37 @@
+// @ts-nocheck
 import { DropdownItem } from '../types/types' 
+import { getInvestments } from "@/sanity/sanity-utils"
+
+export async function getDropdownItems(): Promise<DropdownItem[]> {
+  const investments = await getInvestments()
+
+  return investments.map((investment) => ({
+    name: investment.name,
+    category: investment.category,
+    path: investment.path.current
+  }))
+}
 
 export const dropdownItems: DropdownItem[] = [
     {
-      title: 'Osiedle Sadowa',
-      description: 'Nowoczesne domy dwulokalowe',
+      name: 'Osiedle Sadowa',
+      category: 'Nowoczesne domy dwulokalowe',
       path: '/osiedle-sadowa'
     },
     {
-      title: 'Leśna Polana',
-      description: 'Domy wolnostojące',
-      path: '/osiedle-polana'
+      name: 'Leśna Polana',
+      category: 'Domy wolnostojące',
+      path: '/lesna-polana'
     },
     {
-      title: 'Osiedle Gajowa',
-      description: 'Nowoczesne domy dwulokalowe',
+      name: 'Osiedle Gajowa',
+      category: 'Nowoczesne domy dwulokalowe',
       path: '/osiedle-gajowa'
     },
     {
-      title: 'Osiedle Sadowa',
-      description: 'Nowoczesne domy dwulokalowe',
-      path: '/osiedle-sadowa'
+      name: 'Osiedle Sadowa',
+      category: 'Nowoczesne domy dwulokalowe',
+      path: '/osiedle-sadowa-2'
     }
   ]
   

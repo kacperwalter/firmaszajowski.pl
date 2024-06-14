@@ -1,0 +1,130 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.building-plan { 
+  margin-bottom: 5rem;
+
+  @include media($min: tablet-h) {
+    margin-bottom: 10rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include media($min: tablet-h) {
+      gap: 8rem;
+    }
+  }
+
+  &__header {
+    text-align: center;
+
+    .rich-text {
+      font-weight: 600;
+    }
+  }
+}
+
+// TODO ofc move it to another component
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; 
+
+  @include media($min: tablet-h) {
+    display: grid;
+  }
+
+  @include media($min: laptop) {
+    // column-gap: 20rem;
+  }
+
+
+  &__menu {
+    display: flex;
+    justify-content: space-around;
+
+    @include media($min: tablet-h) {
+      justify-content: unset;
+      gap: 2rem;
+    }
+
+    &-item {
+      // TODO unify it with styles from 
+      position: relative;
+      text-transform: uppercase;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+
+      font-family: inherit;
+      font-size: inherit; 
+      color: inherit; 
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      text-transform: uppercase;
+      text-decoration: none;
+
+      transition: text-shadow .1s ease-in;
+      will-change: text-shadow;
+
+      &:hover,
+      &:focus,
+      &--active {
+        text-shadow: 0.3px 0 currentColor, -0.3px 0 currentColor;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        bottom: -1rem;
+        background-color: var(--color-neo);
+        opacity: 0;
+        transition: opacity .1s ease-in;
+        will-change: opacity;
+        pointer-events: none;
+  
+        @include media(tablet-h) {
+          left: 0;
+        }
+
+        @include media($min: hd) {
+          // bottom: 1rem;
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &--active {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 60rem;
+    object-fit: cover;
+
+    @include media($min: tablet-h) {
+      grid-column-start: 2;
+      grid-row: span 2;
+    }
+  }
+
+  &__caption {
+    @include media($min: tablet-h) {
+      max-width: 55rem;
+    }
+  }
+}
