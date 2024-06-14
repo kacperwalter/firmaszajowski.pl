@@ -2,13 +2,13 @@
 import { createClient, groq } from "next-sanity"
 import type { Investment } from "@/app/types/Investment"
 
-const client = createClient({
-  projectId: "jhpk521q",
-  dataset: "production",
-  apiVersion: "2024-06-12",
-})
-
 export async function getInvestments(): Promise<Investment[]> {
+  const client = createClient({
+    projectId: "jhpk521q",
+    dataset: "production",
+    apiVersion: "2024-06-12",
+  })
+
   return client.fetch(
     groq`*[_type == "investment"]{
       _id,
@@ -27,6 +27,12 @@ export async function getInvestments(): Promise<Investment[]> {
 }
 
 export async function getInvestment(slug) {
+  const client = createClient({
+    projectId: "jhpk521q",
+    dataset: "production",
+    apiVersion: "2024-06-12",
+  })
+
   return client.fetch(
     groq`*[_type == "investment" && slug.current == $slug][0]{
       _id,
