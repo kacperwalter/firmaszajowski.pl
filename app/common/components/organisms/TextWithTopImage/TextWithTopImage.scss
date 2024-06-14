@@ -1,0 +1,23 @@
+.text-with-top-image {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__image {
+    max-width: 30rem;
+  }
+
+  .heading {
+    text-align: center;
+  }
+
+  &__caption {
+    text-align: center;
+  }
+}
