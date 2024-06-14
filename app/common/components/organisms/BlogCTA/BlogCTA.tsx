@@ -13,6 +13,7 @@ const BlogCTA = ({ content }) => {
 
   const openGallery = () => setIsGalleryOpen(true);
   const closeGallery = () => setIsGalleryOpen(false);
+  // console.log(content.imageGalleryContent)
 
   return (
     <>
@@ -40,7 +41,7 @@ const BlogCTA = ({ content }) => {
 
               {content.buttons[1].text && (
                 <Button
-                  as="link"
+                  as="button"
                   text={content.buttons[1].text}
                   onClick={openGallery}
                   arrow

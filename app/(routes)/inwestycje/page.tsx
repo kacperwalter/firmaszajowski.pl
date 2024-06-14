@@ -16,6 +16,8 @@ import "@/app/common/styles/spacings.scss"
 import "@/app/common/styles/utils/is-hidden.scss"
 // TODO remove these imports then
 
+import ErrorPage from "@/app/common/components/molecules/ErrorPage/ErrorPage"
+
 const CTAcontent = {
   heading: "Jeśli interesuję Cię ta nieruchomość <strong>prosimy o kontakt</strong>",
   caption: "<strong>Oferta:</strong><br>- dom o łącznej powierzchni użytkowej 113,8 m2<br>- dom o łącznej powierzchni użytkowej 113,8 m2",
@@ -53,14 +55,15 @@ const InwestycjePage = () => {
     <>
       <BckgRect placement="center" />
       <Navbar />
-      {/* TODO - move that main into module (like in other pages) */}
+      {/* TODO - move that main into module (like in other pages)
       <main>
         <BlogpostHero />
         <FeaturesList />
         <BuildingPlan />
         <ImageAndContent />
         <BlogCTA content={CTAcontent}/>
-      </main>
+      </main> */}
+      <ErrorPage type="500" />
       <Footer />
     </>
   )

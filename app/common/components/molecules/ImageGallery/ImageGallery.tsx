@@ -18,6 +18,8 @@ const ImageGallery = ({ content, closeGallery }) => {
     totalImages,
   } = useImageGallery(content.images)
 
+  console.log(content)
+
   return (
     <section className="image-gallery">
       <button className="image-gallery__button-close" onClick={closeGallery}>
@@ -31,7 +33,7 @@ const ImageGallery = ({ content, closeGallery }) => {
       <div className="image-gallery__content">
         <Image
           className="image-gallery__current-image"
-          src={currentImage.src}
+          src={currentImage.url}
           alt={currentImage.alt}
           width={1000}
           height={1000}
@@ -42,7 +44,7 @@ const ImageGallery = ({ content, closeGallery }) => {
             <Image
              key={index}
              className={`image-gallery__listing-image ${index === currentImageIndex ? 'active' : ''}`}
-             src={image.src}
+             src={image.url}
              alt={image.alt}
              width={500}
              height={500}
