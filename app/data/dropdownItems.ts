@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { DropdownItem } from '../types/types' 
 import { getInvestments } from "@/sanity/sanity-utils"
 

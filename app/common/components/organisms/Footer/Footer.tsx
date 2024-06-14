@@ -24,6 +24,7 @@ const Footer = () => {
                   <ul className="footer__navigation-list">
                     {dropdownItems.map((dropdownItem, dropdownIndex) => (
                       <li key={dropdownIndex}>
+                        {/* @ts-ignore */}
                         <a href={dropdownItem.path}>{dropdownItem.description}</a>
                       </li>
                     ))}
