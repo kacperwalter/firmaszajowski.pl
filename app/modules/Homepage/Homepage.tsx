@@ -1,3 +1,4 @@
+// @ts-nocheck
 import HomepageHero from "@/app/common/components/organisms/HomepageHero/HomepageHero"
 import BlogFeed from "@/app/common/components/organisms/BlogFeed/BlogFeed"
 import CTA from "@/app/common/components/organisms/CTA/CTA"
@@ -12,32 +13,7 @@ const homepageHeroData = {
 const blogFeedData = {
   heading: "Nasze <br><strong>inwestycje mieszkaniowe</strong>",
   caption: "Zajmujemy się budową oraz sprzedażą mieszkań  i nowoczesnych domów szeregowych w spokojnych, komfortowych lokalizacjach. Nasze inwestycje położone są w Chodzieży i jej okolicach – staramy się, aby nasze budynki wpisywały się w bieżący krajobraz, oferując klientom dostęp do zieleni, bez szkodliwej ingerencji w środowisko naturalne.",
-  posts: [
-    {
-      image: "images/lesna-polana.jpg",
-      heading: "Leśna Polana",
-      caption: "Domy wolnostojące",
-      slug: "inwestycje/lesna-polana-1",
-    },
-    {
-      image: "images/osiedle-sadowa.jpg",
-      heading: "Osiedle Sadowa",
-      caption: "Nowoczesne domy dwulokalowe",
-      slug: "inwestycje/osiedle-sadowa",
-    },
-    {
-      image: "images/osiedle-gajowa.jpeg",
-      heading: "Osiedle Gajowa",
-      caption: "Mieszkania",
-      slug: "inwestycje/osiedle-gajowa",
-    },
-    {
-      image: "images/lesna-polana-2.jpeg",
-      heading: "Leśna Polana",
-      caption: "Domy bliźniacze",
-      slug: "inwestycje/lesna-polana-2",
-    },
-  ],
+  posts: [],
 }
 
 const CTAData = {
@@ -51,6 +27,18 @@ const CTAData = {
 const Home = async () => {
   const investments = await getInvestments()
   // console.log(investments)
+
+  const blogFeedListing = investments.map(investment => ({
+    image: {
+      src: investment.image.src,
+      alt: investment.image.alt,
+    },
+    heading: investment.name,
+    caption: investment.category,
+    slug: investment.slug,
+  }))
+
+  blogFeedData.posts = blogFeedListing
   
   return (
     <main>

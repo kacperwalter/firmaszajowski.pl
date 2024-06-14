@@ -7,7 +7,16 @@ import FeaturesList from "@/app/common/components/organisms/FeaturesList/Feature
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
-import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
+
+// TODO temporarly they have to be imported there, before single inwestycja is a module
+import "@/app/common/styles/colors.scss"
+import "@/app/common/styles/fonts.scss"
+import "@/app/common/styles/globals.scss"
+import "@/app/common/styles/spacings.scss"
+import "@/app/common/styles/utils/is-hidden.scss"
+// TODO remove these imports then
+
+import ErrorPage from "@/app/common/components/molecules/ErrorPage/ErrorPage"
 
 const CTAcontent = {
   heading: "Jeśli interesuję Cię ta nieruchomość <strong>prosimy o kontakt</strong>",
@@ -46,14 +55,15 @@ const InwestycjePage = () => {
     <>
       <BckgRect placement="center" />
       <Navbar />
-      {/* TODO - move that main into module (like in other pages) */}
+      {/* TODO - move that main into module (like in other pages)
       <main>
         <BlogpostHero />
         <FeaturesList />
         <BuildingPlan />
         <ImageAndContent />
         <BlogCTA content={CTAcontent}/>
-      </main>
+      </main> */}
+      <ErrorPage type="500" />
       <Footer />
     </>
   )

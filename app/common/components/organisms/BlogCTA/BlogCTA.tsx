@@ -13,6 +13,7 @@ const BlogCTA = ({ content }) => {
 
   const openGallery = () => setIsGalleryOpen(true);
   const closeGallery = () => setIsGalleryOpen(false);
+  // console.log(content.imageGalleryContent)
 
   return (
     <>

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Link from "next/link"
 import type { BlogFeedProps } from "./BlogFeed.types"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
@@ -22,12 +23,12 @@ const BlogFeed = ({ content }: BlogFeedProps) => {
             <Link 
               key={index} 
               className="blog-feed__post"
-              href={post.slug}
+              href={`inwestycje/${post.slug}`}
             >
               <div className="blog-feed__image" >
                 <img 
-                  src={post.image} 
-                  alt={post.heading} 
+                  src={post.image.src} 
+                  alt={post.image.alt} 
                 />
               </div>
 

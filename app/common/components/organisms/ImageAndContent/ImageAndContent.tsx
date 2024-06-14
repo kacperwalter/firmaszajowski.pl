@@ -1,19 +1,25 @@
 import Image from "next/image"
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import RichText from "@/app/common/components/atoms/RichText/RichText"
-
 import "./ImageAndContent.scss"
 
-const content = {
-  heading: "<strong>Położenie</strong><br>Spokojny zakątek Rataj",
-  caption: "Wybierając lokalizację dla tej inwestycji kierowaliśmy się przede wszystkim dostępem do zieleni. Nasza propozycja jest skierowana do osób, które poszukują bliskości z przyrodą i chcą żyć w rytmie slow. Leśna Polana oferuje spokój i harmonię przez 365 dni w roku – na tarasie i w prywatnym ogrodzie!",
-  image: {
-    src: "/images/dom-w-lesie.png",
-    alt: "alt",
-    }
-}
+type ImageAndContentProps = {
+  content: {
+    display: boolean;
+    heading: string;
+    caption: string;
+    image: {
+      url: string;
+      alt: string;
+    };
+  };
+};
 
-const ImageAndContent = () => {
+const ImageAndContent = ({ content }: ImageAndContentProps) => {
+  if (!content.display) {
+    return null;
+  }
+
   return (
     <section className="image-and-content">
       <Heading
@@ -24,7 +30,7 @@ const ImageAndContent = () => {
 
       <Image
         className="image-and-content__image"
-        src={content.image.src}
+        src={content.image.url}
         alt={content.image.alt}
         width={1000}
         height={1000}

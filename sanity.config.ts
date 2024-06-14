@@ -3,12 +3,14 @@ import { deskTool } from "sanity/desk"
 import schemas from "@/sanity/schemas"
 
 const config = defineConfig({
-  projectId: "q9ew4tw5",
+  projectId: "jhpk521q",
   dataset: "production",
-  title: "firmaszajowski-cms",
-  apiVersion: "2024-03-24",
+  title: "firmaszajowski",
+  apiVersion: "2024-06-12",
   basePath: "/admin",
-  plugins: [deskTool()],
+  plugins: [
+    deskTool(),
+  ],
   schema: { types: schemas }
 })
 
