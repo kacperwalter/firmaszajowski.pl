@@ -13,6 +13,7 @@ const Dropdown = ({ isVisible }: DropdownProps) => {
   useEffect(() => {
     const fetchInvestments = async () => {
       const investments = await getInvestments()
+      console.log("Dropdown - fetched investments useEffect", investments)
       setInvestments(investments)
     }
 
