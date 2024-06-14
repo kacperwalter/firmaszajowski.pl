@@ -40,7 +40,7 @@ const BlogCTA = ({ content }) => {
 
               {content.buttons[1].text && (
                 <Button
-                  as="button"
+                  as="link"
                   text={content.buttons[1].text}
                   onClick={openGallery}
                   arrow

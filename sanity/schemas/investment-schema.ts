@@ -130,6 +130,11 @@ const investment = {
       title: 'Image and content',
       type: 'imageAndContent',
     },
+    {
+      name: 'blogCTA',
+      title: 'CTA',
+      type: 'blogCTA',
+    },
   ]
 }
 

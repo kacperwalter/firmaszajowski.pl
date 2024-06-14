@@ -8,6 +8,7 @@ import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/Blogpos
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
 import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/BuildingPlan"
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
+import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
 
 // TODO temporarly they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
@@ -25,7 +26,7 @@ type Props = {
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  console.log(investment)
+  console.log(investment.blogCTA)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),
@@ -56,6 +57,14 @@ const Inwestycja = async ({ params }: Props) => {
     caption: investment.imageAndContent.caption,
     image: investment.imageAndContent.image,
   }
+
+  const blogCTAContent = {
+    display: investment.blogCTA.display,
+    heading: investment.blogCTA.heading,
+    caption: investment.blogCTA.caption,
+    buttons: investment.blogCTA.buttons,
+    imageGalleryContent: investment.blogCTA.imageGalleryContent,
+  }
   
   return (
     <>
@@ -68,6 +77,7 @@ const Inwestycja = async ({ params }: Props) => {
         <FeaturesList content={featuresListContent} />
         <BuildingPlan content={buildingPlanContent} />
         <ImageAndContent content={imageAndContentContent} />
+        <BlogCTA content={blogCTAContent}/>
       </main>
 
       <Footer />

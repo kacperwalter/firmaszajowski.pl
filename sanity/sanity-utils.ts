@@ -77,6 +77,22 @@ export async function getInvestment(slug) {
           alt
         }
       },
+      blogCTA {
+        display,
+        heading,
+        caption,
+        buttons[]{
+          text,
+          href
+        },
+        imageGalleryContent {
+          heading,
+          images[]{
+            "url": src.asset->url,
+            alt
+          }
+        }
+      },
     }`,
     { slug },
   )
