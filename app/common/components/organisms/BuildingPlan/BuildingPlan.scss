@@ -96,8 +96,8 @@
           left: 0;
         }
 
-        @include media($min: laptop) {
-          bottom: 1rem;
+        @include media($min: hd) {
+          // bottom: 1rem;
         }
       }
 
@@ -113,6 +113,8 @@
 
   &__image {
     width: 100%;
+    max-height: 60rem;
+    object-fit: cover;
 
     @include media($min: tablet-h) {
       grid-column-start: 2;
