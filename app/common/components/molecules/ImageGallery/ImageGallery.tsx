@@ -18,7 +18,7 @@ const ImageGallery = ({ content, closeGallery }) => {
     totalImages,
   } = useImageGallery(content.images)
 
-  console.log(content)
+  // console.log(content)
 
   return (
     <section className="image-gallery">
