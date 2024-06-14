@@ -6,7 +6,7 @@ import Button from "@/app/common/components/atoms/Button/Button"
 import ImageGallery from "@/app/common/components/molecules/ImageGallery/ImageGallery"
 import { useState } from "react"
 
-import "./blogCTA.scss"
+import "./BlogCTA.scss"
 
 const BlogCTA = ({ content }) => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
