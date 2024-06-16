@@ -37,6 +37,8 @@ export async function getInvestment(slug) {
     groq`*[_type == "investment" && slug.current == $slug][0]{
       _id,
       _createdAt,
+      pageTitle,
+      metaDescription,
       name,
       category,
       "slug": slug.current,
