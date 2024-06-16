@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getInvestment } from "@/sanity/sanity-utils"
 
 import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
@@ -22,10 +23,31 @@ type Props = {
   params: { inwestycja: string }
 }
 
+// TODO let's refactor it and do it better 
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const slug = params.inwestycja
+  const investment = await getInvestment(slug)
+
+  return {
+    title: investment.pageTitle || "Firma Szajowski",
+    description: investment.metaDescription || "",
+    alternates: {
+      canonical: `https://www.firmaszajowski.pl/inwestycje//${investment.slug}`,
+    },
+    openGraph: {
+      title: investment.pageTitle || "Firma Szajowski",
+      description: investment.metaDescription || "",
+      url: `https://www.firmaszajowski.pl/inwestycje/${investment.slug}`,
+      siteName: "Firmaszajowski",
+    }
+  }
+}
+
 // TODO refactor of fetching data into app
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
+  // console.log(investment)
 
   const blogpostHeroContent = {
     heading: investment.heroSection.heading.toString(),

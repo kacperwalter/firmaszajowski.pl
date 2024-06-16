@@ -9,7 +9,7 @@ import { Investment } from '@/app/types/Investment'
 
 const Dropdown = ({ isVisible }: DropdownProps) => {
   const [investments, setInvestments] = useState<Investment[]>([])
-  console.log("Dropdown mounted");
+  // console.log("Dropdown mounted");
 
   useEffect(() => {
     const fetchInvestments = async () => {

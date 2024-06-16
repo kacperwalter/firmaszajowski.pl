@@ -8,9 +8,19 @@ const poppins = Poppins({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 })
 
+// TODO CMS
 export const metadata: Metadata = {
-  title: "firmaszajowski.pl",
+  title: "Firma Szajowski",
   description: "",
+  alternates: {
+    canonical: "https://www.firmaszajowski.pl/",
+  },
+  openGraph: {
+    title: "Firma Szajowski",
+    description: "",
+    url: "puntmruczenia.pl",
+    siteName: "Firma Szajowski",
+  }
 }
 
 export default function RootLayout({
