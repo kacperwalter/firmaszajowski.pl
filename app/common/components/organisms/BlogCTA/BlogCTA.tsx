@@ -9,11 +9,10 @@ import { useState } from "react"
 import "./BlogCTA.scss"
 
 const BlogCTA = ({ content }) => {
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
-  const openGallery = () => setIsGalleryOpen(true);
-  const closeGallery = () => setIsGalleryOpen(false);
-  // console.log(content.imageGalleryContent)
+  const openGallery = () => setIsGalleryOpen(true)
+  const closeGallery = () => setIsGalleryOpen(false)
 
   return (
     <>

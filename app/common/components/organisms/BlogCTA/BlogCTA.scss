@@ -31,7 +31,11 @@
     }
 
     .button {
-      font-size: var(--font-size-h5);
+      font-size: var(--font-size-h6);
+      display: grid;
+      place-content: center;
+      grid-template-columns: 1fr auto;
+      align-items: center;
     }
   }
 }
