@@ -5,54 +5,68 @@ import Image from "next/image"
 import Wrapper from '@/app/common/components/atoms/Wrapper/Wrapper'
 import "./FeaturesList.scss"
 
-
 const FeaturesList = ({ content }) => {
-  const formatNumber = (number: number) => {
+  const formatNumber = (number) => {
     return number < 10 ? `0${number}` : number
   }
+
+  const caption = content?.caption || "Default Caption"
+  const heading = content?.heading || "Default Heading"
+  const images = content?.images || []
+  const features = content?.features || []
 
   return (
     <section className="features-list">
       <Wrapper>
-        <RichText color={"dark"} text={content.caption} />
+        {caption && (
+          <RichText color={"dark"} text={caption} />
+        )}
 
         <div className="features-list__info">
-          <Heading type='h1' text={content.heading} color="dark" />
+          {heading && (
+            <Heading type='h1' text={heading} color="dark" />
+          )}
 
           <div className="features-list__images">
-            <Image
-              src={content.images[0].url}
-              alt={content.images[0].alt}
-              width={1000}
-              height={1000}
-              className="features-list__images--primary"
-            />
+            {images[0] && (
+              <Image
+                src={images[0].url || "/path/to/default/image.jpg"}
+                alt={images[0].alt || "Default Alt"}
+                width={1000}
+                height={1000}
+                className="features-list__images--primary"
+              />
+            )}
 
-            <Image
-              src={content.images[1].url}
-              alt={content.images[1].alt}
-              width={1000}
-              height={1000}
-              className="features-list__images--secondary"
-            />
+            {images[1] && (
+              <Image
+                src={images[1].url || "/path/to/default/image.jpg"}
+                alt={images[1].alt || "Default Alt"}
+                width={1000}
+                height={1000}
+                className="features-list__images--secondary"
+              />
+            )}
           </div>
         </div>
 
         <ul className="features-list__list">
-          {content.features.map((item, index) => (
+          {features.map((item, index) => (
             <li key={index} className="features-list__item">
               <span className="features-list__item-caption">
                 <span className="features-list__item--index">{formatNumber(index + 1)}</span>
-                <p>{item.caption}</p>
+                <p>{item.caption || "Default Feature Caption"}</p>
               </span>
 
-              <Image
-                src={item.icon.url}
-                alt={item.caption}
-                width={50}
-                height={50}
-                className="features-list__item-icon"
-              />
+              {item.icon && (
+                <Image
+                  src={item.icon.url || "/path/to/default/icon.jpg"}
+                  alt={item.caption || "Default Feature Caption"}
+                  width={50}
+                  height={50}
+                  className="features-list__item-icon"
+                />
+              )}
             </li>
           ))}
         </ul>
