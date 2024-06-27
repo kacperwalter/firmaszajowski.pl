@@ -36,6 +36,24 @@
       place-content: center;
       grid-template-columns: 1fr auto;
       align-items: center;
+      cursor: pointer;
+
+      &--primary {
+        &:hover {
+          color: var(--color-dark) !important;
+        }
+      }
+
+      &--secondary {
+        &:hover {
+          background-color: var(--color-dark);
+          color: var(--color-white);
+    
+          .button__arrow path {
+            fill: var(--color-white);
+          }
+        }
+      }
     }
   }
 }
