@@ -11,7 +11,7 @@ import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/Buildin
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
 
-// TODO temporarly they have to be imported there, before single inwestycja is a module
+// TODO temporarily they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
 import "@/app/common/styles/fonts.scss"
 import "@/app/common/styles/globals.scss"
@@ -29,15 +29,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const investment = await getInvestment(slug)
 
   return {
-    title: investment.pageTitle || "Firma Szajowski",
-    description: investment.metaDescription || "",
+    title: investment?.pageTitle || "Firma Szajowski",
+    description: investment?.metaDescription || "",
     alternates: {
-      canonical: `https://www.firmaszajowski.pl/inwestycje//${investment.slug}`,
+      canonical: `https://www.firmaszajowski.pl/inwestycje/${investment?.slug || ""}`,
     },
     openGraph: {
-      title: investment.pageTitle || "Firma Szajowski",
-      description: investment.metaDescription || "",
-      url: `https://www.firmaszajowski.pl/inwestycje/${investment.slug}`,
+      title: investment?.pageTitle || "Firma Szajowski",
+      description: investment?.metaDescription || "",
+      url: `https://www.firmaszajowski.pl/inwestycje/${investment?.slug || ""}`,
       siteName: "Firmaszajowski",
     }
   }
@@ -47,44 +47,43 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 const Inwestycja = async ({ params }: Props) => {
   const slug = params.inwestycja
   const investment = await getInvestment(slug)
-  // console.log(investment)
-
+  
   const blogpostHeroContent = {
-    heading: investment.heroSection.heading.toString(),
-    subheading: investment.name,
+    heading: investment?.heroSection?.heading?.toString() || "Default Heading",
+    subheading: investment?.name || "Default Subheading",
     image: {
-      src: investment.image.src,
-      alt: investment.image.alt,
+      src: investment?.image?.src || "/path/to/default/image.jpg",
+      alt: investment?.image?.alt || "Default Alt",
     },
-    headingAnchor: investment.heroSection.headingAnchor,
+    headingAnchor: investment?.heroSection?.headingAnchor || "#"
   }
 
   const featuresListContent = {
-    heading: investment.featuresList.heading,
-    caption: investment.featuresList.caption,
-    images: investment.featuresList.images,
-    features: investment.featuresList.features,
+    heading: investment?.featuresList?.heading || "Default Features Heading",
+    caption: investment?.featuresList?.caption || "Default Features Caption",
+    images: investment?.featuresList?.images || [],
+    features: investment?.featuresList?.features || []
   }
 
   const buildingPlanContent = {
-    heading: investment.buildingPlan.heading,
-    subheading: investment.buildingPlan.subheading,
-    tabs: investment.buildingPlan.tabs,
+    heading: investment?.buildingPlan?.heading || "Default Building Plan Heading",
+    subheading: investment?.buildingPlan?.subheading || "Default Building Plan Subheading",
+    tabs: investment?.buildingPlan?.tabs || []
   }
 
   const imageAndContentContent = {
-    display: investment.imageAndContent.display,
-    heading: investment.imageAndContent.heading,
-    caption: investment.imageAndContent.caption,
-    image: investment.imageAndContent.image,
+    display: investment?.imageAndContent?.display || false,
+    heading: investment?.imageAndContent?.heading || "Default Image And Content Heading",
+    caption: investment?.imageAndContent?.caption || "Default Image And Content Caption",
+    image: investment?.imageAndContent?.image || { url: "/path/to/default/image.jpg", alt: "Default Alt" }
   }
 
   const blogCTAContent = {
-    display: investment.blogCTA.display,
-    heading: investment.blogCTA.heading,
-    caption: investment.blogCTA.caption,
-    buttons: investment.blogCTA.buttons,
-    imageGalleryContent: investment.blogCTA.imageGalleryContent,
+    display: investment?.blogCTA?.display || false,
+    heading: investment?.blogCTA?.heading || "Default Blog CTA Heading",
+    caption: investment?.blogCTA?.caption || "Default Blog CTA Caption",
+    buttons: investment?.blogCTA?.buttons || [],
+    imageGalleryContent: investment?.blogCTA?.imageGalleryContent || []
   }
   
   return (
@@ -98,7 +97,7 @@ const Inwestycja = async ({ params }: Props) => {
         <FeaturesList content={featuresListContent} />
         <BuildingPlan content={buildingPlanContent} />
         <ImageAndContent content={imageAndContentContent} />
-        <BlogCTA content={blogCTAContent}/>
+        <BlogCTA content={blogCTAContent} />
       </main>
 
       <Footer />

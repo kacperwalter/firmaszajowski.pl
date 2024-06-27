@@ -47,11 +47,11 @@
 
     @include media($min: tablet-h) {
       justify-content: unset;
+      align-items: flex-end;
       gap: 2rem;
     }
 
     &-item {
-      // TODO unify it with styles from 
       position: relative;
       text-transform: uppercase;
       background-color: transparent;
@@ -59,12 +59,12 @@
       padding: 0;
       margin: 0;
       cursor: pointer;
+      margin-bottom: 2rem;
 
       font-family: inherit;
       font-size: inherit; 
       color: inherit; 
 
-      display: inline-flex;
       align-items: center;
       justify-content: center;
 
@@ -85,7 +85,7 @@
         position: absolute;
         width: 100%;
         height: 4px;
-        bottom: -1rem;
+        top: 30px;
         background-color: var(--color-neo);
         opacity: 0;
         transition: opacity .1s ease-in;

@@ -9,40 +9,48 @@ import { useState } from "react"
 import "./BlogCTA.scss"
 
 const BlogCTA = ({ content }) => {
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false)
 
-  const openGallery = () => setIsGalleryOpen(true);
-  const closeGallery = () => setIsGalleryOpen(false);
-  // console.log(content.imageGalleryContent)
+  const openGallery = () => setIsGalleryOpen(true)
+  const closeGallery = () => setIsGalleryOpen(false)
+
+  const heading = content?.heading || "Default Heading"
+  const caption = content?.caption || "Default Caption"
+  const buttons = content?.buttons || []
+  const imageGalleryContent = content?.imageGalleryContent || []
 
   return (
     <>
       <section className="blogCTA">
         <Wrapper>
           <div className="blogCTA__container">
-            <Heading
-              text={content.heading}
-              type="h2"
-            />
+            {heading && (
+              <Heading
+                text={heading}
+                type="h2"
+              />
+            )}
 
-            <div
-              className="blogCTA__caption"
-              dangerouslySetInnerHTML={{ __html: content.caption }}
-            />
+            {caption && (
+              <div
+                className="blogCTA__caption"
+                dangerouslySetInnerHTML={{ __html: caption }}
+              />
+            )}
 
             <div className="blogCTA__buttons">
-              {content.buttons[0].text && (
+              {buttons[0]?.text && (
                 <Button
                   as="link"
-                  text={content.buttons[0].text}
-                  href={content.buttons[0].href}
+                  text={buttons[0].text}
+                  href={buttons[0].href}
                 />
               )}
 
-              {content.buttons[1].text && (
+              {buttons[1]?.text && (
                 <Button
                   as="button"
-                  text={content.buttons[1].text}
+                  text={buttons[1].text}
                   onClick={openGallery}
                   arrow
                   arrowDirection="right"
@@ -55,7 +63,7 @@ const BlogCTA = ({ content }) => {
       </section>
 
       {isGalleryOpen && (
-        <ImageGallery content={content.imageGalleryContent} closeGallery={closeGallery} />
+        <ImageGallery content={imageGalleryContent} closeGallery={closeGallery} />
       )}
     </>
   )

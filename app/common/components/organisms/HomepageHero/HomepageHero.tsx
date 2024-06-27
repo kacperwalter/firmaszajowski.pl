@@ -15,6 +15,7 @@ const HomepageHero = ({ content }: HomepageHeroProps) => {
             caption={content.caption}
             color='white'
           />
+          
           <video className="homepage-hero__video-background" autoPlay muted loop> 
             <source src={content.video} type="video/mp4" />
             Your browser does not support the video tag.

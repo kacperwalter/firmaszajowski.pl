@@ -93,6 +93,10 @@
   &__link {
     position: relative;
 
+    @include media(tablet-h) {
+      display: grid;
+    }
+
     &-title,
     &-navlink {
       text-transform: uppercase;
