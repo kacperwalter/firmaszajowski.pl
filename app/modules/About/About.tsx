@@ -18,8 +18,8 @@ const detailsData1 = {
 }
 
 const detailsData2 = {
-  heading: "<strong>Firma budowlana</strong>",
-  caption: "Świadczymy usługi budowlane dedykowane powierzchniom mieszkalnym i dużym przestrzeniom użytkowym. Wykonujemy kompleksowe wykończenia wnętrz bloków mieszkalnych: tynki, posadzki, izolacje termiczne i akustyczne, szpachle, malowanie. <br><br>  Nasi pracownicy pracują na materiałach budowlanych sprawdzonych, polskich producentów, a ich kompetencje potwierdza certyfikat autoryzowanej firmy wykonawczej.",
+  heading: "<strong>Inwestycje mieszkaniowe</strong>",
+  caption: "Znajomość rynku budowlanego i stabilne zaplecze finansowe, pozwalające na sprawną realizację inwestycji, zaprocentowały zaufaniem naszych klientów. Zajmujemy się budową oraz sprzedażą mieszkań i domów w spokojnych, komfortowych lokalizacjach.  <br><br>  Nasze inwestycje położone są w Chodzieży i okolicach. Staramy się, aby nasze budynki wpisywały się w bieżący krajobraz, oferując dostęp do zieleni, bez szkodliwej ingerencji w środowisko. Budujemy z pasją i perspektywą.",
   image: "images/o-firmie/planning-2.jpeg",
 }
 
