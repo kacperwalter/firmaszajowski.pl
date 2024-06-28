@@ -69,6 +69,16 @@
       }
     }
 
+    .header {
+      @include media(tablet-h) {
+        justify-items: center;
+      }
+    }
+
+    .heading {
+      width: max-content;
+    }
+
     .rich-text {
       color: var(--color-gray);
     }
