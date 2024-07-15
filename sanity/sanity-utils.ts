@@ -90,6 +90,7 @@ export async function getInvestment(slug) {
         heading,
         caption,
         buttons[]{
+          isGalleryOpener,
           text,
           href
         },

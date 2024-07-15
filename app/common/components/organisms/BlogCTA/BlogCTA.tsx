@@ -19,6 +19,8 @@ const BlogCTA = ({ content }) => {
   const buttons = content?.buttons || []
   const imageGalleryContent = content?.imageGalleryContent || []
 
+  console.log(buttons) 
+
   return (
     <>
       <section className="blogCTA">
@@ -39,25 +41,19 @@ const BlogCTA = ({ content }) => {
             )}
 
             <div className="blogCTA__buttons">
-              {buttons[0]?.text && (
+              {buttons.map((button, index) => (
                 <Button
-                  as="link"
-                  text={buttons[0].text}
-                  href={buttons[0].href}
-                />
-              )}
-
-              {buttons[1]?.text && (
-                <Button
-                  as="button"
-                  text={buttons[1].text}
-                  onClick={openGallery}
-                  arrow
+                  key={index}
+                  as={button.isGalleryOpener ? "button" : "link"}
+                  text={button.text}
+                  href={button.href}
+                  onClick={button.isGalleryOpener ? openGallery : undefined}
+                  arrow={button.isGalleryOpener}
                   arrowDirection="right"
-                  variant="secondary"
+                  variant={button.isGalleryOpener ? "secondary" : undefined}
                 />
-              )}
-            </div>
+              ))}
+            </div> 
           </div>
         </Wrapper>
       </section>

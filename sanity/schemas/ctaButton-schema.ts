@@ -4,6 +4,12 @@ const ctaButton = {
   type: 'object',
   fields: [
     {
+      name: 'isGalleryOpener',
+      title: 'Open image gallery button',
+      type: 'boolean',
+      initialValue: true,
+    },
+    {
       name: 'text',
       title: 'Text',
       type: 'string',
