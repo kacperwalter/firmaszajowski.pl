@@ -1,11 +1,33 @@
+// @ts-nocheck
+'use client'
+
+import { useState, useEffect } from "react"
+import Link from "next/link"
+import { getInvestments } from "@/sanity/sanity-utils"
+
 import BrandLogo from "@/app/common/components/atoms/BrandLogo/BrandLogo"
 import ContactInfo from "@/app/common/components/molecules/ContactInfo/ContactInfo"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
 import { navigationItems } from "@/app/data/navigationItems"
-import { dropdownItems } from "@/app/data/dropdownItems"
 import "./Footer.scss"
 
 const Footer = () => {
+  const [investments, setInvestments] = useState([])
+
+  useEffect(() => {
+    const fetchInvestments = async () => {
+      try {
+        const investments = await getInvestments()
+        console.log("Dropdown - fetched investments useEffect", investments)
+        setInvestments(investments)
+      } catch (error) {
+        console.error("Failed to fetch investments:", error)
+      }
+    }
+  
+    fetchInvestments()
+  }, [])
+
   return (
     <section className="footer">
       <Wrapper isWide>
@@ -22,12 +44,13 @@ const Footer = () => {
                 <>
                   <a className="footer__navigation-heading" href={item.path}>{item.label}</a>
                   <ul className="footer__navigation-list">
-                    {dropdownItems.map((dropdownItem, dropdownIndex) => (
-                      <li key={dropdownIndex}>
-                        {/* @ts-ignore */}
-                        <a href={dropdownItem.path}>{dropdownItem.description}</a>
-                      </li>
-                    ))}
+                  {investments.map((item, index) => (
+                    <li key={index} className="">
+                      <Link href={`/inwestycje/${item.slug}`} className="dropdown__link">
+                          <h4 className="">{item.name} - {item.category}</h4>
+                      </Link>
+                    </li>
+                  ))}
                   </ul>
                 </>
               ) : (
