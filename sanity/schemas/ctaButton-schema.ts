@@ -10,6 +10,12 @@ const ctaButton = {
       initialValue: true,
     },
     {
+      name: 'isDownloadButton',
+      title: 'Download File Button',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'text',
       title: 'Text',
       type: 'string',
@@ -18,6 +24,13 @@ const ctaButton = {
       name: 'href',
       title: 'Href',
       type: 'string',
+      hidden: ({ parent }) => parent?.isGalleryOpener || parent?.isDownloadButton,
+    },
+    {
+      name: 'file',
+      title: 'File',
+      type: 'file',
+      hidden: ({ parent }) => !parent?.isDownloadButton,
     },
   ],
 }
