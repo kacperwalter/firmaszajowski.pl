@@ -90,8 +90,11 @@ export async function getInvestment(slug) {
         heading,
         caption,
         buttons[]{
+          isGalleryOpener,
+          isDownloadButton,
           text,
-          href
+          href,
+          "fileUrl": file.asset->url
         },
         imageGalleryContent {
           heading,

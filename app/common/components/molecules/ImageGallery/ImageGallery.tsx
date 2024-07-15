@@ -1,6 +1,7 @@
 // @ts-nocheck
 "use client"
 
+import { useEffect } from "react"
 import "./ImageGallery.scss"
 import Heading from '@/app/common/components/atoms/Heading/Heading'
 import Image from "next/image"
@@ -18,7 +19,19 @@ const ImageGallery = ({ content, closeGallery }) => {
     totalImages,
   } = useImageGallery(content.images)
 
-  // console.log(content)
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        closeGallery()
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown)
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [closeGallery])
 
   return (
     <section className="image-gallery">

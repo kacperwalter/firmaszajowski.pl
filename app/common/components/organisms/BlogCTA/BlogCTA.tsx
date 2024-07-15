@@ -14,10 +14,21 @@ const BlogCTA = ({ content }) => {
   const openGallery = () => setIsGalleryOpen(true)
   const closeGallery = () => setIsGalleryOpen(false)
 
+  const handleDownload = (url, filename) => {
+    const link = document.createElement('a')
+    link.href = url
+    link.download = filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const heading = content?.heading || "Default Heading"
   const caption = content?.caption || "Default Caption"
   const buttons = content?.buttons || []
   const imageGalleryContent = content?.imageGalleryContent || []
+
+  console.log(buttons)
 
   return (
     <>
@@ -39,24 +50,24 @@ const BlogCTA = ({ content }) => {
             )}
 
             <div className="blogCTA__buttons">
-              {buttons[0]?.text && (
+              {buttons.map((button, index) => (
                 <Button
-                  as="link"
-                  text={buttons[0].text}
-                  href={buttons[0].href}
+                  key={index}
+                  as={button.isGalleryOpener || button.isDownloadButton ? "button" : "link"}
+                  text={button.text}
+                  href={!button.isDownloadButton ? button.href : undefined}
+                  onClick={
+                    button.isGalleryOpener
+                      ? openGallery
+                      : button.isDownloadButton
+                      ? () => handleDownload(button.fileUrl, button.text)
+                      : undefined
+                  }
+                  arrow={button.isGalleryOpener}
+                  arrowDirection={button.isGalleryOpener ? "right" : undefined}
+                  variant={index === 0 ? "primary" : "secondary"}
                 />
-              )}
-
-              {buttons[1]?.text && (
-                <Button
-                  as="button"
-                  text={buttons[1].text}
-                  onClick={openGallery}
-                  arrow
-                  arrowDirection="right"
-                  variant="secondary"
-                />
-              )}
+              ))}
             </div>
           </div>
         </Wrapper>

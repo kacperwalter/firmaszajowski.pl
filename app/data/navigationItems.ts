@@ -1,6 +1,6 @@
 export const navigationItems = [
     {
-      path: "/inwestycje",
+      path: "/#blog-feed-header",
       label: "Inwestycje",
       isDropdown: true,
     },

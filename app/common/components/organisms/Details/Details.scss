@@ -130,9 +130,14 @@
     .wrapper .details__image {
       width: 80rem;
 
-      @include media(tablet-h) {
-        width: 60rem;
+      @include media(laptop) {
+        width: 55rem;
       }
+
+      @include media(tablet-h) {
+        width: 45rem;
+      }
+      
 
       @include media(tablet) {
         width: 100%;
