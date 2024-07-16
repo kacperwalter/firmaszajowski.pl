@@ -108,3 +108,25 @@ export async function getInvestment(slug) {
     { slug },
   )
 }
+
+export async function getContactData() {
+  const client = createClient({
+    projectId: "jhpk521q",
+    dataset: "production",
+    apiVersion: "2024-06-12",
+  })
+
+  return client.fetch(
+    groq`*[_type == "contact"][0]{
+      heading,
+      items[] {
+        _key,
+        name,
+        heading,
+        caption,
+        phone,
+        email
+      }
+    }`
+  )
+}
