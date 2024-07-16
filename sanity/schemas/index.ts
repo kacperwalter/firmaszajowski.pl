@@ -9,6 +9,7 @@ import ctaButton from "./ctaButton-schema"
 import imageGalleryImage from "./imageGalleryImage-schema"
 import imageGalleryContent from "./imageGalleryContent-schema"
 import blogCTA from "./blogCTA-schema"
+import contact from "./contact-schema"
 
 const schemas = [
   investment,
@@ -22,6 +23,7 @@ const schemas = [
   imageGalleryImage,
   imageGalleryContent,
   blogCTA,
+  contact,
 ]
 
 export default schemas

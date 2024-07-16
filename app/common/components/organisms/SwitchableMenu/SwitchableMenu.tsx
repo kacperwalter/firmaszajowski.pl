@@ -10,7 +10,7 @@ import "./SwitchableMenu.scss"
 import type { SwitchableMenuProps } from "./SwitchableMenu.types"
 
 const SwitchableMenu = ({ content }: SwitchableMenuProps) => {
-  const [activeItemId, setActiveItemId] = useState(content.items[0].id)
+  const [activeItemId, setActiveItemId] = useState(0)
 
   const handleItemClick = (itemId: number) => {
     setActiveItemId(itemId)
@@ -21,21 +21,21 @@ const SwitchableMenu = ({ content }: SwitchableMenuProps) => {
       <Wrapper>
         <Heading type="h1" text={content.heading}/>
         <div className="switchable-menu__items">
-          {content.items.map(item => (
+          {content.items.map((item, index) => (
             <div
-              key={item.id}
-              className={`switchable-menu__item ${activeItemId === item.id ? "switchable-menu__item--active" : ""}`}
+              key={index}
+              className={`switchable-menu__item ${activeItemId === index ? "switchable-menu__item--active" : ""}`}
             >
               <div 
                 className="switchable-menu__select"
-                onClick={() => handleItemClick(item.id)}
+                onClick={() => handleItemClick(index)}
               >
-                <Heading text={item.name} />
+                <Heading text={item.name} type="h3" />
                 <ActionButton variant="secondary" />
               </div>
 
               <div 
-                className={`switchable-menu__item-content ${activeItemId === item.id ? "" : "is-hidden"}`}
+                className={`switchable-menu__item-content ${activeItemId === index ? "" : "is-hidden"}`}
               >
                 <Header heading={item.heading} caption={item.caption} headingType="h3" />
                 <ContactInfo phone={item.phone} email={item.email} />
