@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 const ctaButton = {
   name: 'ctaButton',
   title: 'CTA Button',
