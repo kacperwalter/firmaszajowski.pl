@@ -63,9 +63,9 @@ const BlogCTA = ({ content }) => {
                       ? () => handleDownload(button.fileUrl, button.text)
                       : undefined
                   }
-                  arrow={button.isGalleryOpener}
-                  arrowDirection={button.isGalleryOpener ? "right" : undefined}
-                  variant={index === 0 ? "primary" : "secondary"}
+                  arrow
+                  arrowDirection={"right"}
+                  variant={index === 0 ? "secondary" : "primary"}
                 />
               ))}
             </div>
