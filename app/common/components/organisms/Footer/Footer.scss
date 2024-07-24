@@ -87,6 +87,11 @@
 
     @include media($min: tablet) {
       align-self: baseline;
-    }    
+    }
+
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
