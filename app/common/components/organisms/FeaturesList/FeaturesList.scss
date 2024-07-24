@@ -12,12 +12,14 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    gap: 3rem;
+    gap: 6rem;
 
     @include media($min: tablet-h) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 8rem;
+      gap: 9rem;
+
     }
 
     @include media($min: laptop) {
@@ -121,6 +123,7 @@
       @include media($min: tablet-h) {
         height: 4rem;
         width: 4rem;
+        align-self: baseline;
       }
 
       @include media($min: laptop) {
@@ -132,6 +135,7 @@
     &--index {
       font-size: var(--font-size-h4);
       color: var(--color-ultragray);
+      align-self: baseline;
 
       @include media(tablet) {
         display: none;
