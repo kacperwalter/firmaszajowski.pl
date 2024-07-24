@@ -16,7 +16,7 @@ const FeaturesList = ({ content }) => {
   const features = content?.features || []
 
   return (
-    <section className="features-list">
+    <section className="features-list" id="features-list">
       <Wrapper>
         {caption && (
           <RichText color={"dark"} text={caption} />

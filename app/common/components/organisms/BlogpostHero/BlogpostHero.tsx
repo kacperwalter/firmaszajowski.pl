@@ -13,7 +13,8 @@ const BlogpostHero = ({ content }) => {
   const heading = content?.heading || "Default Heading"
   const imageSrc = content?.image?.src || "/path/to/default/image.jpg"
   const imageAlt = content?.image?.alt || "Default Image Alt"
-  const headingAnchor = content?.headingAnchor || "/default-link"
+  // const headingAnchor = content?.headingAnchor || "/default-link"
+  const headingAnchor = "#features-list"
 
   return (
     <section className="blogpost-hero">
