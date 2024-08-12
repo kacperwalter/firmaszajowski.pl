@@ -25,7 +25,7 @@ const detailsData2 = {
 
 const dofinansowanieData = {
   heading: "Projekt dotyczący utrzymania zdolności do pracy przez cały okres aktywności zawodowej",
-  caption: "<p><strong>Dofinansowanie:</strong> 88.235,68 zł</p><p><strong>Wartość całkowita:</strong> 120.123,73 zł</p><p><strong>Dofinansowanie:</strong> Fundusz Ubezpieczeń Społecznych</p><p><strong>Krótki opis projektu:</strong> Ograniczenie obciążenia układu mięśniowo szkieletowego podczas ręcznych prac transportowych poprzez zakup urządzeń do transportu bliskiego, oraz zwiększenie bezpieczeństwa podczas pracy na wysokości poprzez zakup rusztowań jezdnych.</p><p><strong>Data podpisania umowy:</strong> Styczeń 2024 r.</p>",
+  caption: "<p><strong>Dofinansowanie:</strong> 88.235,68 zł</p><p><strong>Wartość całkowita:</strong> 120.123,73 zł</p><p><strong>Rodzaj programu:</strong> Program dofinansowania płatników składek w ramach prewencji wypadkowej</p><p><strong>Dofinansowanie:</strong> Fundusz Ubezpieczeń Społecznych</p><p><strong>Krótki opis projektu:</strong> Ograniczenie obciążenia układu mięśniowo szkieletowego podczas ręcznych prac transportowych poprzez zakup urządzeń do transportu bliskiego, oraz zwiększenie bezpieczeństwa podczas pracy na wysokości poprzez zakup rusztowań jezdnych.</p><p><strong>Data podpisania umowy:</strong> Styczeń 2024 r.</p>",
   image: {
     url: "/images/flaga-i-godlo.png",
     alt: "alt",
