@@ -63,8 +63,8 @@
     align-self: center;
     display: flex;
     align-items: center;
-    gap: 1rem;
-    color: var(--color-dark);
+    gap: 2rem;
+    color: var(--color-ultragray);
 
     .arrow-previous {
       transform: rotate(90deg);
@@ -87,6 +87,14 @@
         height: 3rem;
       }
     }
+
+    &-current {
+      color: var(--color-dark);
+    }
+  }
+
+  &__navigation {
+    font-size: 2.4rem;
   }
 
   @include media(tablet) {}
