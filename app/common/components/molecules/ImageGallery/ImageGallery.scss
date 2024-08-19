@@ -33,12 +33,25 @@
     max-height: 100vh;
   }
 
+  &__current-image {
+    @include media($min: tablet) {
+      max-width: 50%;
+      align-self: center;
+    }
+  }
+
   &__listing {
     padding-left: 2rem;
     padding-right: 2rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 2rem;
+
+    &-image {
+      @include media($min: tablet) {
+        // max-width: 5rem;
+      }
+    }
   }
 
   &__button-close {
@@ -50,12 +63,6 @@
     @include media(tablet) {
       width: fit-content;
       align-self: flex-end;
-    }
-  }
-
-  &__listing-image {
-    @include media(tablet) {
-      max-width: 45%;
     }
   }
 
