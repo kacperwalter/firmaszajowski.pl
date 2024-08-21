@@ -73,7 +73,11 @@ export async function getInvestment(slug) {
             "url": asset->url,
             alt
           },
-          caption
+          caption,
+          rooms[] {
+            roomName,
+            roomSize
+          }
         }
       },
       imageAndContent {
