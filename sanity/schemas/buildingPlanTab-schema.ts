@@ -25,6 +25,33 @@ const buildingPlanTab = {
       title: 'Caption',
       type: 'text',
     },
+    {
+      name: 'rooms',
+      title: 'Rooms',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'roomName',
+              title: 'Room Name',
+              type: 'string',
+            },
+            {
+              name: 'roomSize',
+              title: 'Room Size',
+              type: 'string',
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'summarySize',
+      title: 'Summary Size',
+      type: 'string',
+    },
   ],
 }
 

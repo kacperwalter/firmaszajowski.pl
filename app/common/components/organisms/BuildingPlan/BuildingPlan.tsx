@@ -19,6 +19,11 @@ type BuildingPlanProps = {
         alt?: string
       }
       caption?: string
+      rooms?: {
+        roomName: string
+        roomSize: string
+      }[]
+      summarySize?: string
     }[]
   }
 }
@@ -30,7 +35,11 @@ const BuildingPlan = ({ content }: BuildingPlanProps) => {
       url: "/path/to/default/image.jpg",
       alt: "Default Alt"
     },
-    caption: "Default Caption"
+    caption: "Default Caption",
+    rooms: [
+      { roomName: "Default Room", roomSize: "0.00 m2" }
+    ],
+    summarySize: "0.00 m2"
   }
 
   const tabs = content?.tabs?.length ? content.tabs : [defaultTab]
@@ -85,6 +94,26 @@ const BuildingPlan = ({ content }: BuildingPlanProps) => {
             className="tabs__caption"
             dangerouslySetInnerHTML={{ __html: activeTab.caption || "Default Caption" }}
           />
+
+          <div className="tabs__rooms">
+            <p><strong>Zestawienie powierzchni:</strong></p>
+
+            <table>
+              <tbody>
+                {activeTab.rooms?.map((room, index) => (
+                  <tr key={index}>
+                    <td>{index + 1}. {room.roomName}</td>
+                    <td>{room.roomSize}</td>
+                  </tr>
+                ))}
+
+                <tr>
+                  <td className="tabs__rooms-summary">Razem:</td>
+                  <td>{activeTab.summarySize || "0.00 m2"}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </article>
       </Wrapper>
     </section>

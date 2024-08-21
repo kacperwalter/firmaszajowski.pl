@@ -113,18 +113,29 @@
 
   &__image {
     width: 100%;
-    max-height: 60rem;
+    max-height: 45rem;
     object-fit: cover;
 
     @include media($min: tablet-h) {
       grid-column-start: 2;
-      grid-row: span 2;
+      grid-row: span 3;
     }
   }
 
   &__caption {
     @include media($min: tablet-h) {
       max-width: 55rem;
+    }
+  }
+
+  &__rooms {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &-summary {
+      margin-top: 2rem;
+      display: table-row; /* Ensures it stays within the table layout */
     }
   }
 }
