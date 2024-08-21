@@ -96,19 +96,23 @@ const BuildingPlan = ({ content }: BuildingPlanProps) => {
           />
 
           <div className="tabs__rooms">
-            <p>Zestawienie powierzchni:</p>
+            <p><strong>Zestawienie powierzchni:</strong></p>
+
             <table>
               <tbody>
                 {activeTab.rooms?.map((room, index) => (
                   <tr key={index}>
-                    <td>{room.roomName}</td>
+                    <td>{index + 1}. {room.roomName}</td>
                     <td>{room.roomSize}</td>
                   </tr>
                 ))}
+
+                <tr>
+                  <td className="tabs__rooms-summary">Razem:</td>
+                  <td>{activeTab.summarySize || "0.00 m2"}</td>
+                </tr>
               </tbody>
             </table>
-
-            <p>Razem: {activeTab.summarySize || "0.00 m2"}</p>
           </div>
         </article>
       </Wrapper>
