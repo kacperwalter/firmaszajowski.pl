@@ -21,6 +21,10 @@
     padding-left: 2rem;
     padding-right: 2rem;
 
+    @include media($min: tablet-h) {
+
+    }
+
     .heading {
       text-align: center;
     }
@@ -81,6 +85,10 @@
     @include media(tablet) {
       width: fit-content;
       align-self: flex-end;
+    }
+
+    @include media($min: tablet-h) {
+      align-items: flex-end;
     }
   }
 
