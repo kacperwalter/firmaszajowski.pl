@@ -23,6 +23,7 @@ type BuildingPlanProps = {
         roomName: string
         roomSize: string
       }[]
+      summarySize?: string
     }[]
   }
 }
@@ -37,7 +38,8 @@ const BuildingPlan = ({ content }: BuildingPlanProps) => {
     caption: "Default Caption",
     rooms: [
       { roomName: "Default Room", roomSize: "0.00 m2" }
-    ]
+    ],
+    summarySize: "0.00 m2"
   }
 
   const tabs = content?.tabs?.length ? content.tabs : [defaultTab]
@@ -93,17 +95,21 @@ const BuildingPlan = ({ content }: BuildingPlanProps) => {
             dangerouslySetInnerHTML={{ __html: activeTab.caption || "Default Caption" }}
           />
 
-          <p>Zestawienie powierzchni:</p>
-          <table className="tabs__rooms">
-            <tbody>
-              {activeTab.rooms?.map((room, index) => (
-                <tr key={index}>
-                  <td>{room.roomName}</td>
-                  <td>{room.roomSize}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="tabs__rooms">
+            <p>Zestawienie powierzchni:</p>
+            <table>
+              <tbody>
+                {activeTab.rooms?.map((room, index) => (
+                  <tr key={index}>
+                    <td>{room.roomName}</td>
+                    <td>{room.roomSize}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <p>Razem: {activeTab.summarySize || "0.00 m2"}</p>
+          </div>
         </article>
       </Wrapper>
     </section>

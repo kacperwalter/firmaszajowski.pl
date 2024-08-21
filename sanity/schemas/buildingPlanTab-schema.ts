@@ -47,6 +47,11 @@ const buildingPlanTab = {
         },
       ],
     },
+    {
+      name: 'summarySize',
+      title: 'Summary Size',
+      type: 'string',
+    },
   ],
 }
 

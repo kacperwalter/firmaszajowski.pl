@@ -77,7 +77,8 @@ export async function getInvestment(slug) {
           rooms[] {
             roomName,
             roomSize
-          }
+          },
+          summarySize
         }
       },
       imageAndContent {
