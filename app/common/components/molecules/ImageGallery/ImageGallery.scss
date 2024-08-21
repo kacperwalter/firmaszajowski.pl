@@ -32,16 +32,21 @@
     gap: 2rem;
     max-height: 100vh;
 
-    // @include media($min: tablet-h) {
-    //   display: grid;
-    //   grid-template-columns: 1fr 1fr;
-    // }
+    @include media($min: tablet-h) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__current-image {
     @include media($min: tablet) {
       max-width: 50%;
       align-self: center;
+    }
+
+    @include media($min: tablet-h) {
+      grid-column-start: 2;
+      max-width: 70%;
     }
   }
 
@@ -52,9 +57,14 @@
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 
+    @include media($min: tablet-h) {
+      grid-row-start: 1;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
     &-image {
-      @include media($min: tablet) {
-        // max-width: 5rem;
+      @include media($min: tablet-h) {
+        // max-height: 13rem;
       }
     }
   }
