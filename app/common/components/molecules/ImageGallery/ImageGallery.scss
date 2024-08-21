@@ -40,7 +40,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       row-gap: 10rem;
-      height: 100vh;
+      min-height: 60vh;
     }
   }
 
@@ -54,6 +54,15 @@
       grid-column-start: 2;
       max-width: 90%;
       height: 40rem;
+    }
+
+    img {
+      @include media($min: tablet-h) {
+        // width: 100rem;
+        // height: 62rem;
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 
@@ -70,9 +79,10 @@
     }
 
     &-image {
-      @include media($min: tablet-h) {
-        // max-height: 13rem;
-      }
+      width: 21rem;
+      height: 13rem;
+      object-fit: cover;
+      object-position: center;
     }
   }
 
@@ -88,7 +98,7 @@
     }
 
     @include media($min: tablet-h) {
-      align-items: flex-end;
+      align-self: flex-end;
     }
   }
 
