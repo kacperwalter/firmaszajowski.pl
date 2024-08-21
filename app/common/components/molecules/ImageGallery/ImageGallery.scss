@@ -12,6 +12,16 @@
   flex-direction: column;
   gap: 4rem;
 
+  @include media($min: tablet-h) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Adding box shadow
+    padding: 4rem;
+  }
+
   &__top {
     width: 100%;
     display: flex;
