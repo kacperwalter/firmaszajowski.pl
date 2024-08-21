@@ -58,7 +58,7 @@
     }
 
     @include media($min: tablet-h) {
-      max-width: 44rem;
+      // max-width: 44rem;
     }
 
     .brand-logo {
@@ -76,7 +76,7 @@
     }
 
     .heading {
-      width: max-content;
+      // width: max-content;
     }
 
     .rich-text {
@@ -106,7 +106,7 @@
 
       .details__content {
         @include media($min: laptop ) {
-          margin-left: 10rem;
+          // margin-left: 10rem;
         }
       }
     }
@@ -141,6 +141,11 @@
 
       @include media(tablet) {
         width: 100%;
+      }
+
+      @include media($min: tablet-h) {
+        min-height: 50rem;
+        object-fit: cover;
       }
     }
   }
