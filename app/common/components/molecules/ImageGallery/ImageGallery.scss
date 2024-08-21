@@ -35,6 +35,8 @@
     @include media($min: tablet-h) {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      row-gap: 10rem;
+      height: 100vh;
     }
   }
 
@@ -46,7 +48,8 @@
 
     @include media($min: tablet-h) {
       grid-column-start: 2;
-      max-width: 70%;
+      max-width: 90%;
+      height: 40rem;
     }
   }
 

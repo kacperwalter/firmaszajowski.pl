@@ -46,13 +46,14 @@ const ImageGallery = ({ content, closeGallery }) => {
       </div>
 
       <div className="image-gallery__content">
-        <Image
-          className="image-gallery__current-image"
-          src={currentImage.url}
-          alt={currentImage.alt}
-          width={1000}
-          height={1000}
-        />
+        <div className="image-gallery__current-image">
+          <Image
+            src={currentImage.url}
+            alt={currentImage.alt}
+            width={1000}
+            height={1000}
+          />
+        </div>
 
         <div className="image-gallery__listing">
           {content.images.map((image, index) => (
