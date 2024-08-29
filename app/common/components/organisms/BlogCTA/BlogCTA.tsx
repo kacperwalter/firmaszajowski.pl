@@ -28,7 +28,6 @@ const BlogCTA = ({ content }) => {
   const buttons = content?.buttons || []
   const imageGalleryContent = content?.imageGalleryContent || []
 
-  console.log(buttons)
 
   return (
     <>
