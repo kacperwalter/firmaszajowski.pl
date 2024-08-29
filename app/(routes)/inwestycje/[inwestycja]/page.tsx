@@ -1,4 +1,7 @@
 // @ts-nocheck
+'use client'
+
+import { useState, useEffect } from "react"
 import { getInvestment } from "@/sanity/sanity-utils"
 
 import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
@@ -11,79 +14,72 @@ import BuildingPlan from "@/app/common/components/organisms/BuildingPlan/Buildin
 import ImageAndContent from "@/app/common/components/organisms/ImageAndContent/ImageAndContent"
 import BlogCTA from "@/app/common/components/organisms/BlogCTA/BlogCTA"
 
-// TODO temporarily they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
 import "@/app/common/styles/fonts.scss"
 import "@/app/common/styles/globals.scss"
 import "@/app/common/styles/spacings.scss"
 import "@/app/common/styles/utils/is-hidden.scss"
-// TODO remove these imports then
 
 type Props = {
   params: { inwestycja: string }
 }
 
-// TODO let's refactor it and do it better 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const slug = params.inwestycja
-  const investment = await getInvestment(slug)
+const Inwestycja = ({ params }: Props) => {
+  const [investment, setInvestment] = useState(null)
 
-  return {
-    title: investment?.pageTitle || "Firma Szajowski",
-    description: investment?.metaDescription || "",
-    alternates: {
-      canonical: `https://www.firmaszajowski.pl/inwestycje/${investment?.slug || ""}`,
-    },
-    openGraph: {
-      title: investment?.pageTitle || "Firma Szajowski",
-      description: investment?.metaDescription || "",
-      url: `https://www.firmaszajowski.pl/inwestycje/${investment?.slug || ""}`,
-      siteName: "Firmaszajowski",
+  useEffect(() => {
+    const fetchInvestment = async () => {
+      try {
+        const investmentData = await getInvestment(params.inwestycja)
+        setInvestment(investmentData)
+      } catch (error) {
+        console.error("Failed to fetch investment:", error)
+      }
     }
-  }
-}
 
-// TODO refactor of fetching data into app
-const Inwestycja = async ({ params }: Props) => {
-  const slug = params.inwestycja
-  const investment = await getInvestment(slug)
-  
+    fetchInvestment()
+  }, [params.inwestycja])
+
+  if (!investment) {
+    return <div>Loading...</div>
+  }
+
   const blogpostHeroContent = {
-    heading: investment?.heroSection?.heading?.toString() || "Default Heading",
-    subheading: investment?.name || "Default Subheading",
+    heading: investment.heroSection?.heading?.toString() || "Default Heading",
+    subheading: investment.name || "Default Subheading",
     image: {
-      src: investment?.image?.src || "/path/to/default/image.jpg",
-      alt: investment?.image?.alt || "Default Alt",
+      src: investment.image?.src || "/path/to/default/image.jpg",
+      alt: investment.image?.alt || "Default Alt",
     },
-    headingAnchor: investment?.heroSection?.headingAnchor || "#"
+    headingAnchor: investment.heroSection?.headingAnchor || "#"
   }
 
   const featuresListContent = {
-    heading: investment?.featuresList?.heading || "Default Features Heading",
-    caption: investment?.featuresList?.caption || "Default Features Caption",
-    images: investment?.featuresList?.images || [],
-    features: investment?.featuresList?.features || []
+    heading: investment.featuresList?.heading || "Default Features Heading",
+    caption: investment.featuresList?.caption || "Default Features Caption",
+    images: investment.featuresList?.images || [],
+    features: investment.featuresList?.features || []
   }
 
   const buildingPlanContent = {
-    heading: investment?.buildingPlan?.heading || "Default Building Plan Heading",
-    subheading: investment?.buildingPlan?.subheading || "Default Building Plan Subheading",
-    tabs: investment?.buildingPlan?.tabs || []
+    heading: investment.buildingPlan?.heading || "Default Building Plan Heading",
+    subheading: investment.buildingPlan?.subheading || "Default Building Plan Subheading",
+    tabs: investment.buildingPlan?.tabs || []
   }
 
   const imageAndContentContent = {
-    display: investment?.imageAndContent?.display || false,
-    heading: investment?.imageAndContent?.heading || "Default Image And Content Heading",
-    caption: investment?.imageAndContent?.caption || "Default Image And Content Caption",
-    image: investment?.imageAndContent?.image || { url: "/path/to/default/image.jpg", alt: "Default Alt" }
+    display: investment.imageAndContent?.display || false,
+    heading: investment.imageAndContent?.heading || "Default Image And Content Heading",
+    caption: investment.imageAndContent?.caption || "Default Image And Content Caption",
+    image: investment.imageAndContent?.image || { url: "/path/to/default/image.jpg", alt: "Default Alt" }
   }
 
   const blogCTAContent = {
-    display: investment?.blogCTA?.display || false,
-    heading: investment?.blogCTA?.heading || "Default Blog CTA Heading",
-    caption: investment?.blogCTA?.caption || "Default Blog CTA Caption",
-    buttons: investment?.blogCTA?.buttons || [],
-    imageGalleryContent: investment?.blogCTA?.imageGalleryContent || []
+    display: investment.blogCTA?.display || false,
+    heading: investment.blogCTA?.heading || "Default Blog CTA Heading",
+    caption: investment.blogCTA?.caption || "Default Blog CTA Caption",
+    buttons: investment.blogCTA?.buttons || [],
+    imageGalleryContent: investment.blogCTA?.imageGalleryContent || []
   }
   
   return (
