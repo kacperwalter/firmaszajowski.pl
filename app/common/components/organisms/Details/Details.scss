@@ -70,7 +70,7 @@
     }
 
     .header {
-      @include media(tablet-h) {
+      @include media(tablet) {
         justify-items: center;
       }
     }

@@ -18,7 +18,6 @@ const Footer = () => {
     const fetchInvestments = async () => {
       try {
         const investments = await getInvestments()
-        console.log("Dropdown - fetched investments useEffect", investments)
         setInvestments(investments)
       } catch (error) {
         console.error("Failed to fetch investments:", error)
@@ -44,7 +43,7 @@ const Footer = () => {
                 <>
                   <a className="footer__navigation-heading" href={item.path}>{item.label}</a>
                   <ul className="footer__navigation-list">
-                  {investments.map((item, index) => (
+                  {investments.map((item, index) => (            
                     <li key={index} className="">
                       <Link href={`/inwestycje/${item.slug}`} className="dropdown__link">
                           <h4 className="">{item.name} - {item.category}</h4>
