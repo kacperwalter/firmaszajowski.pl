@@ -4,7 +4,7 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 
-  @include media($min: laptop) {
+  @include media($min: tablet-h) {
     padding-top: 10rem;
     padding-bottom: 13rem;
   }
@@ -23,14 +23,14 @@
   }
 
   &__item {
-    @include media($min: laptop) {
+    @include media($min: tablet-h) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2.4rem;
     }
 
     &--active {
-      @include media(tablet-h) {
+      @include media(tablet) {
         border-bottom: 1px solid var(--color-dark);
       }
 
@@ -54,13 +54,13 @@
           width: 4px; 
           background-color: var(--color-neo);
 
-          @include media($min: laptop) {
+          @include media($min: tablet-h) {
             height: 65%;
             width: 5.5px;
           }
         }
 
-        @include media($min: laptop) {
+        @include media($min: tablet-h) {
           border-bottom: 1px solid var(--color-dark);
         }
 
@@ -74,7 +74,7 @@
           &__arrow {
             transform: rotate(180deg);
 
-            @include media($min: laptop) {
+            @include media($min: tablet-h) {
               transform: rotate(-90deg);
             }
           
@@ -109,7 +109,7 @@
       }
     }
 
-    @include media($min: laptop) {
+    @include media($min: tablet-h) {
       max-width: 75rem;
       cursor: pointer;
     }
@@ -128,7 +128,7 @@
         height: 1.5rem;
         transform: rotate(0deg);
 
-        @include media($min: laptop) {
+        @include media($min: tablet-h) {
           transform: rotate(-45deg);
         }
       }
@@ -141,11 +141,10 @@
     padding-left: 2.4rem;
     padding-right: 2.4rem;
 
-    @include media($min: laptop) {
+    @include media($min: tablet-h) {
       position: absolute;
       left: 55%;
       top: 0;
-      width: 70rem;
       padding-top: 0;
     }
 
