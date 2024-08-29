@@ -7,6 +7,7 @@ export async function getInvestments(): Promise<Investment[]> {
     projectId: "jhpk521q",
     dataset: "production",
     apiVersion: "2024-06-12",
+    useCdn: false
   })
 
   return client.fetch(
@@ -31,6 +32,7 @@ export async function getInvestment(slug) {
     projectId: "jhpk521q",
     dataset: "production",
     apiVersion: "2024-06-12",
+    useCdn: false
   })
 
   return client.fetch(
