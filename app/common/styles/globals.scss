@@ -12,11 +12,6 @@ html {
 body {
   font-family: var(--font-poppins);
   font-size: 1.6rem;
-  // TODO if smth breaks, remove lines below
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
 }
 
 body,
