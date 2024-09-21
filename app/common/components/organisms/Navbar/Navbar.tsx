@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from "next/image"
 import Link from "next/link"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
@@ -14,10 +14,27 @@ import "./Navbar.scss"
 
 const Navbar = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
   const toggleMenu = () => setIsMenuVisible(!isMenuVisible)
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <nav className="navbar"> 
+    <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}> 
       <Wrapper isWide>
         <Link href="/">
           <BrandLogo />
