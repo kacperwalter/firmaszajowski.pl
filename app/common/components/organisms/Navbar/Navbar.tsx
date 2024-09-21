@@ -36,7 +36,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${isScrolled ? 'navbar--scrolled' : ''}`}> 
       <Wrapper isWide>
-        <Link href="/">
+        <Link className="navbar__linklogo" href="/">
           <BrandLogo />
         </Link>
 

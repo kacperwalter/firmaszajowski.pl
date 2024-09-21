@@ -34,6 +34,10 @@
     }
   }
 
+  &__linklogo {
+    display: flex;
+  }
+
   &__menu {
     @include media(tablet) {
       height: 95vh;
