@@ -93,7 +93,8 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--color-ultragray);
-
+    gap: 0.2rem;
+    
     &:hover,
     &:focus {
       .action-button {
