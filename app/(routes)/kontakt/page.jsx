@@ -1,7 +1,7 @@
 import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
 import Footer from "@/app/common/components/organisms/Footer/Footer"
 import Contact from "@/app/modules/Contact/Contact"
-import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
+import KontaktRect from "@/app/common/components/atoms/BackgroundRactangles/KontaktRect/KontaktRect"
 
 // TODO temporarly they have to be imported there, before single inwestycja is a module
 import "@/app/common/styles/colors.scss"
@@ -29,7 +29,7 @@ export const metadata = {
   const ContactPage = () => {
     return (
       <>
-        <BckgRect placement="left" />
+        <KontaktRect />
         <Navbar />
         <Contact />
         <Footer />

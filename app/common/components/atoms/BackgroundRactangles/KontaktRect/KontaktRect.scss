@@ -1,0 +1,15 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.kontakt-rect {
+  background-color: var(--color-beige);
+  width: 50vw;
+  height: 69rem;
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+
+  @include media(tablet) {
+    display: none;
+  }
+}

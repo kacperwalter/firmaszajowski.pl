@@ -9,6 +9,10 @@
     padding-bottom: 13rem;
   }
 
+  @include media($min: laptop) {
+    margin-bottom: 10rem;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
