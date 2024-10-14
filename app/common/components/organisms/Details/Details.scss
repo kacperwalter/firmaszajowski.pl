@@ -113,6 +113,7 @@
   }
 
   &--hero {
+    margin-top: 3rem;
     padding-top: 0;
 
     .wrapper {
@@ -128,10 +129,10 @@
     }
 
     .wrapper .details__image {
-      width: 80rem;
+      width: 90rem;
 
       @include media(laptop) {
-        width: 55rem;
+        width: 90rem;
       }
 
       @include media(tablet-h) {
