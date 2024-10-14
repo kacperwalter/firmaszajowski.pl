@@ -1,0 +1,11 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.ofirmie-rect {
+  background-color: var(--color-beige);
+  width: 63vw;
+  height: 600px;
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  right: 0;
+}

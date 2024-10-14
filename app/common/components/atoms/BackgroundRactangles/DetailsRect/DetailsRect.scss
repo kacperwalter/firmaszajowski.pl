@@ -1,0 +1,16 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.details-rect {
+  background-color: var(--color-beige);
+  width: 60rem;
+  height: 35rem;
+  position: absolute;
+  z-index: -100;
+  top: 10rem;
+  left: -6rem;
+
+  @include media ($min: laptop) {
+    width: 80rem;
+    top: 20rem;
+  }
+}

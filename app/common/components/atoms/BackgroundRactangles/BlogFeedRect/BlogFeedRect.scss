@@ -1,0 +1,11 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.blogfeed-rect {
+  background-color: var(--color-beige);
+  width: 65vw;
+  height: 520px;
+  position: absolute;
+  z-index: -100;
+  top: 35%;
+  right: 0;
+}

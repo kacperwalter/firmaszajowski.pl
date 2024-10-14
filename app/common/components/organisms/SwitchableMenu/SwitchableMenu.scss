@@ -9,6 +9,10 @@
     padding-bottom: 13rem;
   }
 
+  @include media($min: laptop) {
+    margin-bottom: 10rem;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -38,11 +42,16 @@
         border-bottom: 1px solid transparent;
         display: flex;
         justify-content: space-between;
-        padding-top: 1rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid var(--color-ultragray);
         position: relative; 
-        padding-left: 2.4rem;
+        padding-left: 1.5rem;
+        padding-top: 1.8rem;
+
+        @include media ($min: tablet-h) {
+          padding-left: 2.4rem;
+          padding-top: 1rem;
+        }
 
         &::before {
           content: '';
@@ -117,8 +126,16 @@
     
     .heading {
       color: var(--color-ultragray);
-      font-size: var(--font-size-h3);
+      font-size: var(--font-size-h4);
       font-weight: 600;
+
+      @include media(mobile) {
+        font-size: var(--font-size-h3);
+      }
+
+      @include media($min: laptop) {
+        font-size: var(--font-size-h3);
+      }
     }
 
     .action-button {
