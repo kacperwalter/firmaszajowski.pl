@@ -1,0 +1,41 @@
+@import 'app/common/styles/mixins/media.scss';
+
+.details-rect {
+  background-color: var(--color-beige);
+  width: 60rem;
+  height: 35rem;
+  position: absolute;
+  z-index: -100;
+  top: 10rem;
+  left: -6rem;
+
+  @include media ($min: laptop) {
+    width: 80rem;
+  top: 20rem;
+  }
+
+  // @include media(tablet) {
+  //   height: 85vh;
+  // }
+
+  // &.bckg-rect--left-down {
+  //     bottom: 0;
+  //     left: 0;
+  // }
+
+  // &.bckg-rect--left {
+  //     top: 0;
+  //     left: 0;
+  // }
+
+  // &.bckg-rect--right {
+  //     top: 0;
+  //     right: 0;
+  // }
+
+  // &.bckg-rect--center {
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  // }
+}

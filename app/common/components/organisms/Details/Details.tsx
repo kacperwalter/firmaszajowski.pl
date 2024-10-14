@@ -1,7 +1,7 @@
 import BrandLogo from "@/app/common/components/atoms/BrandLogo/BrandLogo"
 import Header from "@/app/common/components/molecules/Header/Header"
 import Wrapper from "@/app/common/components/atoms/Wrapper/Wrapper"
-import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
+import DetailsRect from "../../atoms/BackgroundRactangles/DetailsRect/DetailsRect"
 import Button from "@/app/common/components/atoms/Button/Button"
 import type { DetailsProps } from "./Details.types"
 import "./Details.scss"
@@ -56,7 +56,7 @@ const Details = ({
           alt="Example image" 
         />
         
-        {(!isReversed && !isHero) && <BckgRect placement="left-down" />}
+        {(!isReversed && !isHero) && <DetailsRect />}
       </Wrapper>
     </section>
   )
