@@ -6,7 +6,8 @@ import { getInvestment } from "@/sanity/sanity-utils"
 
 import Navbar from "@/app/common/components/organisms/Navbar/Navbar"
 import Footer from "@/app/common/components/organisms/Footer/Footer"
-import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
+// import BckgRect from "@/app/common/components/atoms/BckgRect/BckgRect"
+import InwestycjaRect from "@/app/common/components/atoms/BackgroundRactangles/InwestycjaRect/InwestycjaRect"
 
 import BlogpostHero from "@/app/common/components/organisms/BlogpostHero/BlogpostHero"
 import FeaturesList from "@/app/common/components/organisms/FeaturesList/FeaturesList"
@@ -84,7 +85,7 @@ const Inwestycja = ({ params }: Props) => {
   
   return (
     <>
-      <BckgRect placement="center" />
+      <InwestycjaRect />
 
       <Navbar />
 
