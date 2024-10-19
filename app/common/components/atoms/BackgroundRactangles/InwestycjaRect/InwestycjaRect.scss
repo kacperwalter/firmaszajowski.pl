@@ -2,12 +2,20 @@
 
 .inwestycja-rect {
   background-color: var(--color-beige);
-  width: 60vw;
-  height: 600px;
+  width: 70vw;
+  max-width: 89rem;
+  height: 100rem;
   position: absolute;
   z-index: -100;
   top: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 
+  @include media ($min: tablet) {
+    width: 60vw;
+  }
+
+  @include media($min: tablet-h) {
+    width: 89rem;
+  }
 }

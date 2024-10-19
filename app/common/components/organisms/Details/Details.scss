@@ -76,7 +76,7 @@
     }
 
     .heading {
-      // width: max-content;
+      font-size: var(--font-size-h4);
     }
 
     .rich-text {
@@ -125,6 +125,10 @@
       .details__content {
         padding-left: var(--wrapper-padding);
         padding-right: var(--wrapper-padding);
+
+        .header .heading {
+          font-size: var(--font-size-h1);
+        }
       }
     }
 

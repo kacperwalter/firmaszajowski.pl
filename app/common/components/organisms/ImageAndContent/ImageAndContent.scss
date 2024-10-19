@@ -1,75 +1,79 @@
 @import 'app/common/styles/mixins/media.scss';
 
 .image-and-content {
-  --content-max-width: 55rem; 
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  row-gap: 1rem;
+  column-gap: 16rem;
   margin-bottom: 5rem;
+  align-items: center;
 
-  @include media(tablet) {
-    max-width: calc(var(--wrapper-max-width) + 2 * var(--wrapper-padding));
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: var(--wrapper-padding);
-    padding-right: var(--wrapper-padding);
+  @include media(mobile) {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+
+  @include media(tablet-h) {
+    column-gap: 8rem;
   }
 
   @include media($min: tablet-h) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-
-  @include media($min: laptop) {
-    column-gap: 16rem;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-items: start;
   }
 
   .heading {
-    font-weight: 500;
-    
-    @include media(tablet) {
-      text-align: center;
-    }
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: var(--font-size-h4);
 
     @include media($min: tablet-h) {
-      font-size: var(--font-size-h4);
-      grid-column-start: 2;
-      grid-row-start: 2;
-      max-width: var(--content-max-width);
+      grid-column: 2;
+      grid-row: 1;
+      text-align: left;
+      margin-bottom: 0;
+      align-self: end;
     }
-
-    @include media($min: hd) {
-      grid-row-start: 2;
-  }
 
     strong {
       font-weight: 600;
       font-size: var(--font-size-h2);
-
-      @include media(tablet) {
-        font-size: var(--font-size-h1);      
-      }
     }
   }
 
-  &__image {
+  &__image-wrapper {
+    grid-column: 1 / -1;
+    width: 100%;
+
     @include media($min: tablet-h) {
-      grid-column-start: 1;
-      grid-row: span 6;
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      margin-right: 2rem;
+    }
+
+    .image-and-content__image {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   }
 
   .rich-text {
+    grid-column: 1 / -1;
     font-size: var(--font-size-body-regular);
 
-    @include media($min: tablet-h) {
-      max-width: var(--content-max-width);
-      grid-column-start: 2;
-      grid-row-start: 3;
+    @include media(tablet) {
+      text-align: center;
+      place-self: center;
     }
 
-    @include media($min: hd) {
-        grid-row-start: 3;
+    @include media($min: tablet-h) {
+      grid-column: 2;
+      grid-row: 2;
+      max-width: 55rem;
     }
   }
 }
