@@ -8,10 +8,18 @@
     background-color: var(--color-beige);
     padding-top: 8rem;
     padding-bottom: 8rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     display: grid;
     place-content: center;
     border-radius: var(--border-radius);
     row-gap: 2rem;
+
+    .heading {
+      strong {
+        font-size: var(--font-size-h4);
+      }
+    }
   }
 
   &__caption {
