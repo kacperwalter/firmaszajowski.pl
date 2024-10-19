@@ -2,9 +2,14 @@
 
 .blog-feed {
   position: relative;
+  margin-bottom: 10rem;
 
   @include media(tablet) {
     margin-bottom: 10rem;
+  }
+
+  @include media ($min: laptop) {
+    margin-bottom: 0;
   }
 
   .wrapper {
