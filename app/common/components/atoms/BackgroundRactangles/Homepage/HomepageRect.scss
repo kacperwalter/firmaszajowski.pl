@@ -2,10 +2,15 @@
 
 .homepage-rect {
   background-color: var(--color-beige);
-  width: 65vw;
-  height: 600px;
+  width: 63vw;
+  // max-width: 63vw;
+  height: 60rem;
   position: absolute;
   z-index: -100;
   top: 0;
   left: 0;
+
+  @include media (tablet-h) {
+    width: 70vw;
+  }
 }
